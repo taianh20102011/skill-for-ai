@@ -2,23 +2,23 @@
 
 /**
  * SKILL-FOR-AI - Unified Web Dashboard & 1-Click AI Control Center
- * Zero-dependency native Node.js HTTP server + Modern Anti-Slop Web UI
+ * Local AI Engine (Ollama / LM Studio) + Multi-Agent Mesh + Anti-Slop Web UI
  */
 
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const os = require('os');
-const { exec, spawn } = require('child_process');
+const { exec } = require('child_process');
 
 const PORT = process.env.PORT || 3333;
 const homeDir = os.homedir();
 const globalMeshDir = path.join(homeDir, '.unified-ai-mesh');
-const skillsDir = path.join(__dirname, '..', 'skills');
 
 let systemLogs = [
   `[${new Date().toLocaleTimeString()}] Unified AI Mesh Dashboard initialized.`,
-  `[${new Date().toLocaleTimeString()}] Loaded 117 autonomous agent skills.`
+  `[${new Date().toLocaleTimeString()}] Loaded 119 autonomous agent skills.`,
+  `[${new Date().toLocaleTimeString()}] Local AI Engine listener ready.`
 ];
 
 function log(msg) {
@@ -28,14 +28,62 @@ function log(msg) {
   console.log(`\x1b[36m${line}\x1b[0m`);
 }
 
+function checkLocalAI() {
+  return new Promise((resolve) => {
+    // 1. Test Ollama on 11434
+    const req = http.get('http://127.0.0.1:11434/api/tags', { timeout: 2000 }, (res) => {
+      let data = '';
+      res.on('data', chunk => data += chunk);
+      res.on('end', () => {
+        try {
+          const json = JSON.parse(data);
+          const models = (json.models || []).map(m => m.name);
+          resolve({
+            connected: true,
+            provider: 'Ollama',
+            endpoint: 'http://127.0.0.1:11434',
+            openAiEndpoint: 'http://127.0.0.1:11434/v1',
+            models: models.length ? models : ['gemma4:12b'],
+            activeModel: models[0] || 'gemma4:12b'
+          });
+        } catch (e) {
+          resolve({ connected: false });
+        }
+      });
+    });
+    req.on('error', () => {
+      // 2. Fallback test LM Studio on 1234
+      const req2 = http.get('http://127.0.0.1:1234/v1/models', { timeout: 1500 }, (res2) => {
+        let data2 = '';
+        res2.on('data', chunk => data2 += chunk);
+        res2.on('end', () => {
+          try {
+            const json2 = JSON.parse(data2);
+            const models2 = (json2.data || []).map(m => m.id);
+            resolve({
+              connected: true,
+              provider: 'LM Studio',
+              endpoint: 'http://127.0.0.1:1234',
+              openAiEndpoint: 'http://127.0.0.1:1234/v1',
+              models: models2.length ? models2 : ['local-model'],
+              activeModel: models2[0] || 'local-model'
+            });
+          } catch (e) {
+            resolve({ connected: false });
+          }
+        });
+      });
+      req2.on('error', () => resolve({ connected: false }));
+    });
+  });
+}
+
 function getMeshConfig() {
   const configPath = path.join(globalMeshDir, 'config.json');
   if (fs.existsSync(configPath)) {
     try {
       return JSON.parse(fs.readFileSync(configPath, 'utf8'));
-    } catch (e) {
-      // fallback
-    }
+    } catch (e) {}
   }
   return {
     system: 'Unified AI Agent Mesh',
@@ -52,7 +100,6 @@ function updateMeshConfig(newMode) {
   config.lastUpdated = new Date().toISOString();
   fs.writeFileSync(path.join(globalMeshDir, 'config.json'), JSON.stringify(config, null, 2), 'utf8');
 
-  // Also update AGENTS.md and .cursorrules in current project
   const sourceAgentsMdPath = path.join(__dirname, '..', 'AGENTS.md');
   const baseAgentsContent = fs.existsSync(sourceAgentsMdPath) ? fs.readFileSync(sourceAgentsMdPath, 'utf8') : '';
   const modePromptText = newMode === 'senior'
@@ -82,7 +129,7 @@ function getHTML() {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SKILL-FOR-AI Control Center</title>
+  <title>SKILL-FOR-AI Control Center & Local AI Engine</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -131,10 +178,13 @@ function getHTML() {
           <h1 class="text-lg font-bold tracking-tight text-white">SKILL-FOR-AI</h1>
           <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/20">v1.0.0</span>
           <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center gap-1">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 pulse-dot"></span> 118 Skills Active
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 pulse-dot"></span> 119 Skills Active
+          </span>
+          <span id="badge-local-ai" class="px-2 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-purple-500/10 text-purple-400 border border-purple-500/20 flex items-center gap-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span> Local AI Ready
           </span>
         </div>
-        <p class="text-xs text-zinc-400">Autonomous Multi-Agent Mesh & 1-Click Operations</p>
+        <p class="text-xs text-zinc-400">Autonomous Multi-Agent Mesh & Local AI Engine (Zero API Cost)</p>
       </div>
     </div>
 
@@ -201,6 +251,49 @@ function getHTML() {
             <div class="text-xs font-semibold text-zinc-200">Aider / Cline</div>
             <div class="text-[10px] text-emerald-400 flex items-center gap-1 font-mono"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Linked</div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEW SECTION: LOCAL AI ENGINE (OLLAMA / LM STUDIO) -->
+    <section class="glass-card rounded-2xl p-6 relative overflow-hidden border-purple-500/30 shadow-lg shadow-purple-500/5">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-purple-600/20 text-purple-400 flex items-center justify-center font-bold text-base shadow-inner">
+            💻
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <h3 class="text-base font-bold text-white">Local AI Engine (Chạy Hoàn Toàn Offline / Miễn Phí 100%)</h3>
+              <span id="local-ai-status-pill" class="px-2 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                🟢 Ollama Connected
+              </span>
+            </div>
+            <p class="text-xs text-zinc-400">Không tốn tiền API, không cần mạng internet, giữ kín tuyệt đối dữ liệu mã nguồn.</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <span class="text-xs text-zinc-400 font-mono">Model Local:</span>
+          <select id="local-model-select" class="bg-zinc-900 border border-zinc-700/80 rounded-xl px-3 py-1.5 text-xs font-mono font-semibold text-purple-300 focus:outline-none focus:border-purple-500">
+            <option value="gemma4:12b">gemma4:12b (Active)</option>
+          </select>
+          <button onclick="connectLocalToAgents()" id="btn-connect-local" class="px-3.5 py-1.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-semibold transition-all shadow-md shadow-purple-600/20 active:scale-95 flex items-center gap-1.5">
+            <span>⚡ Nối Vào Toàn Bộ Coding Agents</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Test Prompt & Instant Local Inference -->
+      <div class="space-y-3 pt-2">
+        <div class="flex gap-2">
+          <input id="local-test-prompt" type="text" placeholder="Gõ thử lệnh để kiểm tra AI Local (Ví dụ: Viết hàm debounce trong TypeScript...)" class="flex-1 bg-zinc-900/90 border border-zinc-800 rounded-xl px-4 py-2.5 text-xs text-zinc-200 placeholder-zinc-500 focus:outline-none focus:border-purple-500" />
+          <button onclick="runLocalPrompt()" id="btn-run-local" class="px-5 py-2.5 rounded-xl bg-zinc-100 hover:bg-white text-zinc-950 font-bold text-xs transition-all duration-200 flex items-center gap-2 active:scale-95">
+            <span>Chạy AI Local</span>
+          </button>
+        </div>
+
+        <div id="local-ai-response-box" class="hidden p-4 rounded-xl bg-zinc-950 border border-zinc-800/80 font-mono text-xs text-zinc-300 leading-relaxed max-h-48 overflow-y-auto whitespace-pre-wrap">
         </div>
       </div>
     </section>
@@ -349,7 +442,6 @@ function getHTML() {
             <button onclick="fetchLogs()" class="text-[10px] font-mono text-zinc-500 hover:text-zinc-300">Làm mới</button>
           </div>
           <div id="log-box" class="flex-1 bg-zinc-950 rounded-xl p-3 border border-zinc-800/80 font-mono text-[11px] text-zinc-400 overflow-y-auto space-y-1">
-            <!-- Logs injected via JS -->
           </div>
         </div>
 
@@ -389,6 +481,24 @@ function getHTML() {
         activeMode = data.activeMode || 'senior';
         renderModeButtons();
       } catch (e) {}
+
+      // Check Local AI
+      try {
+        const localRes = await fetch('/api/local-ai');
+        const localData = await localRes.json();
+        const pill = document.getElementById('local-ai-status-pill');
+        const select = document.getElementById('local-model-select');
+        if (localData.connected) {
+          pill.className = 'px-2 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20';
+          pill.innerText = '🟢 ' + localData.provider + ' Connected';
+          if (localData.models && localData.models.length) {
+            select.innerHTML = localData.models.map(m => '<option value="' + m + '">' + m + '</option>').join('');
+          }
+        } else {
+          pill.className = 'px-2 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-zinc-800 text-zinc-400 border border-zinc-700';
+          pill.innerText = '⚪ Local Engine Offline';
+        }
+      } catch (e) {}
     }
 
     function renderModeButtons() {
@@ -417,6 +527,57 @@ function getHTML() {
         fetchLogs();
       } catch (e) {
         alert('Lỗi cập nhật chế độ');
+      }
+    }
+
+    async function runLocalPrompt() {
+      const input = document.getElementById('local-test-prompt');
+      const prompt = input.value.trim();
+      const model = document.getElementById('local-model-select').value;
+      if (!prompt) return;
+
+      const btn = document.getElementById('btn-run-local');
+      const box = document.getElementById('local-ai-response-box');
+      btn.disabled = true;
+      btn.innerText = 'Đang suy luận...';
+      box.classList.remove('hidden');
+      box.innerText = '🤖 Đang kết nối tới mô hình ' + model + ' tại localhost:11434...';
+
+      try {
+        const res = await fetch('/api/local-ai/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ prompt, model })
+        });
+        const data = await res.json();
+        box.innerText = data.response || 'Không có phản hồi từ mô hình.';
+        showToast('✓ AI Local đã hoàn thành!');
+      } catch (err) {
+        box.innerText = 'Lỗi kết nối Local AI: ' + err.message;
+      } finally {
+        btn.disabled = false;
+        btn.innerText = 'Chạy AI Local';
+        fetchLogs();
+      }
+    }
+
+    async function connectLocalToAgents() {
+      const model = document.getElementById('local-model-select').value;
+      const btn = document.getElementById('btn-connect-local');
+      btn.disabled = true;
+      try {
+        const res = await fetch('/api/local-ai/connect-agents', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ model })
+        });
+        const data = await res.json();
+        showToast('✓ Đã định tuyến toàn bộ Agent sang model ' + model + ' (Zero Cost)!');
+        fetchLogs();
+      } catch (e) {
+        alert('Lỗi định tuyến');
+      } finally {
+        btn.disabled = false;
       }
     }
 
@@ -491,7 +652,7 @@ function getHTML() {
 </html>`;
 }
 
-const server = http.createServer((req, res) => {
+const server = http.createServer(async (req, res) => {
   const parsedUrl = new URL(req.url, `http://${req.headers.host}`);
 
   // CORS headers
@@ -523,6 +684,112 @@ const server = http.createServer((req, res) => {
     return;
   }
 
+  if (req.method === 'GET' && parsedUrl.pathname === '/api/local-ai') {
+    const status = await checkLocalAI();
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify(status));
+    return;
+  }
+
+  if (req.method === 'POST' && parsedUrl.pathname === '/api/local-ai/chat') {
+    let body = '';
+    req.on('data', chunk => { body += chunk; });
+    req.on('end', () => {
+      try {
+        const data = JSON.parse(body);
+        const model = data.model || 'gemma4:12b';
+        const prompt = data.prompt || 'Hello';
+        log(`[Local AI] Querying model ${model}...`);
+
+        const postData = JSON.stringify({
+          model,
+          messages: [{ role: 'user', content: prompt }]
+        });
+
+        const clientReq = http.request({
+          hostname: '127.0.0.1',
+          port: 11434,
+          path: '/v1/chat/completions',
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Content-Length': Buffer.byteLength(postData)
+          }
+        }, (clientRes) => {
+          let resData = '';
+          clientRes.on('data', c => resData += c);
+          clientRes.on('end', () => {
+            try {
+              const resJson = JSON.parse(resData);
+              const reply = resJson.choices && resJson.choices[0] && resJson.choices[0].message
+                ? resJson.choices[0].message.content
+                : 'No response';
+              log(`[Local AI] Response received from ${model}.`);
+              res.writeHead(200, { 'Content-Type': 'application/json' });
+              res.end(JSON.stringify({ response: reply }));
+            } catch (e) {
+              res.writeHead(200, { 'Content-Type': 'application/json' });
+              res.end(JSON.stringify({ response: resData }));
+            }
+          });
+        });
+
+        clientReq.on('error', (err) => {
+          log(`[Local AI Error] ${err.message}`);
+          res.writeHead(500, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ error: err.message }));
+        });
+
+        clientReq.write(postData);
+        clientReq.end();
+      } catch (e) {
+        res.writeHead(400);
+        res.end(JSON.stringify({ error: e.message }));
+      }
+    });
+    return;
+  }
+
+  if (req.method === 'POST' && parsedUrl.pathname === '/api/local-ai/connect-agents') {
+    let body = '';
+    req.on('data', chunk => { body += chunk; });
+    req.on('end', () => {
+      try {
+        const data = JSON.parse(body);
+        const model = data.model || 'gemma4:12b';
+        const envContent = `# Local AI Offline Configuration (Zero Cost)
+OPENAI_BASE_URL="http://127.0.0.1:11434/v1"
+OPENAI_API_KEY="ollama"
+OPENAI_MODEL_NAME="${model}"
+`;
+        fs.writeFileSync(path.join(process.cwd(), '.env'), envContent, 'utf8');
+        fs.writeFileSync(path.join(process.cwd(), '.env.local'), envContent, 'utf8');
+
+        // Also update unified mesh config
+        const meshConfigFile = path.join(globalMeshDir, 'config.json');
+        if (fs.existsSync(meshConfigFile)) {
+          try {
+            const cfg = JSON.parse(fs.readFileSync(meshConfigFile, 'utf8'));
+            cfg.localAI = {
+              active: true,
+              endpoint: 'http://127.0.0.1:11434/v1',
+              model: model
+            };
+            fs.writeFileSync(meshConfigFile, JSON.stringify(cfg, null, 2), 'utf8');
+          } catch (e) {}
+        }
+
+        log(`Routing all agents to Local AI Model [${model}] via http://127.0.0.1:11434/v1`);
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ status: 'ok', model }));
+      } catch (e) {
+        res.writeHead(400);
+        res.end(JSON.stringify({ error: e.message }));
+      }
+    });
+    return;
+  }
+
   if (req.method === 'POST' && parsedUrl.pathname === '/api/set-mode') {
     let body = '';
     req.on('data', chunk => { body += chunk; });
@@ -551,7 +818,7 @@ const server = http.createServer((req, res) => {
         const xaydungCli = path.join(__dirname, 'xaydung.js');
 
         log(`1-Click Scaffold triggered: [${type.toUpperCase()}] ${desc}`);
-        exec(`node "${xaydungCli}" ${type} "${desc.replace(/"/g, '\\"')}"`, (err, stdout, stderr) => {
+        exec(`node "${xaydungCli}" ${type} "${desc.replace(/"/g, '\\"')}"`, (err) => {
           if (err) {
             log(`[ERROR] Scaffolding error: ${err.message}`);
           } else {
@@ -596,14 +863,13 @@ server.listen(PORT, () => {
 ===========================================================
  ⚡ SKILL-FOR-AI WEB DASHBOARD STARTED!
  🌐 Control Center URL: ${url}
+ 💻 Local AI Engine: Ollama / LM Studio (Zero Cost)
  - 1-Click Operations: Web / App / Plugin / Tool Scaffolding
  - Agent Mesh Status: Claude Code, Antigravity, Cursor, Codex
- - Visual Tools: Diagrams, Slide Decks, Web Scraper
 ===========================================================
 `);
   log(`Web UI Dashboard running at ${url}`);
 
-  // Automatically open browser on Windows/macOS/Linux
   const openCmd = process.platform === 'win32' ? `start ${url}` : process.platform === 'darwin' ? `open ${url}` : `xdg-open ${url}`;
   exec(openCmd);
 });
