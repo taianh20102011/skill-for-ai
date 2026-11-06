@@ -5,7 +5,8 @@
   "main": "bin/cli.js",
   "bin": {
     "skill-for-ai": "bin/cli.js",
-    "xaydung": "bin/xaydung.js"
+    "xaydung": "bin/xaydung.js",
+    "skill-ui": "bin/dashboard.js"
   },
   "files": [
     "bin",
@@ -20,6 +21,8 @@
   ],
   "scripts": {
     "start": "node bin/cli.js",
+    "ui": "node bin/dashboard.js",
+    "dashboard": "node bin/dashboard.js",
     "install-skills": "node bin/cli.js"
   },
   "keywords": [

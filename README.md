@@ -23,11 +23,32 @@ npx skill-for-ai
 ```
 *(Or run directly from GitHub: `npx github:taianh20102011/skill-for-ai`)*
 
-This command automatically installs **90+ Production Skills** across your agent runtimes:
+This command automatically installs **117+ Production Skills** across your agent runtimes:
 * 🔹 **Google Antigravity / Gemini CLI**: `~/.gemini/config/skills`
 * 🔹 **Claude Code**: `~/.claude/skills`
 * 🔹 **OpenCode / Codex Agents**: `~/.agents/skills`
 * 🔹 **Cursor / VS Code**: Automatically generates `AGENTS.md` and `.cursorrules` in your project root.
+
+---
+
+## 🌐 1-Click Web-App Dashboard Control Center
+
+Prefer a visual dashboard? Control your entire multi-agent ecosystem via a sleek local web interface:
+
+```bash
+# Launch from terminal
+skill-for-ai ui
+# Or using the dedicated shortcut
+skill-ui
+```
+*(Runs locally at `http://localhost:3333` with zero external dependencies)*
+
+### 🎮 What You Can Do in 1-Click:
+* ⚡ **1-Click Scaffolding (`/xaydung`)**: Select Web, Desktop App, Minecraft Plugin, or CLI Tool, enter your brief, and let AI scaffold the whole project.
+* 🎛️ **Mode Toggle**: Switch on the fly between **Senior Dev Mode** (YAGNI, self-healing) and **Junior Dev Mode** (Mentorship, detailed comments).
+* 📊 **Visual & Multimedia Generation**: Generate system architecture diagrams, PowerPoint slides (`.pptx`), and clean web scraping to Markdown with one tap.
+* 🛡️ **CyberSecurity & OWASP Audit**: Run one-click security audits across your active project.
+* 🤖 **Live Mesh Monitor**: View live sync statuses of Antigravity, Claude Code, Cursor, and Codex.
 
 ---
 
@@ -120,6 +141,7 @@ This repository standardizes and packages skills inspired by and derived from am
 14. **browser-use team** - [browser-use/browser-use](https://github.com/browser-use/browser-use) (MIT License).
 15. **Kamran Ahmed** - [kamranahmedse/developer-roadmap](https://github.com/kamranahmedse/developer-roadmap).
 16. **Mozilla MDN Contributors** - [mdn/learning-area](https://github.com/mdn/learning-area) (CC0 / CC BY).
+17. **Jim Liu (宝玉)** - [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills) & [JimLiu/baoyu-design](https://github.com/JimLiu/baoyu-design) (MIT License).
 
 ---
 

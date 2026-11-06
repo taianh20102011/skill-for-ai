@@ -23,11 +23,32 @@ npx skill-for-ai
 ```
 *(Hoặc chạy trực tiếp từ GitHub nếu chưa publish: `npx github:taianh20102011/skill-for-ai`)*
 
-Lệnh trên sẽ tự động nạp toàn bộ **90+ Kỹ Năng** vào môi trường Agent của bạn:
+Lệnh trên sẽ tự động nạp toàn bộ **117+ Kỹ Năng** vào môi trường Agent của bạn:
 * 🔹 **Google Antigravity / Gemini CLI**: `~/.gemini/config/skills`
 * 🔹 **Claude Code**: `~/.claude/skills`
 * 🔹 **OpenCode / Codex Agents**: `~/.agents/skills`
 * 🔹 **Cursor / VS Code**: Tự động sinh `AGENTS.md` và `.cursorrules` ngay tại thư mục làm việc.
+
+---
+
+## 🌐 Trung Tâm Điều Khiển Web-App Dashboard (1-Chạm Là AI Làm)
+
+Nếu bạn muốn điều khiển toàn bộ mạng lưới AI bằng giao diện trực quan, chỉ cần chạy:
+
+```bash
+# Khởi chạy từ terminal
+skill-for-ai ui
+# Hoặc dùng lệnh tắt
+skill-ui
+```
+*(Bảng điều khiển chạy cục bộ tại `http://localhost:3333`, không cần cài thêm thư viện phụ thuộc)*
+
+### 🎮 Các Tính Năng 1-Chạm Trên Web:
+* ⚡ **Khởi Tạo Dự Án 1-Chạm (`/xaydung`)**: Chọn Web, Desktop App, Minecraft Plugin hoặc CLI Tool, nhập mô tả và bấm nút để AI tự động dựng toàn bộ khung dự án.
+* 🎛️ **Chuyển Đổi Chế Độ Linh Hoạt**: Đổi giữa **Senior Dev Mode** (YAGNI, tự build, tự vá lỗi) và **Junior Dev Mode** (hướng dẫn từng bước, thêm comments chi tiết).
+* 📊 **Đồ Họa & Trực Quan Hóa (Baoyu Suite)**: 1-chạm vẽ sơ đồ kiến trúc (Diagram), tạo Slide thuyết trình xuất sang PowerPoint (`.pptx`), và cào link web sang Markdown sạch.
+* 🛡️ **Kiểm Toán Bảo Mật OWASP & Cloudflare**: Rà soát lỗ hổng bảo mật và rò rỉ mã bí mật cho toàn bộ codebase.
+* 🤖 **Giám Sát Trạng Thái Đa Agent**: Hiển thị trạng thái kết nối trực tiếp của Antigravity, Claude Code, Cursor và Codex.
 
 ---
 
@@ -120,6 +141,7 @@ Dự án này tổng hợp, chuẩn hóa và đóng gói các kỹ năng mở d�
 14. **browser-use team** - [browser-use/browser-use](https://github.com/browser-use/browser-use) (MIT License).
 15. **Kamran Ahmed** - [kamranahmedse/developer-roadmap](https://github.com/kamranahmedse/developer-roadmap).
 16. **Mozilla MDN Contributors** - [mdn/learning-area](https://github.com/mdn/learning-area) (CC0 / CC BY).
+17. **Jim Liu (宝玉)** - [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills) & [JimLiu/baoyu-design](https://github.com/JimLiu/baoyu-design) (MIT License).
 
 ---
 

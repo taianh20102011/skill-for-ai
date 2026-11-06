@@ -13,6 +13,11 @@ const args = process.argv.slice(2);
 const type = args[0] ? args[0].toLowerCase() : null;
 const description = args.slice(1).join(' ');
 
+if (type === 'ui' || type === 'dashboard') {
+  require('./dashboard.js');
+  return;
+}
+
 console.log('\x1b[36m%s\x1b[0m', `
   ██╗  ██╗ █████╗ ██╗   ██╗██████╗ ██╗   ██╗███╗   ██╗ ██████╗ 
   ╚██╗██╔╝██╔══██╗╚██╗ ██╔╝██╔══██╗██║   ██║████╗  ██║██╔════╝ 

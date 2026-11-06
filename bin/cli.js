@@ -10,6 +10,11 @@ const path = require('path');
 const os = require('os');
 const readline = require('readline');
 
+if (process.argv.includes('ui') || process.argv.includes('dashboard')) {
+  require('./dashboard.js');
+  return;
+}
+
 const homeDir = os.homedir();
 const sourceSkillsDir = path.join(__dirname, '..', 'skills');
 
@@ -143,12 +148,20 @@ ${baseAgentsContent}
 ===========================================================
  SETUP COMPLETE - AUTONOMOUS AI SYSTEM READY!
  - Active Mode: ${selectedMode.toUpperCase()} DEV MODE
+ - Web Dashboard: skill-for-ai ui (http://localhost:3333)
  - Build Command: /xaydung [web|app|plugin|tool] <description>
  - Repository: https://github.com/taianh20102011/skill-for-ai
 ===========================================================
 `);
 
+  const answerUI = await ask('\x1b[36m? Launch Web UI Dashboard to control the AI system via 1-click web interface? (Y/n): \x1b[0m');
+  const launchUI = !answerUI || answerUI.trim().toLowerCase() === 'y' || answerUI.trim().toLowerCase() === 'yes';
+
   rl.close();
+
+  if (launchUI) {
+    require('./dashboard.js');
+  }
 }
 
 main().catch(err => {
