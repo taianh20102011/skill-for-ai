@@ -1,6 +1,6 @@
 # ⚡ SKILL-FOR-AI: Ultimate Agentic Skills & Anti-Slop Ecosystem
 
-> **Bộ kỹ năng tự hành (Autonomous Agent Skills), quy chuẩn thiết kế Anti-Slop và hệ thống kiểm toán bảo mật toàn diện** dành cho các AI Coding Agents: **Claude Code, Google Antigravity, Cursor, OpenAI Codex, OpenCode, Aider, và Cline**.
+> **Bộ kỹ năng tự hành (Autonomous Agent Skills), hệ thống liên kết đa Agent (Multi-Agent Mesh) và quy chuẩn thiết kế Anti-Slop toàn diện** dành cho các AI Coding Agents: **Claude Code, Google Antigravity, Cursor, OpenAI Codex, OpenCode, Aider, và Cline**.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node.js](https://img.shields.io/badge/Node.js-18+-green.svg)](https://nodejs.org/)
@@ -8,19 +8,29 @@
 
 ---
 
-## 🚀 Cài Đặt 1-Click (1-Command Install)
+## 🚀 Cài Đặt 1-Click & Liên Kết Hệ Thống AI
 
-Chỉ cần chạy duy nhất một lệnh trong Terminal (hỗ trợ Windows, macOS, Linux):
+Chỉ cần chạy duy nhất một lệnh trong Terminal:
 
 ```bash
 npx skill-for-ai
 ```
+*(Hoặc gõ `skill-for-ai` nếu đã cài trên máy)*
 
-Lệnh trên sẽ tự động nhận diện và nạp toàn bộ **90+ Kỹ Năng** vào môi trường Agent của bạn:
-* 🔹 **Google Antigravity / Gemini CLI**: `~/.gemini/config/skills`
-* 🔹 **Claude Code**: `~/.claude/skills`
-* 🔹 **OpenCode / Codex Agents**: `~/.agents/skills`
-* 🔹 **Cursor**: Tự động sinh `AGENTS.md` và `.cursorrules` ngay tại thư mục làm việc.
+### 🤖 Cơ Chế Hỏi Quyền & Lựa Chọn Chế Độ Thông Minh:
+Khi chạy cài đặt, CLI sẽ chủ động hỏi xác nhận của bạn:
+1. **Xác nhận kết nối mạng lưới đa Agent**:
+   ```text
+   ? Bạn có cho phép tự động nối tất cả các AI Agent thành một hệ thống thống nhất không? (Y/n)
+   ```
+2. **Chọn chế độ vận hành (Operating Mode)**:
+   * 🌟 **Senior Dev Mode (Khuyên dùng)**:
+     * Kích hoạt triết lý **YAGNI (Ponytail)**: Viết code tối giản, triệt tiêu code rác và abstraction thừa thãi.
+     * Tự động chạy terminal build loop (`pnpm build`, `./gradlew build`, `cargo check`), bắt stack trace khi lỗi và tự vá mã nguồn.
+     * Tự động kiểm toán bảo mật qua Cloudflare Security Guidelines và OWASP Top 10.
+   * 🎓 **Junior Dev Mode**:
+     * Chế độ trợ giảng: Hướng dẫn người dùng từng bước một, giải thích chi tiết ý nghĩa từng hàm/biến.
+     * Bổ sung nhiều comment chú thích trong code để người học dễ nắm bắt.
 
 ---
 
@@ -38,8 +48,8 @@ Sau khi cài đặt, bạn chỉ cần gõ lệnh trong khung chat của **Antig
 ### Chu trình tự động chạy ngầm:
 1. **Phân tích kiến trúc & Brainstorming**: Lên kế hoạch và đặc tả kỹ thuật chi tiết.
 2. **Khởi tạo Scaffold**: Chọn chuẩn stack tối ưu (React/Tailwind/GSAP/Lenis hoặc Tauri v2 / Rust hoặc Paper Adventure).
-3. **Thực thi mã nguồn (YAGNI Mode)**: Viết code tinh gọn, không tạo file thừa thãi.
-4. **Vòng lặp tự sửa lỗi (Compiler Loop)**: Tự chạy `pnpm build` / `./gradlew build` / `cargo check`, tự đọc stack trace khi lỗi và tự vá mã nguồn cho đến khi pass.
+3. **Thực thi mã nguồn**: Viết code chuẩn theo mode đã chọn (Senior hoặc Junior).
+4. **Vòng lặp tự sửa lỗi (Compiler Loop)**: Tự chạy compile, tự đọc stack trace khi lỗi và tự sửa code.
 5. **Kiểm toán bảo mật**: Tự động rà soát qua Cloudflare Security Guidelines, OWASP Top 10 và Semgrep SAST.
 
 ---
@@ -78,7 +88,7 @@ Sau khi cài đặt, bạn chỉ cần gõ lệnh trong khung chat của **Antig
 
 ## ⚖️ Nguồn Tham Chiếu & Bản Quyền (Attribution & Acknowledgements)
 
-Dự án này tổng hợp, chuẩn hóa và đóng gói các kỹ năng mở dựa trên các công trình xuất sắc từ cộng đồng mã nguồn mở thế giới. Chúng tôi chân thành cảm ơn các tác giả:
+Dự án này tổng hợp, chuẩn hóa và đóng gói các kỹ năng mở dựa trên các công trình xuất sắc từ cộng đồng mã nguồn mở thế giới:
 
 1. **Addy Osmani** - [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) (MIT License).
 2. **Jesse Vincent (obra)** - [obra/superpowers](https://github.com/obra/superpowers) (MIT License).
