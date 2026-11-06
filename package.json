@@ -13,6 +13,9 @@
     "commands",
     "AGENTS.md",
     "README.md",
+    "README.vn.md",
+    "README.fr.md",
+    "README.zh.md",
     "LICENSE"
   ],
   "scripts": {
