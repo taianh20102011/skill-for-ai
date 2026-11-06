@@ -1,0 +1,33 @@
+{
+  "name": "skill-for-ai",
+  "version": "1.0.0",
+  "description": "Universal Anti-Slop Agent Skills, Autonomous Execution Loop, and Security Suite for Claude Code, Antigravity, Cursor, Codex, and OpenCode.",
+  "main": "bin/cli.js",
+  "bin": {
+    "skill-for-ai": "bin/cli.js",
+    "xaydung": "bin/cli.js"
+  },
+  "scripts": {
+    "start": "node bin/cli.js",
+    "install-skills": "node bin/cli.js"
+  },
+  "keywords": [
+    "ai-agent",
+    "agent-skills",
+    "antigravity",
+    "claude-code",
+    "cursor",
+    "codex",
+    "anti-slop",
+    "gsap",
+    "r3f",
+    "minecraft-plugins",
+    "security-audit"
+  ],
+  "author": "taianh20102011",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/taianh20102011/skill-for-ai.git"
+  }
+}

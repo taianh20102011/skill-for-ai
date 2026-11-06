@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Upstream Cloned Repositories (Heavy full git trees)
+downloaded_repos/
+01-web-ui-mastery/animate-ui/
+01-web-ui-mastery/web-agent-tools/
+03-minecraft-clean-architecture/ai-minecraft-agents/
+06-security-audit-and-qa/blue-team-defense/
+06-security-audit-and-qa/owasp-cheatsheet-series/
+06-security-audit-and-qa/pentesting-reference/
+08-web-roadmaps-and-docs/developer-roadmap/
+08-web-roadmaps-and-docs/mdn-learning-area/
+08-web-roadmaps-and-docs/public-apis/
+09-mobile-agent-automation/appium/
+09-mobile-agent-automation/lavague/
+09-mobile-agent-automation/roadmaps-and-awesome/
+09-mobile-agent-automation/cross-platform/
+
+# Archives & Temporary
+*.rar
+*.zip
+*.log
+.DS_Store
+Thumbs.db
+.system_generated/
