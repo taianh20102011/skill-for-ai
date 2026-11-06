@@ -57,6 +57,37 @@ function copyFolderSync(from, to) {
 }
 
 async function main() {
+  const isYes = process.argv.includes('-y') || process.argv.includes('--yes') || process.argv.includes('--all') || !process.stdin.isTTY;
+  const isJunior = process.argv.includes('--junior') || process.argv.includes('-j');
+  const isSenior = process.argv.includes('--senior') || process.argv.includes('-s');
+  const isList = process.argv.includes('--list') || process.argv.includes('-l');
+  const isHelp = process.argv.includes('--help') || process.argv.includes('-h');
+
+  if (isHelp) {
+    console.log(`
+Usage: skill-for-ai [options]
+       npx github:taianh20102011/skill-for-ai [options]
+
+Options:
+  -y, --yes          Auto-confirm installation for all agent platforms (non-interactive)
+  --all              Alias for -y (install all 320 skills to all agents)
+  -s, --senior       Select Senior Dev Mode (YAGNI & Anti-Slop, default)
+  -j, --junior       Select Junior Dev Mode (Detailed Mentorship & Comments)
+  -l, --list         List all available skills
+  --ui               Launch web control dashboard after installation
+  -h, --help         Show this help message
+`);
+    rl.close();
+    return;
+  }
+
+  if (isList) {
+    const list = fs.readdirSync(sourceSkillsDir).filter(f => fs.lstatSync(path.join(sourceSkillsDir, f)).isDirectory());
+    console.log(`\x1b[32mInstalled Skills (${list.length}):\x1b[0m\n`);
+    list.forEach((s, idx) => console.log(`  [${idx + 1}] ${s}`));
+    rl.close();
+    return;
+  }
   console.log('\x1b[33m[!] UNIFIED MULTI-AGENT MESH INTEGRATION:\x1b[0m');
   console.log('    Automatically bridges Claude Code, Antigravity, Cursor, Codex, and OpenCode');
   console.log('    so all AI agents share the same skills, memory layer, and engineering standards.\n');
