@@ -131,7 +131,7 @@ function getHTML() {
           <h1 class="text-lg font-bold tracking-tight text-white">SKILL-FOR-AI</h1>
           <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/20">v1.0.0</span>
           <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center gap-1">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 pulse-dot"></span> 117 Skills Active
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 pulse-dot"></span> 118 Skills Active
           </span>
         </div>
         <p class="text-xs text-zinc-400">Autonomous Multi-Agent Mesh & 1-Click Operations</p>

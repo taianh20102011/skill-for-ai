@@ -142,6 +142,7 @@ Dự án này tổng hợp, chuẩn hóa và đóng gói các kỹ năng mở d�
 15. **Kamran Ahmed** - [kamranahmedse/developer-roadmap](https://github.com/kamranahmedse/developer-roadmap).
 16. **Mozilla MDN Contributors** - [mdn/learning-area](https://github.com/mdn/learning-area) (CC0 / CC BY).
 17. **Jim Liu (宝玉)** - [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills) & [JimLiu/baoyu-design](https://github.com/JimLiu/baoyu-design) (MIT License).
+18. **Headroom Labs** - [headroomlabs-ai/headroom](https://github.com/headroomlabs-ai/headroom) (Apache 2.0 License).
 
 ---
 
