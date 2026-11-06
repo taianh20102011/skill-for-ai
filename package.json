@@ -7,6 +7,14 @@
     "skill-for-ai": "bin/cli.js",
     "xaydung": "bin/cli.js"
   },
+  "files": [
+    "bin",
+    "skills",
+    "commands",
+    "AGENTS.md",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "start": "node bin/cli.js",
     "install-skills": "node bin/cli.js"
