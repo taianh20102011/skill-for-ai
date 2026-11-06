@@ -5,7 +5,7 @@
   "main": "bin/cli.js",
   "bin": {
     "skill-for-ai": "bin/cli.js",
-    "xaydung": "bin/cli.js"
+    "xaydung": "bin/xaydung.js"
   },
   "files": [
     "bin",
