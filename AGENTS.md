@@ -49,3 +49,16 @@ Bộ khung giúp web có chiều sâu, micro-interactions tinh tế và chuyển
 - **Senior Dev Mode (Ponytail)**: YAGNI, triệt tiêu code rác, chỉ viết code tối thiểu cần thiết, kiểm toán nợ kỹ thuật (`ponytail-debt`).
 - **Google Web Engineering (Addy Osmani Skills)**: Tối ưu hiệu năng, DevTools browser testing, clean API interface contracts.
 - **Memory Layer**: Mem0 trích xuất graph/vector long-term memory; AGENTS.md lưu convention bất biến.
+
+## 7. Quy Tắc Tự Động Hóa Nạp Repo Kỹ Năng (Auto-Ingestion Directive)
+Mỗi khi người dùng gửi một liên kết GitHub/Repo bất kỳ:
+1. **Kiểm tra License ngay lập tức**:
+   - Nếu là giấy phép tự do/mở (MIT, Apache 2.0, BSD, CC, Unlicense, v.v.): Tự động nạp toàn bộ skills/tools vào hệ sinh thái ngay mà không cần hỏi lại.
+   - Nếu dính license bắt trả phí định kỳ, paywall, hoặc lây nhiễm copyleft cực đoan: Lập tức cảnh báo và loại bỏ.
+2. **Quy trình đóng gói tự động**:
+   - Sao chép và chuẩn hóa vào `D:\SKILL_AI\skills/`.
+   - Đồng bộ tức thì sang runtime của tất cả AI: Antigravity (`~/.gemini/config/skills/`), Claude Code (`~/.claude/skills/`), Codex/OpenCode (`~/.agents/skills/`).
+   - Cập nhật Attribution trong các file README để đảm bảo bản quyền.
+   - Cập nhật số lượng skills hiển thị trong Web Dashboard.
+   - Tự động Git commit & push lên GitHub `taianh20102011/skill-for-ai`.
+
