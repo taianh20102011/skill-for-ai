@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "universal-swarm": {
+      "command": "node",
+      "args": ["d:/skill/mcp-server/index.js"]
+    }
+  }
+}

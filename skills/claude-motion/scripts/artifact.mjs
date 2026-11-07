@@ -51,7 +51,7 @@ function removeState(root) {
   fs.rmSync(path.join(root, STATE_FILE), { force: true });
 }
 var GITIGNORE_FILE = ".gitignore";
-var gitignoreLines = (kind) => [STATE_FILE, LOG_FILE, ".sharing.json", ...kind === "docs" ? [] : ["/history/"], `/${EXPORTS_DIR}/`, "*.tmp", ".tmp-*", ".DS_Store"];
+var gitignoreLines = (kind) => [STATE_FILE, LOG_FILE, ".sharing.json", ...kind === "docs" ? [] : ["history/"], ".*.tmp", ".DS_Store"];
 function writeGitignore(root, kind) {
   const file = path.join(root, GITIGNORE_FILE);
   try {
@@ -104,17 +104,15 @@ function isTailnet(address) {
   const m = /^100\.(\d{1,3})\./.exec(address);
   return !!m && Number(m[1]) >= 64 && Number(m[1]) <= 127;
 }
-var isTunnel = (name) => /^(utun|tun|tap|wg|ppp|ipsec)\d/i.test(name);
 function lanAddresses() {
-  const out = /* @__PURE__ */ new Map();
-  for (const [name, list] of Object.entries(os.networkInterfaces())) {
+  const out = [];
+  for (const list of Object.values(os.networkInterfaces())) {
     for (const entry of list ?? []) {
       if (entry.family !== "IPv4" || entry.internal || entry.address.startsWith("169.254.") || isBenchmarkRange(entry.address)) continue;
-      const rank = isTailnet(entry.address) ? 2 : isTunnel(name) ? 1 : 0;
-      out.set(entry.address, Math.min(rank, out.get(entry.address) ?? rank));
+      out.push(entry.address);
     }
   }
-  return [...out.keys()].sort((a, b) => out.get(a) - out.get(b));
+  return [...new Set(out)].sort((a, b) => Number(isTailnet(a)) - Number(isTailnet(b)));
 }
 function answers(host, port) {
   return new Promise((resolve) => {
@@ -697,9 +695,8 @@ var Hub = class {
   }
   // ---- the network side ------------------------------------------------------------------------------------------
   async openLan() {
-    const addresses = lanAddresses().filter((address) => !this.lanServers.has(address));
-    const answering = await Promise.all(addresses.map(answersAnyPort));
-    for (const address of addresses.filter((_, i) => !answering[i])) {
+    for (const address of lanAddresses()) {
+      if (this.lanServers.has(address)) continue;
       const server = this.createServer();
       try {
         await listen(server, this.port, address);
@@ -1021,7 +1018,7 @@ import { promisify } from "node:util";
 import zlib from "node:zlib";
 var LOCAL_FILES = /* @__PURE__ */ new Set([STATE_FILE, LOG_FILE, SHARING_FILE]);
 var LOCAL_DIRS = /* @__PURE__ */ new Set([EXPORTS_DIR]);
-var JUNK_FILES = /* @__PURE__ */ new Set([".DS_Store", "Thumbs.db", "desktop.ini", ".git"]);
+var JUNK_FILES = /* @__PURE__ */ new Set([".DS_Store", "Thumbs.db", "desktop.ini"]);
 var isTemp = (name) => name.endsWith(".tmp") || name.startsWith(".tmp-");
 var STORED = /* @__PURE__ */ new Set([".png", ".jpg", ".jpeg", ".gif", ".webp", ".avif", ".heic", ".mp4", ".m4v", ".mov", ".webm", ".mp3", ".m4a", ".aac", ".ogg", ".opus", ".flac", ".woff", ".woff2", ".zip", ".gz", ".br", ".zst", ".7z"]);
 var MAX_ENTRIES = 65535;
@@ -1095,7 +1092,7 @@ async function writeZip(entries, write) {
   for (const entry of entries) {
     let data;
     try {
-      data = entry.data ?? await fsp.readFile(entry.file);
+      data = await fsp.readFile(entry.file);
     } catch (error) {
       if (error.code === "ENOENT") continue;
       throw error;
@@ -1415,11 +1412,8 @@ var ShareHost = class {
    * their own artifact; a guest comes over a LAN address (this computer's own included: that is how the owner sees
    * what a role sees).
    */
-  isLocal(request) {
-    return this.options.local ? this.options.local(request) : isLoopback(request.socket.remoteAddress);
-  }
   viewerOf(request) {
-    if (this.isLocal(request)) return { role: "owner", user: this.options.owner };
+    if (isLoopback(request.socket.remoteAddress)) return { role: "owner", user: this.options.owner };
     const guest = this.on ? this.sharing.guest(this.cookie(request)) : null;
     if (!guest) return null;
     this.sharing.seen(guest);
@@ -1551,7 +1545,7 @@ var ShareHost = class {
   async join(request, response, method, token2) {
     const t = this.words(request);
     const role = this.sharing.linkRole(token2);
-    const local = this.isLocal(request);
+    const local = isLoopback(request.socket.remoteAddress);
     const form = method === "POST" ? await readBody(request, 8 << 10).then((body) => body.toString("utf8"), () => "") : "";
     const title = this.options.title();
     if (!role || !local && !this.on) return this.sendPage(response, 404, t.linkGoneTitle, `<h1>${esc(t.linkGoneTitle)}</h1><p>${esc(t.linkGone)}</p>`);
@@ -3415,7 +3409,6 @@ data: ${JSON.stringify(snap)}
     if (agentHook) await runHook(agentHook);
   }
   async function runHook(command2) {
-    if (typeof command2 !== "string") return runHandler(command2);
     const doc = await readComments(root);
     for (const thread of pendingForAgent(doc)) {
       if (hookRunning.has(thread.id)) continue;
@@ -3440,15 +3433,15 @@ data: ${JSON.stringify(snap)}
         log3(`comments: the agent hook failed to start: ${error.message}`);
       });
       child.on("exit", (code) => {
+        hookRunning.delete(thread.id);
         if (code !== 0) {
-          hookRunning.delete(thread.id);
           log3(`comments: the agent hook exited with ${code} for ${thread.id}; the comment stays waiting${stderr ? `: ${stderr.trim()}` : ""}`);
           return;
         }
         void updateComments(root, (d) => {
           const t = d.threads.find((x) => x.id === thread.id);
           if (t) markDelivered(t, now(), "hook");
-        }).finally(() => hookRunning.delete(thread.id)).then(() => {
+        }).then(() => {
           log3(`comments: sent to the agent (hook): ${thread.id}`);
           return broadcast();
         }).catch((error) => log3(`comments: ${error.message}`));
@@ -3488,44 +3481,6 @@ data: ${JSON.stringify(snap)}
         log3(`comments: sent to the agent (hook): ${request.id}`);
       });
     }
-  }
-  async function runHandler(handler) {
-    for (const { id } of pendingForAgent(await readComments(root))) {
-      if (hookRunning.has(id)) continue;
-      hookRunning.add(id);
-      try {
-        const doc = await readComments(root);
-        const thread = pendingForAgent(doc).find((t) => t.id === id);
-        if (!thread) continue;
-        try {
-          await handler.thread(agentViews(doc, [thread])[0]);
-        } catch (error) {
-          log3(`comments: the agent handler failed for ${id}; the comment stays waiting: ${error.message}`);
-          continue;
-        }
-        await updateComments(root, (d) => {
-          const t = d.threads.find((x) => x.id === id);
-          if (t) markDelivered(t, now(), "hook");
-        });
-        log3(`comments: sent to the agent (handler): ${id}`);
-        await broadcast();
-      } finally {
-        hookRunning.delete(id);
-      }
-    }
-    const failed = [];
-    for (const request of requests.splice(0)) {
-      setRequestState(request.id, "working");
-      try {
-        await handler.request(request);
-        log3(`comments: sent to the agent (handler): ${request.id}`);
-      } catch (error) {
-        failed.push(request);
-        setRequestState(request.id, "queued");
-        log3(`comments: the agent handler failed for ${request.id}; the request stays waiting: ${error.message}`);
-      }
-    }
-    requests.unshift(...failed);
   }
   let debounce;
   const changed = () => {
@@ -4871,7 +4826,7 @@ function findChrome() {
 }
 var sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 async function launchChrome(chrome, args = []) {
-  const profile = fs13.mkdtempSync(path12.join(os8.tmpdir(), "baoyu-chrome-"));
+  const profile = fs13.mkdtempSync(path12.join(os8.tmpdir(), "claude-motion-chrome-"));
   const child = spawn5(
     chrome,
     [

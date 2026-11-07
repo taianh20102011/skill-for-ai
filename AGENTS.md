@@ -1,64 +1,69 @@
-# THE ANTI-SLOP MANIFESTO & AUTONOMOUS AGENT SPECIFICATION
+# AGENTS.md — Universal Agent Autonomous Directives
 
-## 1. Web UI & Hiệu Ứng Đỉnh Cao (React, Tailwind, GSAP, R3F)
-Bộ khung giúp web có chiều sâu, micro-interactions tinh tế và chuyển động mượt mà:
-- **Aceternity UI**: Background grid beams, sparklers, 3D pin, card hover mượt mà với Tailwind + Framer Motion.
-- **MagicUI**: Marquee, border beam, animated beam, meteors, dock cho SaaS & landing page.
-- **Animate UI (imskyleen)**: Bộ sưu tập components animate & micro-interactions hiện đại, mượt mà chuẩn tương tác modern web.
-- **React Bits (DavidHDev)**: Thư viện text animations (SplitText, DecryptedText), interactive canvas shaders (Iridescence, Aurora), 3D cards.
-- **Motion Primitives (ibelick)**: Micro-interactions cực kỳ tinh tế, không phô trương, chuẩn gu Apple / Linear (dialog morphing, smooth tabs, cursor following).
-- **Cinematic 3D Web (R3F & Drei)**: Chuẩn mực đưa 3D vào web; shader GLSL và model GLTF tối ưu 60fps không lag.
-- **GSAP ScrollTrigger & Lenis**: Chuẩn smooth scroll đồng bộ GSAP ScrollTrigger để cuộn mượt tự nhiên, pinned sections, scrubbed timelines.
-- **shadcn/ui**: Headless base, tùy biến palette monochrome, high-contrast hoặc brutalism thay vì preset AI slop mặc định.
-- **Vercel React Performance**: Tối ưu hóa Core Web Vitals (LCP < 2s, INP < 150ms, CLS < 0.05).
+> **Governing Standards**: Antigravity, Claude Code, OpenAI Codex, Cursor, Gemini, Devin, OpenCode.
+> This file is loaded automatically by coding agents. Adhere to these directives unconditionally.
 
-## 2. Web Agent Tools & Lộ Trình Kiến Thức (Roadmaps & Docs)
-- **browser-use & Playwright**: Tự động hóa duyệt web, điều hướng, click, điền form, và trích xuất dữ liệu DOM cho AI agent.
-- **bolt.new-any-llm**: Xây dựng, chạy thử và triển khai full-stack web in-browser qua prompt.
-- **Developer & Cybersecurity Roadmaps**: Khung năng lực chuẩn hóa ngành (Frontend, Backend, DevOps, AppSec, Cryptography).
-- **MDN Learning Area**: Tài liệu Web APIs, HTML5/CSS3 ngữ nghĩa và JavaScript chuẩn Mozilla.
-- **Public APIs**: Kho API công khai miễn phí sẵn sàng tích hợp và mock dữ liệu thực tế.
+---
 
-## 3. Desktop App & Tool (Tauri / Electron + Modern Web Stack)
-- **Tauri v2**: Core Rust siêu nhẹ (<15MB RAM, bundle vài MB), frontend React + Tailwind + GSAP.
-- **Electron-Vite**: Template chuẩn với Vite + React + TypeScript, cấu hình HMR cực nhanh.
-- **UI Architecture**: Layout sidebar thu gọn, command palette (cmdk), tab control chuẩn Linear/VS Code.
+## 🚀 Universal One-Liner Trigger: `!exec: <task>` or `/swarm: <task>`
 
-## 4. Minecraft Clean Architecture & AI Agent Sandbox
-- **Adventure Kyori**: Chuẩn xử lý text và chat hiện đại với MiniMessage gradient hex màu, font custom. Cấm dùng mã màu cũ (`§`, `&`).
-- **Triumph-GUI**: Phân trang GUI, component builder với Adventure components, tối ưu bất đồng bộ.
-- **Revxrsal Lamp**: Command framework khai báo dạng annotation với auto tab-completion và validation chặt chẽ.
-- **Lucko Helper**: Event Bus, Async Schedulers, Promises, Redis/Mongo sync chuẩn server production.
-- **FastAsyncWorldEdit (FAWE)**: Thao tác khối lượng block lớn bất đồng bộ, tối ưu NMS memory.
-- **Minecraft AI Sandbox Integration**:
-  - `AgentCraft`: Mô hình hóa dự án Git ngoài đời thực thành văn phòng ảo cho AI Coding Agents trong Minecraft.
-  - `MindCraft`: Autonomous Agent Mineflayer kết nối LLMs (OpenAI, Claude, DeepSeek, Ollama) khám phá, chế tạo, sinh tồn.
-  - `CraftGPT`: Kiến trúc sinh cấu trúc hình học qua DSL an toàn, biên dịch Java trước khi dán vào thế giới game qua WorldEdit.
-  - `13 Minecraft Agent Skills`: Đầy đủ bộ kỹ năng Modding (Fabric/Forge), Datapack, Server Ops, Aikar's JVM flags, WorldEdit scripting.
+Whenever a prompt starts with `!exec:` or `/swarm:`, IMMEDIATELY execute all 320 skills end-to-end:
+1. **Spec & Architecture**: Autonomous decomposition, edge cases handled.
+2. **Minimalist Code Discipline**: Ponytail YAGNI (-53% code) & Karpathy Guidelines (surgical changes, think before coding).
+3. **Alabaster Porcelain + GSAP 25+**: 6px radius, CNC sub-pixel 1px border, Plus Jakarta Sans, hardware-accelerated 120fps motion.
+4. **Bank-Grade Security**: 2FA Gmail OTP (HMAC-SHA256), session revocation, zero-trust RBAC.
+5. **Terminal Proof & Continuity**: Verify tests, persist durable architectural facts in `.ai-memory/`.
 
-## 5. Tự Động Kiểm Tra Bảo Mật & CyberSecurity Engineering
-- **Cloudflare Security Audit**: Kiểm toán toàn diện AI/LLM, Client-Side, Cloud, RPC/IPC, Binary memory safety.
-- **OWASP Top 10 & CheatSheet Series**: Áp dụng triệt để kiến trúc phòng thủ cho Auth, Session, SQLi, XSS, REST, Docker.
-- **Security Testing References**: Tham chiếu `PayloadsAllTheThings`, `The Book of Secret Knowledge`, và `SecLists` để kiểm thử độ bền hệ thống.
-- **Secret Leak Detection**: Regex quét chặn rò rỉ OpenAI/Anthropic/AWS/GitHub API keys trước khi staging/commit.
-- **Semgrep SAST & OSV-Scanner**: Tự động quét static code analysis và dependency CVEs.
-- **REA (Reverse Engineer Anything)**: Dịch ngược nhị phân, kiểm tra ứng dụng Electron, APK, WebAssembly và network flow an toàn.
+---
 
-## 6. Autonomous Agent Loop & Developer Tooling
-- **Engine Loop**: Superpowers (`brainstorming`, `writing-plans`, `subagent-driven-development`, `verification-before-completion`).
-- **Senior Dev Mode (Ponytail)**: YAGNI, triệt tiêu code rác, chỉ viết code tối thiểu cần thiết, kiểm toán nợ kỹ thuật (`ponytail-debt`).
-- **Google Web Engineering (Addy Osmani Skills)**: Tối ưu hiệu năng, DevTools browser testing, clean API interface contracts.
-- **Memory Layer**: Mem0 trích xuất graph/vector long-term memory; AGENTS.md lưu convention bất biến.
+## ⚡ 1. Primary Behavioral Directive: The 1% Rule (`using-superpowers`)
 
-## 7. Quy Tắc Tự Động Hóa Nạp Repo Kỹ Năng (Auto-Ingestion Directive)
-Mỗi khi người dùng gửi một liên kết GitHub/Repo bất kỳ:
-1. **Kiểm tra License ngay lập tức**:
-   - Nếu là giấy phép tự do/mở (MIT, Apache 2.0, BSD, CC, Unlicense, v.v.): Tự động nạp toàn bộ skills/tools vào hệ sinh thái ngay mà không cần hỏi lại.
-   - Nếu dính license bắt trả phí định kỳ, paywall, hoặc lây nhiễm copyleft cực đoan: Lập tức cảnh báo và loại bỏ.
-2. **Quy trình đóng gói tự động**:
-   - Sao chép và chuẩn hóa vào `D:\SKILL_AI\skills/`.
-   - Đồng bộ tức thì sang runtime của tất cả AI: Antigravity (`~/.gemini/config/skills/`), Claude Code (`~/.claude/skills/`), Codex/OpenCode (`~/.agents/skills/`).
-   - Cập nhật Attribution trong các file README để đảm bảo bản quyền.
-   - Cập nhật số lượng skills hiển thị trong Web Dashboard.
-   - Tự động Git commit & push lên GitHub `taianh20102011/skill-for-ai`.
+Before writing ANY code, generating files, or proposing architecture:
+1. **Skill Discovery**: If there is even a 1% chance a skill applies, invoke it immediately.
+2. **Priority Order**:
+   - Process skills FIRST: `superpowers:brainstorming` (clarify spec in bite-sized chunks) or `superpowers:systematic-debugging` (root-cause isolation).
+   - Domain execution skills NEXT: `modern-fullstack-gsap-security`, `frontend-design`, `gsap-skills`, `cloudflare-security-audit`.
+   - Quality gates LAST: `karpathy-guidelines`, `ponytail`, `verification-before-completion`.
 
+---
+
+## 💎 2. Visual & Frontend Invariants (Alabaster Porcelain + GSAP)
+
+Every UI component built in this repository MUST strictly follow:
+- **Theme**: Alabaster Porcelain canvas `#F7F8FA`, cards `#FFFFFF`, ink `#0F172A`, sapphire accent `#2563EB`.
+- **Absolute Prohibitions**: ❌ No Gradients, ❌ No Glassmorphism, ❌ No Nested Cards, ❌ No Random Shadows.
+- **Strict Border Radius**: Strictly **`rounded-[6px]`** (`6px`) on every component.
+- **CNC-Milled Sub-pixel 1px Border**:
+  - Light: `border border-[#E2E8F0] shadow-[0_4px_20px_-2px_rgba(15,23,42,0.05),0_1px_2px_0_rgba(15,23,42,0.04)]`
+- **Typography**: `Plus Jakarta Sans` for UI, `JetBrains Mono` with `tabular-nums` for code/numbers.
+- **GSAP 25+ Engine**: Hardware-accelerated 120fps animations wrapped in `useGSAP` with auto-cleanup. Use `ScrollSmoother`, `ScrollTrigger`, `Flip`, `DrawSVG`, `CustomBounce`, and `CustomWiggle`.
+
+---
+
+## 🛡️ 3. Bank-Grade Security Invariants
+
+- **Mandatory 2FA**: Admin & sensitive actions require 6-digit numeric Gmail OTP verified via `HMAC-SHA256` (10-min expiration, max 5 attempts, IP-bound).
+- **Session Revocation**: Password reset increments `sessionVersion`, immediately invalidating all active sessions.
+- **Zero-Trust RBAC**: Server-side role checks on all mutations; never trust client-side claims.
+- **Cookies**: `HttpOnly; Secure; SameSite=Strict; Path=/`.
+- **ID Obfuscation**: Never expose autoincrement integer IDs. Use UUID v4 or Hashids.
+
+---
+
+## ☕ 4. Code Discipline: Karpathy & Ponytail
+
+- **Think Before Coding**: Surface assumptions explicitly. Present tradeoffs.
+- **Simplicity First & YAGNI**: The minimum code that solves the user's task. No speculative boilerplate.
+- **Surgical Changes**: Touch only what you must. Match existing style. Never modify adjacent working code.
+- **Goal-Driven Execution**: Define test criteria upfront. Never claim completion without terminal proof.
+
+---
+
+## 🧠 5. Cross-Agent Continuity (`ai-memory`)
+
+- When handing off tasks across models or sessions, update or read `handoff.md` with:
+  1. Goal & Target State
+  2. Active Invariants
+  3. Failed Approaches (prevents loops)
+  4. Immediate Next Tasks
+- All knowledge is persisted in `.ai-memory/` as plain markdown without external LLM token fees.

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://opencode.ai/config.schema.json",
+  "instructions": [
+    "AGENTS.md",
+    "references/full-skills-tree-catalog.md"
+  ],
+  "rules": [
+    "Strict 6px border radius (rounded-[6px])",
+    "Alabaster Porcelain palette (#F7F8FA canvas, #FFFFFF card, #0F172A text, #2563EB accent)",
+    "GSAP 25+ with useGSAP cleanup",
+    "Mandatory 2FA Gmail OTP via HMAC-SHA256 and session revocation",
+    "Ponytail YAGNI minimal code footprint and Karpathy guidelines"
+  ],
+  "triggerPrefix": "!exec:"
+}

@@ -1,0 +1,69 @@
+# AGENTS.md — Universal Agent Autonomous Directives
+
+> **Governing Standards**: Antigravity, Claude Code, OpenAI Codex, Cursor, Gemini, Devin, OpenCode.
+> This file is loaded automatically by coding agents. Adhere to these directives unconditionally.
+
+---
+
+## 🚀 Universal One-Liner Trigger: `!exec: <task>` or `/swarm: <task>`
+
+Whenever a prompt starts with `!exec:` or `/swarm:`, IMMEDIATELY execute all 320 skills end-to-end:
+1. **Spec & Architecture**: Autonomous decomposition, edge cases handled.
+2. **Minimalist Code Discipline**: Ponytail YAGNI (-53% code) & Karpathy Guidelines (surgical changes, think before coding).
+3. **Alabaster Porcelain + GSAP 25+**: 6px radius, CNC sub-pixel 1px border, Plus Jakarta Sans, hardware-accelerated 120fps motion.
+4. **Bank-Grade Security**: 2FA Gmail OTP (HMAC-SHA256), session revocation, zero-trust RBAC.
+5. **Terminal Proof & Continuity**: Verify tests, persist durable architectural facts in `.ai-memory/`.
+
+---
+
+## ⚡ 1. Primary Behavioral Directive: The 1% Rule (`using-superpowers`)
+
+Before writing ANY code, generating files, or proposing architecture:
+1. **Skill Discovery**: If there is even a 1% chance a skill applies, invoke it immediately.
+2. **Priority Order**:
+   - Process skills FIRST: `superpowers:brainstorming` (clarify spec in bite-sized chunks) or `superpowers:systematic-debugging` (root-cause isolation).
+   - Domain execution skills NEXT: `modern-fullstack-gsap-security`, `frontend-design`, `gsap-skills`, `cloudflare-security-audit`.
+   - Quality gates LAST: `karpathy-guidelines`, `ponytail`, `verification-before-completion`.
+
+---
+
+## 💎 2. Visual & Frontend Invariants (Alabaster Porcelain + GSAP)
+
+Every UI component built in this repository MUST strictly follow:
+- **Theme**: Alabaster Porcelain canvas `#F7F8FA`, cards `#FFFFFF`, ink `#0F172A`, sapphire accent `#2563EB`.
+- **Absolute Prohibitions**: ❌ No Gradients, ❌ No Glassmorphism, ❌ No Nested Cards, ❌ No Random Shadows.
+- **Strict Border Radius**: Strictly **`rounded-[6px]`** (`6px`) on every component.
+- **CNC-Milled Sub-pixel 1px Border**:
+  - Light: `border border-[#E2E8F0] shadow-[0_4px_20px_-2px_rgba(15,23,42,0.05),0_1px_2px_0_rgba(15,23,42,0.04)]`
+- **Typography**: `Plus Jakarta Sans` for UI, `JetBrains Mono` with `tabular-nums` for code/numbers.
+- **GSAP 25+ Engine**: Hardware-accelerated 120fps animations wrapped in `useGSAP` with auto-cleanup. Use `ScrollSmoother`, `ScrollTrigger`, `Flip`, `DrawSVG`, `CustomBounce`, and `CustomWiggle`.
+
+---
+
+## 🛡️ 3. Bank-Grade Security Invariants
+
+- **Mandatory 2FA**: Admin & sensitive actions require 6-digit numeric Gmail OTP verified via `HMAC-SHA256` (10-min expiration, max 5 attempts, IP-bound).
+- **Session Revocation**: Password reset increments `sessionVersion`, immediately invalidating all active sessions.
+- **Zero-Trust RBAC**: Server-side role checks on all mutations; never trust client-side claims.
+- **Cookies**: `HttpOnly; Secure; SameSite=Strict; Path=/`.
+- **ID Obfuscation**: Never expose autoincrement integer IDs. Use UUID v4 or Hashids.
+
+---
+
+## ☕ 4. Code Discipline: Karpathy & Ponytail
+
+- **Think Before Coding**: Surface assumptions explicitly. Present tradeoffs.
+- **Simplicity First & YAGNI**: The minimum code that solves the user's task. No speculative boilerplate.
+- **Surgical Changes**: Touch only what you must. Match existing style. Never modify adjacent working code.
+- **Goal-Driven Execution**: Define test criteria upfront. Never claim completion without terminal proof.
+
+---
+
+## 🧠 5. Cross-Agent Continuity (`ai-memory`)
+
+- When handing off tasks across models or sessions, update or read `handoff.md` with:
+  1. Goal & Target State
+  2. Active Invariants
+  3. Failed Approaches (prevents loops)
+  4. Immediate Next Tasks
+- All knowledge is persisted in `.ai-memory/` as plain markdown without external LLM token fees.
