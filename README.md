@@ -1,16 +1,16 @@
-# ⚡ SKILL-FOR-AI: Ultimate Agentic Skills & Anti-Slop Ecosystem
+# ⚡ SKILL-FOR-AI: Ultimate 320+ Agent Skills & Autonomous /xaydung Scaffolder
 
 <div align="center">
 
-**English** | [Tiếng Việt](./README.vn.md) | [Français](./README.fr.md) | [简体中文](./README.zh.md)
+**English** | [Tiếng Việt](./README.vn.md)
 
 </div>
 
-> **Autonomous Agent Skills, Unified Multi-Agent Mesh, and Anti-Slop Design Specifications** for modern AI Coding Agents: **Claude Code, Google Antigravity, Cursor, OpenAI Codex, OpenCode, Aider, and Cline**.
+> **Universal 320+ Autonomous Agent Skills, Autonomous `/xaydung` Project Scaffolder, and Anti-Slop Security Ecosystem** for modern AI Coding Agents: **Claude Code, Google Antigravity, Cursor, OpenAI Codex, OpenCode, Aider, and Cline**.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node.js](https://img.shields.io/badge/Node.js-18+-green.svg)](https://nodejs.org/)
-[![NPM Version](https://img.shields.io/badge/npm-skill--for--ai-blue.svg)](https://www.npmjs.com/)
+[![NPM Version](https://img.shields.io/badge/npm-skill--for--ai-blue.svg)](https://www.npmjs.com/package/skill-for-ai)
 
 ---
 
@@ -21,57 +21,19 @@ Run a single command in your terminal:
 ```bash
 npx skill-for-ai
 ```
-*(Or run directly from GitHub: `npx github:taianh20102011/skill-for-ai`)*
+*(Or install non-interactively with auto-confirmation: `npx skill-for-ai -y`)*
 
-This command automatically installs **117+ Production Skills** across your agent runtimes:
+This command automatically deploys and links **all 320+ Production Skills** across your agent runtimes:
 * 🔹 **Google Antigravity / Gemini CLI**: `~/.gemini/config/skills`
 * 🔹 **Claude Code**: `~/.claude/skills`
 * 🔹 **OpenCode / Codex Agents**: `~/.agents/skills`
-* 🔹 **Cursor / VS Code**: Automatically generates `AGENTS.md` and `.cursorrules` in your project root.
-
----
-
-## 🌐 1-Click Web-App Dashboard Control Center
-
-Prefer a visual dashboard? Control your entire multi-agent ecosystem via a sleek local web interface:
-
-```bash
-# Launch from terminal
-skill-for-ai ui
-# Or using the dedicated shortcut
-skill-ui
-```
-*(Runs locally at `http://localhost:3333` with zero external dependencies)*
-
-### 🎮 What You Can Do in 1-Click:
-* ⚡ **1-Click Scaffolding (`/xaydung`)**: Select Web, Desktop App, Minecraft Plugin, or CLI Tool, enter your brief, and let AI scaffold the whole project.
-* 🎛️ **Mode Toggle**: Switch on the fly between **Senior Dev Mode** (YAGNI, self-healing) and **Junior Dev Mode** (Mentorship, detailed comments).
-* 📊 **Visual & Multimedia Generation**: Generate system architecture diagrams, PowerPoint slides (`.pptx`), and clean web scraping to Markdown with one tap.
-* 🛡️ **CyberSecurity & OWASP Audit**: Run one-click security audits across your active project.
-* 🤖 **Live Mesh Monitor**: View live sync statuses of Antigravity, Claude Code, Cursor, and Codex.
-
----
-
-### 🤖 Interactive Permission & Operating Mode Selection
-During setup, the CLI will ask for your confirmation:
-1. **Multi-Agent Unified Mesh Confirmation**:
-   ```text
-   ? Do you allow automatically connecting all AI Agents into a unified system? (Y/n)
-   ```
-2. **Select Operating Mode**:
-   * 🌟 **Senior Dev Mode (Recommended)**:
-     * Enforces **YAGNI (Ponytail)**: Minimum code to solve the exact problem, zero bloat or unnecessary abstractions.
-     * Autonomous compiler loop (`pnpm build`, `./gradlew build`, `cargo check`), captures stack traces upon failure and self-heals code.
-     * Automated security audits following Cloudflare Security Guidelines and OWASP Top 10.
-   * 🎓 **Junior Dev Mode**:
-     * Tutorial & Mentorship mode: Step-by-step walkthrough, explains function/variable logic in depth.
-     * Adds comprehensive inline comments for easy learning.
+* 🔹 **Cursor / VS Code**: Generates project-level `AGENTS.md` and `.cursorrules` in your current working directory.
 
 ---
 
 ## 🛠️ Autonomous Super-Command: `/xaydung`
 
-Once installed, invoke autonomous scaffolding and development directly inside **Antigravity / Claude Code / Cursor**:
+`skill-for-ai` comes with an integrated autonomous project scaffolder. You can invoke it in your terminal or **directly inside the chat window of Antigravity, Claude Code, or Cursor**:
 
 ```text
 /xaydung web <web idea / specifications>
@@ -80,16 +42,46 @@ Once installed, invoke autonomous scaffolding and development directly inside **
 /xaydung tool <CLI utility or automation script>
 ```
 
-### Autonomous Background Pipeline:
-1. **Architectural Analysis & Brainstorming**: Generates technical specs and task breakdown.
-2. **Scaffold Initialization**: Selects optimal tech stack (React/Tailwind/GSAP/Lenis, Tauri v2 / Rust, or Paper Adventure).
-3. **Autonomous Implementation**: Writes clean code strictly following Senior or Junior conventions.
-4. **Self-Healing Compiler Loop**: Runs build & test commands, parses error logs, and automatically fixes bugs.
-5. **Security & Quality Audit**: Validates against Cloudflare Security Guidelines, OWASP Top 10, and Semgrep SAST.
+### Or run directly from terminal:
+```bash
+xaydung web "SaaS Landing page with dark mode, GSAP ScrollTrigger and Lenis"
+xaydung app "Modern desktop markdown notes app with Tauri v2"
+xaydung plugin "Multi-server economy synchronization with Adventure MiniMessage"
+xaydung tool "High-speed log analysis CLI with automated test suite"
+```
+
+### 🏗️ Supported Autonomous Stacks:
+1. **`web`**: React 19 + Tailwind CSS + GSAP 25+ + Lenis Smooth Scroll + Animate UI (Anti-Slop standard `#080808`, Geist / Plus Jakarta Sans).
+2. **`app`**: High-performance Native Desktop App (Tauri v2 + Rust) or Cross-platform Mobile (Flutter).
+3. **`plugin`**: Enterprise Minecraft Paper/Purpur 1.21.x+ Plugin (Adventure Kyori MiniMessage, Lamp command framework, Triumph-GUI).
+4. **`tool`**: Production-grade CLI Tool / Utility with self-healing compiler diagnostics and automated test suite.
 
 ---
 
-## 📦 Packaged Skills (90+ Production Skills)
+## 🌐 1-Click Web Control Center (Dashboard)
+
+Prefer a visual dashboard? Control your entire multi-agent ecosystem and scaffold projects with 1 click:
+
+```bash
+# Launch from terminal
+skill-for-ai ui
+# Or using the dedicated shortcut
+xaydung ui
+```
+*(Runs locally at `http://localhost:3333` with zero external dependencies)*
+
+### 🎮 What You Can Do in the Web Dashboard:
+* ⚡ **1-Click Scaffolding (`/xaydung`)**: Select Web, Desktop App, Minecraft Plugin, or CLI Tool, enter your brief, and let AI scaffold the whole project.
+* 🎛️ **Mode Toggle**: Switch between **Senior Dev Mode** (YAGNI, self-healing, zero-slop) and **Junior Dev Mode** (Tutorial walkthrough, detailed comments).
+* 📊 **Visual & Multimedia Generation**: 1-click system architecture diagrams, PowerPoint slides (`.pptx`), and web scraping to Markdown.
+* 🛡️ **CyberSecurity & OWASP Audit**: Run one-click security audits across your active project.
+* 🤖 **Live Mesh Monitor**: View live sync statuses of Antigravity, Claude Code, Cursor, and Codex.
+
+---
+
+## 📦 Packaged Skills (320 Production Skills)
+
+`skill-for-ai` packages a complete arsenal of 320 skills across 36 specialized engineering pillars:
 
 ### 1. High-End Web UI & Micro-Interactions (Zero Slop)
 * **`anti-slop-web-ui`**: High-end aesthetic rules: Dark mode `#080808`, Geist / JetBrains Mono typography, 150-250ms spring physics.
@@ -104,8 +96,7 @@ Once installed, invoke autonomous scaffolding and development directly inside **
 * **`mobile-app-automation-agent`**: Automated mobile UI execution and testing (Android UIAutomator2, iOS XCUITest, Appium, LaVague LAM).
 
 ### 3. Minecraft Clean Architecture & AI Sandbox
-* **13 Minecraft Skills**: `minecraft-plugin-dev`, `minecraft-modding`, `minecraft-commands-scripting`, `minecraft-datapack`, `minecraft-server-admin`, `minecraft-worldedit-ops`, etc.
-* **AI Sandbox Integration**: Connects with `AgentCraft` (virtual office for coding agents) and `MindCraft` (Mineflayer bot).
+* **13 Minecraft Skills**: `minecraft-plugin-dev`, `minecraft-modding`, `minecraft-commands-scripting`, `minecraft-datapack`, `minecraft-server-admin`, `minecraft-worldedit-ops`, `minecraft-ci-release`, etc.
 
 ### 4. Enterprise CyberSecurity & Defensive Engineering
 * **`cloudflare-security-audit`**: Comprehensive Cloudflare security audit standard.
@@ -117,7 +108,8 @@ Once installed, invoke autonomous scaffolding and development directly inside **
 ### 5. Autonomous Coding Loops & Developer Tooling
 * **`superpowers`**: Brainstorming, `writing-plans`, subagent-driven development, TDD, and verification-before-completion.
 * **`ponytail`**: Lazy Senior Dev mode (YAGNI, eliminates dead code, tracks technical debt).
-* **`agent-skills-addy`**: Elite web engineering standards from Google Chrome Lead (Addy Osmani).
+* **`local-ai-engine`**: 100% offline, zero-cost agent execution via Ollama, LM Studio, and DeepSeek R1 / Qwen 2.5.
+* **`autonomous-execution-loop`**: Autonomous coding loops, compiler execution, and auto stack trace diagnostics.
 
 ---
 
@@ -147,5 +139,5 @@ This repository standardizes and packages skills inspired by and derived from am
 ---
 
 ## 📄 License
-Released under the [MIT License](LICENSE).
+Released under the [MIT License](LICENSE).  
 Free to use, modify, and integrate for personal and commercial projects.
