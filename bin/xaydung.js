@@ -2,8 +2,8 @@
 
 /**
  * XAYDUNG CLI - Autonomous Project Builder & Scaffolder
- * Usage in Terminal: xaydung <web|app|plugin|tool> [description]
- * Usage in AI Chat:  /xaydung <web|app|plugin|tool> <description>
+ * Usage in Terminal: xaydung <web|app|game|plugin|tool> [description]
+ * Usage in AI Chat:  /xaydung <web|app|game|plugin|tool> <description>
  */
 
 const fs = require('fs');
@@ -28,22 +28,24 @@ console.log('\x1b[36m%s\x1b[0m', `
 `);
 console.log('\x1b[32m%s\x1b[0m', '>>> Autonomous Project Builder & Anti-Slop Scaffolder <<<\n');
 
-if (!type || !['web', 'app', 'plugin', 'tool'].includes(type)) {
+if (!type || !['web', 'app', 'game', 'plugin', 'tool'].includes(type)) {
   console.log(`\x1b[33mUsage in Terminal:\x1b[0m
-  xaydung <web|app|plugin|tool> [description]
+  xaydung <web|app|game|plugin|tool> [description]
 
 \x1b[33mUsage in AI Chat (Antigravity / Claude Code / Cursor):\x1b[0m
-  Type \x1b[32m/xaydung <web|app|plugin|tool> <description>\x1b[0m directly in the chat box!
+  Type \x1b[32m/xaydung <web|app|game|plugin|tool> <description>\x1b[0m directly in the chat box!
 
 \x1b[33mAvailable Project Types:\x1b[0m
   \x1b[36mweb\x1b[0m     - React 19 + Tailwind CSS + GSAP + Lenis + Animate UI (Anti-Slop)
   \x1b[36mapp\x1b[0m     - Lightweight Desktop App (Tauri v2 + Rust) or Mobile (Flutter)
+  \x1b[36mgame\x1b[0m    - Godot 4.3+ GDScript (Call Down Signal Up, Game Feel Juice, EventBus)
   \x1b[36mplugin\x1b[0m  - Clean Minecraft Paper/Purpur Plugin (Adventure + Lamp + Triumph-GUI)
   \x1b[36mtool\x1b[0m    - Production-grade CLI Tool / Utility with automated testing loop
 
 \x1b[33mExamples:\x1b[0m
   xaydung web "SaaS Landing page with dark mode and GSAP ScrollTrigger"
   xaydung app "Modern desktop markdown notes app with Tauri v2"
+  xaydung game "2D Roguelite survivor game with hitstop, screen shake and EventBus"
   xaydung plugin "Multi-server economy synchronization with Adventure MiniMessage"
   xaydung tool "High-speed log analysis CLI with automated test suite"
 `);
@@ -82,6 +84,12 @@ ${
     ? `- **Desktop Core**: Tauri v2 (Rust Core <15MB RAM, ultra-light binary)
 - **Frontend UI**: React + Tailwind + GSAP
 - **Packaging**: Cross-platform desktop release (Windows, macOS, Linux)`
+    : type === 'game'
+    ? `- **Engine & Syntax**: Godot 4.3+ (Strict GDScript with Static Typing)
+- **Architecture**: Decoupled "Call Down, Signal Up", Autoload EventBus, custom Resource (.tres) data models
+- **Game Feel ("Juice")**: Screen shake, Hitstop micro-pause (60ms), Squash & stretch, Coyote Time & Jump Buffering
+- **Asset Directory**: Kenney.nl (CC0), Quaternius (CC0), Freesound.org audio
+- **Verification Loop**: Headless compilation check (godot --headless --quit)`
     : type === 'plugin'
     ? `- **Server API**: Paper / Purpur 1.21.x / 26.x
 - **Chat & UI**: Adventure Kyori MiniMessage (Hex gradients, custom fonts)
@@ -93,16 +101,16 @@ ${
 }
 
 ## 📋 Autonomous Execution Checklist
-- [x] Initial scaffolding and configuration files created.
-- [ ] Implement core business logic and UI components.
-- [ ] Run automated compile loop and resolve stack traces.
-- [ ] Run security audit (OWASP Top 10 & Cloudflare Guidelines).
-- [ ] Final verification before completion.
+- [x] Initial Scaffolding and Directory Setup
+- [ ] Implement Core Architecture & Entry Point
+- [ ] Inject Autonomous Coding Directives (AGENTS.md)
+- [ ] Run Automated Compilation / Syntax Check
+- [ ] Execute Security & Quality Audit (OWASP / YAGNI)
 `;
 
 fs.writeFileSync(path.join(targetDir, 'XAYDUNG_SPEC.md'), specContent, 'utf8');
 
-// 2. Generate Boilerplate Files based on Type
+// 2. Generate starter project files
 if (type === 'web') {
   const pkgJson = {
     name: projectName,
@@ -115,50 +123,29 @@ if (type === 'web') {
       preview: 'vite preview'
     },
     dependencies: {
-      react: '^19.0.0',
+      'react': '^19.0.0',
       'react-dom': '^19.0.0',
-      gsap: '^3.12.5',
-      lenis: '^1.1.18',
-      'lucide-react': '^0.468.0'
+      'lucide-react': '^1.0.0'
     },
     devDependencies: {
-      '@vitejs/plugin-react': '^4.3.4',
-      tailwindcss: '^3.4.16',
-      autoprefixer: '^10.4.20',
-      postcss: '^8.4.49',
-      vite: '^6.0.3'
+      '@vitejs/plugin-react': '^4.3.0',
+      'autoprefixer': '^10.4.20',
+      'postcss': '^8.4.49',
+      'tailwindcss': '^3.4.17',
+      'vite': '^6.0.0'
     }
   };
-
   fs.writeFileSync(path.join(targetDir, 'package.json'), JSON.stringify(pkgJson, null, 2), 'utf8');
 
   const srcDir = path.join(targetDir, 'src');
-  if (!fs.existsSync(srcDir)) fs.mkdirSync(srcDir, { recursive: true });
+  fs.mkdirSync(srcDir, { recursive: true });
 
-  const appJsx = `import React, { useEffect, useRef } from 'react';
-import Lenis from 'lenis';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
+  const appJsx = `import React from 'react';
 
 export default function App() {
-  const heroRef = useRef(null);
-
-  useEffect(() => {
-    const lenis = new Lenis({ autoRaf: true });
-    
-    gsap.fromTo(heroRef.current, 
-      { opacity: 0, y: 30 }, 
-      { opacity: 1, y: 0, duration: 1, ease: 'power3.out' }
-    );
-
-    return () => lenis.destroy();
-  }, []);
-
   return (
-    <div className="min-h-screen bg-[#080808] text-zinc-100 flex flex-col items-center justify-center p-8 selection:bg-zinc-800">
-      <div ref={heroRef} className="max-w-3xl text-center space-y-6">
+    <div className="min-h-screen bg-[#080808] text-zinc-100 flex flex-col items-center justify-center p-8 selection:bg-zinc-800 selection:text-white">
+      <div className="max-w-2xl text-center space-y-6">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-zinc-800 bg-zinc-900/50 text-xs text-zinc-400">
           <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
           Crafted with Anti-Slop Specifications
@@ -236,6 +223,160 @@ export default defineConfig({
 });
 `;
   fs.writeFileSync(path.join(targetDir, 'vite.config.js'), viteConfig, 'utf8');
+} else if (type === 'game') {
+  const scriptsDir = path.join(targetDir, 'scripts');
+  const scenesDir = path.join(targetDir, 'scenes');
+  const assetsDir = path.join(targetDir, 'assets');
+  fs.mkdirSync(scriptsDir, { recursive: true });
+  fs.mkdirSync(scenesDir, { recursive: true });
+  fs.mkdirSync(assetsDir, { recursive: true });
+
+  const projectGodot = `; Engine configuration file.
+; Generated autonomously by skill-for-ai /xaydung
+
+config_version=5
+
+[application]
+
+config/name="${projectName}"
+run/main_scene="res://scenes/main.tscn"
+config/features=PackedStringArray("4.3", "Forward Plus")
+
+[autoload]
+
+EventBus="*res://scripts/event_bus.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep"
+
+[rendering]
+
+renderer/rendering_method="forward_plus"
+`;
+  fs.writeFileSync(path.join(targetDir, 'project.godot'), projectGodot, 'utf8');
+
+  const eventBusGd = `extends Node
+
+# Global EventBus Autoload for decoupled cross-system communication
+signal player_spawned(player: CharacterBody2D)
+signal player_health_changed(current: int, max: int)
+signal screen_shake_requested(intensity: float, duration: float)
+signal score_updated(new_score: int)
+`;
+  fs.writeFileSync(path.join(scriptsDir, 'event_bus.gd'), eventBusGd, 'utf8');
+
+  const playerGd = `extends CharacterBody2D
+
+signal health_changed(current: int, max: int)
+signal died()
+
+@export var move_speed: float = 280.0
+@export var jump_impulse: float = -420.0
+@export var gravity: float = 980.0
+@export var max_health: int = 100
+
+var current_health: int = 100
+var is_invulnerable: bool = false
+
+# Juice & Game Feel: Coyote Time & Jump Buffer
+var coyote_timer: float = 0.0
+var jump_buffer_timer: float = 0.0
+const COYOTE_TIME_MAX: float = 0.12
+const JUMP_BUFFER_MAX: float = 0.10
+
+@onready var collision_shape: CollisionShape2D = $CollisionShape2D
+
+func _ready() -> void:
+    current_health = max_health
+    EventBus.player_spawned.emit(self)
+
+func _physics_process(delta: float) -> void:
+    # Gravity
+    if not is_on_floor():
+        velocity.y += gravity * delta
+        coyote_timer -= delta
+    else:
+        coyote_timer = COYOTE_TIME_MAX
+
+    # Input handling
+    var direction: float = Input.get_axis("ui_left", "ui_right")
+    velocity.x = direction * move_speed
+
+    # Jump Buffer
+    if Input.is_action_just_pressed("ui_accept"):
+        jump_buffer_timer = JUMP_BUFFER_MAX
+    else:
+        jump_buffer_timer -= delta
+
+    # Jump Execution
+    if jump_buffer_timer > 0.0 and coyote_timer > 0.0:
+        velocity.y = jump_impulse
+        jump_buffer_timer = 0.0
+        coyote_timer = 0.0
+        # Juice: Squash & Stretch
+        _apply_squash_and_stretch(Vector2(0.8, 1.25))
+
+    move_and_slide()
+
+func take_damage(amount: int) -> void:
+    if is_invulnerable:
+        return
+    current_health = clampi(current_health - amount, 0, max_health)
+    health_changed.emit(current_health, max_health)
+    EventBus.player_health_changed.emit(current_health, max_health)
+    EventBus.screen_shake_requested.emit(8.0, 0.2)
+    _apply_hitstop(0.06)
+
+    if current_health <= 0:
+        died.emit()
+
+func _apply_hitstop(duration: float) -> void:
+    Engine.time_scale = 0.05
+    await get_tree().create_timer(duration * 0.05).timeout
+    Engine.time_scale = 1.0
+
+func _apply_squash_and_stretch(target_scale: Vector2) -> void:
+    var tween: Tween = create_tween().set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+    tween.tween_property(self, "scale", target_scale, 0.08)
+    tween.tween_property(self, "scale", Vector2.ONE, 0.12)
+`;
+  fs.writeFileSync(path.join(scriptsDir, 'player.gd'), playerGd, 'utf8');
+
+  const mainTscn = `[gd_scene format=3 uid="uid://mainscene001"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(640, 360)
+`;
+  fs.writeFileSync(path.join(scenesDir, 'main.tscn'), mainTscn, 'utf8');
+
+  const gddMd = `# GAME DESIGN DOCUMENT (GDD): ${projectName.toUpperCase()}
+
+## 1. High Concept & Elevator Pitch
+- **Title**: ${projectName}
+- **Genre**: 2D Action Platformer / Arena
+- **Pitch**: ${description || 'Fast-paced indie game with high game feel, responsive controls, and tight core loops.'}
+
+## 2. Core Gameplay Loop
+$$\\text{Engage Enemies} \\longrightarrow \\text{Evade & Defeat} \\longrightarrow \\text{Collect Rewards} \\longrightarrow \\text{Upgrade Stats & Skills}$$
+
+## 3. Game Feel ("Juice") Invariants
+- [x] **Hitstop**: 60ms engine freeze on critical hits
+- [x] **Coyote Time**: 120ms jump forgiveness after leaving ledges
+- [x] **Jump Buffering**: 100ms early jump registration
+- [x] **Squash & Stretch**: Dynamic tween scaling on jump and landing
+- [x] **Camera Shake**: Decay trauma-based offset on player damage
+
+## 4. Free Open-Source Asset Sources
+- Sprites & UI: [Kenney.nl](https://kenney.nl) (CC0)
+- Audio & SFX: [Freesound.org](https://freesound.org) / [Pixabay](https://pixabay.com)
+`;
+  fs.writeFileSync(path.join(targetDir, 'GDD.md'), gddMd, 'utf8');
 } else if (type === 'plugin') {
   const pomXml = `<project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"

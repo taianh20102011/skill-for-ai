@@ -7,7 +7,7 @@
 
 ## 🚀 Universal One-Liner Trigger: `!exec: <task>` or `/swarm: <task>`
 
-Whenever a prompt starts with `!exec:` or `/swarm:`, IMMEDIATELY execute all 320 skills end-to-end:
+Whenever a prompt starts with `!exec:` or `/swarm:`, IMMEDIATELY execute all 325 skills end-to-end:
 1. **Spec & Architecture**: Autonomous decomposition, edge cases handled.
 2. **Minimalist Code Discipline**: Ponytail YAGNI (-53% code) & Karpathy Guidelines (surgical changes, think before coding).
 3. **Alabaster Porcelain + GSAP 25+**: 6px radius, CNC sub-pixel 1px border, Plus Jakarta Sans, hardware-accelerated 120fps motion.
@@ -22,7 +22,7 @@ Before writing ANY code, generating files, or proposing architecture:
 1. **Skill Discovery**: If there is even a 1% chance a skill applies, invoke it immediately.
 2. **Priority Order**:
    - Process skills FIRST: `superpowers:brainstorming` (clarify spec in bite-sized chunks) or `superpowers:systematic-debugging` (root-cause isolation).
-   - Domain execution skills NEXT: `modern-fullstack-gsap-security`, `frontend-design`, `gsap-skills`, `cloudflare-security-audit`.
+   - Domain execution skills NEXT: `modern-fullstack-gsap-security`, `frontend-design`, `game-development-godot`, `game-design-and-feel`, `cloudflare-security-audit`.
    - Quality gates LAST: `karpathy-guidelines`, `ponytail`, `verification-before-completion`.
 
 ---
@@ -40,7 +40,18 @@ Every UI component built in this repository MUST strictly follow:
 
 ---
 
-## 🛡️ 3. Bank-Grade Security Invariants
+## 🎮 3. Game Development Directives (Godot 4.3+ / Unity / Web Game)
+
+Whenever working on Game Development tasks:
+- **Godot 4.x Strict Syntax**: Use `CharacterBody2D/3D`, `await`, `instantiate()`, `@export`, `@onready`. NEVER use Godot 3 syntax (`yield`, `KinematicBody2D`, `instance()`, `export var`).
+- **Static Typing**: Enforce explicit static typing on all GDScript variables and functions (`func take_damage(amount: int) -> void:`).
+- **Architecture**: Enforce "Call Down, Signal Up" decoupling. Use an Autoload `EventBus` for cross-system events. Use custom `Resource` (`.tres`) for data models.
+- **Game Feel ("Juice") Invariants**: Every combat/interaction MUST feature juice: hitstop micro-freeze (60ms), trauma-based camera shake, squash & stretch tweens, coyote time (120ms), and jump buffering (100ms).
+- **Headless Verification Loop**: Run `godot --headless --quit` before claiming task completion to verify zero parse/syntax errors.
+
+---
+
+## 🛡️ 4. Bank-Grade Security Invariants
 
 - **Mandatory 2FA**: Admin & sensitive actions require 6-digit numeric Gmail OTP verified via `HMAC-SHA256` (10-min expiration, max 5 attempts, IP-bound).
 - **Session Revocation**: Password reset increments `sessionVersion`, immediately invalidating all active sessions.
@@ -50,7 +61,7 @@ Every UI component built in this repository MUST strictly follow:
 
 ---
 
-## ☕ 4. Code Discipline: Karpathy & Ponytail
+## ☕ 5. Code Discipline: Karpathy & Ponytail
 
 - **Think Before Coding**: Surface assumptions explicitly. Present tradeoffs.
 - **Simplicity First & YAGNI**: The minimum code that solves the user's task. No speculative boilerplate.
@@ -59,7 +70,7 @@ Every UI component built in this repository MUST strictly follow:
 
 ---
 
-## 🧠 5. Cross-Agent Continuity (`ai-memory`)
+## 🧠 6. Cross-Agent Continuity (`ai-memory`)
 
 - When handing off tasks across models or sessions, update or read `handoff.md` with:
   1. Goal & Target State

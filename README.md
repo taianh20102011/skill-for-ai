@@ -1,4 +1,4 @@
-# ⚡ SKILL-FOR-AI: Ultimate 320+ Agent Skills & Autonomous /xaydung Scaffolder
+# ⚡ SKILL-FOR-AI: Ultimate 325+ Agent Skills & Autonomous /xaydung Scaffolder
 
 <div align="center">
 
@@ -6,7 +6,7 @@
 
 </div>
 
-> **Universal 320+ Autonomous Agent Skills, Autonomous `/xaydung` Project Scaffolder, and Anti-Slop Security Ecosystem** for modern AI Coding Agents: **Claude Code, Google Antigravity, Cursor, OpenAI Codex, OpenCode, Aider, and Cline**.
+> **Universal 325+ Autonomous Agent Skills, Autonomous `/xaydung` Project Scaffolder, Game Development Arsenal, and Anti-Slop Security Ecosystem** for modern AI Coding Agents: **Claude Code, Google Antigravity, Cursor, OpenAI Codex, OpenCode, Aider, and Cline**.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node.js](https://img.shields.io/badge/Node.js-18+-green.svg)](https://nodejs.org/)
@@ -23,7 +23,7 @@ npx skill-for-ai
 ```
 *(Or install non-interactively with auto-confirmation: `npx skill-for-ai -y`)*
 
-This command automatically deploys and links **all 320+ Production Skills** across your agent runtimes:
+This command automatically deploys and links **all 325+ Production Skills** across your agent runtimes:
 * 🔹 **Google Antigravity / Gemini CLI**: `~/.gemini/config/skills`
 * 🔹 **Claude Code**: `~/.claude/skills`
 * 🔹 **OpenCode / Codex Agents**: `~/.agents/skills`
@@ -38,6 +38,7 @@ This command automatically deploys and links **all 320+ Production Skills** acro
 ```text
 /xaydung web <web idea / specifications>
 /xaydung app <desktop or mobile application description>
+/xaydung game <game concept / mechanics>
 /xaydung plugin <minecraft paper/purpur plugin features>
 /xaydung tool <CLI utility or automation script>
 ```
@@ -46,6 +47,7 @@ This command automatically deploys and links **all 320+ Production Skills** acro
 ```bash
 xaydung web "SaaS Landing page with dark mode, GSAP ScrollTrigger and Lenis"
 xaydung app "Modern desktop markdown notes app with Tauri v2"
+xaydung game "2D Roguelite survivor game with hitstop, screen shake and EventBus"
 xaydung plugin "Multi-server economy synchronization with Adventure MiniMessage"
 xaydung tool "High-speed log analysis CLI with automated test suite"
 ```
@@ -53,8 +55,29 @@ xaydung tool "High-speed log analysis CLI with automated test suite"
 ### 🏗️ Supported Autonomous Stacks:
 1. **`web`**: React 19 + Tailwind CSS + GSAP 25+ + Lenis Smooth Scroll + Animate UI (Anti-Slop standard `#080808`, Geist / Plus Jakarta Sans).
 2. **`app`**: High-performance Native Desktop App (Tauri v2 + Rust) or Cross-platform Mobile (Flutter).
-3. **`plugin`**: Enterprise Minecraft Paper/Purpur 1.21.x+ Plugin (Adventure Kyori MiniMessage, Lamp command framework, Triumph-GUI).
-4. **`tool`**: Production-grade CLI Tool / Utility with self-healing compiler diagnostics and automated test suite.
+3. **`game`**: Godot 4.3+ GDScript (Strict static typing, CharacterBody2D/3D, "Call Down, Signal Up", Autoload EventBus, Hitstop 60ms, Camera shake, Coyote time & Jump buffering).
+4. **`plugin`**: Enterprise Minecraft Paper/Purpur 1.21.x+ Plugin (Adventure Kyori MiniMessage, Lamp command framework, Triumph-GUI).
+5. **`tool`**: Production-grade CLI Tool / Utility with self-healing compiler diagnostics and automated test suite.
+
+---
+
+## 🎮 Game Development & Game Feel ("Juice") Arsenal
+
+`skill-for-ai` includes specialized game creation skills and curated asset libraries:
+
+* **`game-development-godot`**: Godot 4.3+ GDScript standards, strict static typing, node decoupling ("Call Down, Signal Up"), custom Resource (`.tres`) architecture, and headless verification (`godot --headless --quit`).
+* **`game-development-unity`**: Unity C# best practices, zero-GC object pooling (`UnityEngine.Pool`), ScriptableObjects data channels, and new Input System.
+* **`game-design-and-feel`**: Core Loop formulation (Action $\to$ Reward $\to$ Progression), Game Balancing formulas, GDD templates, and the 5 Game Feel Invariants (Screen shake, Hitstop micro-pause, Squash & stretch, Coyote time, Jump buffering).
+* **`game-assets-and-audio`**: Curated directory of 100% free commercial-grade game assets:
+  * *2D & UI*: Kenney.nl (CC0), Itch.io free assets, OpenGameArt.org, CraftPix, Game-icons.net (4,000+ vector icons).
+  * *3D & Materials*: Quaternius.com (Low-poly CC0), Poly.pizza, Adobe Mixamo (Rigs & animations), Poly Haven / AmbientCG (PBR textures & HDRIs CC0).
+  * *Audio & BGM*: Freesound.org (CC0), Pixabay SFX, Sonniss GDC Hollywood-grade audio bundles, Incompetech.
+  * *Open-Source Repositories*: `KenneyNL`, `Calinou/awesome-godot`, `ellisonleao/magictools`.
+* **`game-engine-mcp-integration`**: Model Context Protocol servers connecting AI Agents directly to engine runtimes:
+  * *Godot MCP*: Headless execution, live crash debug log parsing, `.tscn` editing.
+  * *Unity MCP*: Hierarchy inspection, prefab management, Play Mode error inspection.
+  * *Blender MCP*: Python API 3D procedural modeling and `.glb` asset export.
+  * *Aseprite MCP*: Automated sprite creation and spritesheet packing.
 
 ---
 
@@ -70,71 +93,16 @@ xaydung ui
 ```
 *(Runs locally at `http://localhost:3333` with zero external dependencies)*
 
-### 🎮 What You Can Do in the Web Dashboard:
-* ⚡ **1-Click Scaffolding (`/xaydung`)**: Select Web, Desktop App, Minecraft Plugin, or CLI Tool, enter your brief, and let AI scaffold the whole project.
-* 🎛️ **Mode Toggle**: Switch between **Senior Dev Mode** (YAGNI, self-healing, zero-slop) and **Junior Dev Mode** (Tutorial walkthrough, detailed comments).
-* 📊 **Visual & Multimedia Generation**: 1-click system architecture diagrams, PowerPoint slides (`.pptx`), and web scraping to Markdown.
-* 🛡️ **CyberSecurity & OWASP Audit**: Run one-click security audits across your active project.
-* 🤖 **Live Mesh Monitor**: View live sync statuses of Antigravity, Claude Code, Cursor, and Codex.
-
 ---
 
-## 📦 Packaged Skills (320 Production Skills)
+## 📦 Packaged Skills (325 Production Skills)
 
-`skill-for-ai` packages a complete arsenal of 320 skills across 36 specialized engineering pillars:
-
-### 1. High-End Web UI & Micro-Interactions (Zero Slop)
-* **`anti-slop-web-ui`**: High-end aesthetic rules: Dark mode `#080808`, Geist / JetBrains Mono typography, 150-250ms spring physics.
-* **`react-bits`**: Animated UI components: *SplitText, DecryptedText, Iridescence, Aurora, Particles, SpotlightCard*.
-* **`animate-ui`**: Apple/Linear-grade micro-interactions: dialog morphing, smooth tabs, spring physics.
-* **`cinematic-3d-web`**: 3D Canvas with R3F, Drei, Three.js, custom GLSL shaders optimized for 60 FPS.
-* **`gsap-scroll-mastery`**: GSAP ScrollTrigger synchronized with Lenis Smooth Scroll.
-* **`vercel-react-performance`**: Core Web Vitals optimization (LCP < 2s, INP < 150ms, CLS < 0.05).
-
-### 2. Autonomous Web & Mobile Agents
-* **`browser-use-agent`**: Autonomous web navigation, form fill, and DOM scraping with Playwright.
-* **`mobile-app-automation-agent`**: Automated mobile UI execution and testing (Android UIAutomator2, iOS XCUITest, Appium, LaVague LAM).
-
-### 3. Minecraft Clean Architecture & AI Sandbox
-* **13 Minecraft Skills**: `minecraft-plugin-dev`, `minecraft-modding`, `minecraft-commands-scripting`, `minecraft-datapack`, `minecraft-server-admin`, `minecraft-worldedit-ops`, `minecraft-ci-release`, etc.
-
-### 4. Enterprise CyberSecurity & Defensive Engineering
-* **`cloudflare-security-audit`**: Comprehensive Cloudflare security audit standard.
-* **`owasp-top-10-audit` & `owasp-security-cheatsheets`**: OWASP Top 10 auditing and proactive defense checklists.
-* **`siem-detection-and-blue-team`**: Sigma YAML detection rule authoring and Active Directory hardening.
-* **`secret-leak-detection`**: Pre-commit secret scanning (OpenAI, AWS, GitHub tokens).
-* **`reverse-engineer-anything` (REA)**: Binary reverse engineering, APK, Electron, and WebAssembly inspection.
-
-### 5. Autonomous Coding Loops & Developer Tooling
-* **`superpowers`**: Brainstorming, `writing-plans`, subagent-driven development, TDD, and verification-before-completion.
-* **`ponytail`**: Lazy Senior Dev mode (YAGNI, eliminates dead code, tracks technical debt).
-* **`local-ai-engine`**: 100% offline, zero-cost agent execution via Ollama, LM Studio, and DeepSeek R1 / Qwen 2.5.
-* **`autonomous-execution-loop`**: Autonomous coding loops, compiler execution, and auto stack trace diagnostics.
-
----
-
-## ⚖️ Attribution & Acknowledgements
-
-This repository standardizes and packages skills inspired by and derived from amazing open-source projects:
-
-1. **Addy Osmani** - [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) (MIT License).
-2. **Jesse Vincent (obra)** - [obra/superpowers](https://github.com/obra/superpowers) (MIT License).
-3. **Dietrich Gebert** - [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) (MIT License).
-4. **David Haz (DavidHDev)** - [DavidHDev/react-bits](https://github.com/DavidHDev/react-bits) (MIT License).
-5. **Skyleen (imskyleen)** - [imskyleen/animate-ui](https://github.com/imskyleen/animate-ui) (MIT License).
-6. **Cloudflare Team** - [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill) (MIT License).
-7. **OWASP Foundation** - [OWASP/CheatSheetSeries](https://github.com/OWASP/CheatSheetSeries) (Creative Commons Attribution-ShareAlike).
-8. **SigmaHQ** - [SigmaHQ/sigma](https://github.com/SigmaHQ/sigma) (Detection rules standard).
-9. **Daniel Miessler** - [danielmiessler/SecLists](https://github.com/danielmiessler/SecLists) (MIT License).
-10. **Swissky** - [swisskyrepo/PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings) (MIT License).
-11. **trimstray** - [trimstray/the-book-of-secret-knowledge](https://github.com/trimstray/the-book-of-secret-knowledge) (MIT License).
-12. **Jahrome907** - [Jahrome907/minecraft-agent-skills](https://github.com/Jahrome907/minecraft-agent-skills) (MIT License).
-13. **morluto** - [morluto/rea](https://github.com/morluto/rea) (MIT License).
-14. **browser-use team** - [browser-use/browser-use](https://github.com/browser-use/browser-use) (MIT License).
-15. **Kamran Ahmed** - [kamranahmedse/developer-roadmap](https://github.com/kamranahmedse/developer-roadmap).
-16. **Mozilla MDN Contributors** - [mdn/learning-area](https://github.com/mdn/learning-area) (CC0 / CC BY).
-17. **Jim Liu (宝玉)** - [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills) & [JimLiu/baoyu-design](https://github.com/JimLiu/baoyu-design) (MIT License).
-18. **Headroom Labs** - [headroomlabs-ai/headroom](https://github.com/headroomlabs-ai/headroom) (Apache 2.0 License).
+* **High-End Web UI & Anti-Slop**: `anti-slop-web-ui`, `react-bits`, `animate-ui`, `cinematic-3d-web`, `gsap-scroll-mastery`, `vercel-react-performance`.
+* **Game Development**: `game-development-godot`, `game-development-unity`, `game-design-and-feel`, `game-assets-and-audio`, `game-engine-mcp-integration`.
+* **Autonomous Web & Mobile Agents**: `browser-use-agent`, `mobile-app-automation-agent`.
+* **Minecraft Clean Architecture**: 13 Paper/Purpur & modding skills (`minecraft-plugin-dev`, `minecraft-modding`, `minecraft-commands-scripting`, etc.).
+* **Enterprise CyberSecurity**: `cloudflare-security-audit`, `owasp-top-10-audit`, `owasp-security-cheatsheets`, `siem-detection-and-blue-team`, `secret-leak-detection`, `reverse-engineer-anything` (REA).
+* **Autonomous Loops**: `superpowers`, `ponytail`, `local-ai-engine` (Ollama/LM Studio offline), `autonomous-execution-loop`.
 
 ---
 

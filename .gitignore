@@ -25,3 +25,7 @@ downloaded_repos/
 .DS_Store
 Thumbs.db
 .system_generated/
+
+.env
+.env.local
+.env.*
