@@ -2,8 +2,8 @@
 
 /**
  * XAYDUNG CLI - Autonomous Project Builder & Scaffolder
- * Usage in Terminal: xaydung <web|app|game|plugin|tool> [description]
- * Usage in AI Chat:  /xaydung <web|app|game|plugin|tool> <description>
+ * Usage in Terminal: xaydung <web|app|game|video|plugin|tool> [description]
+ * Usage in AI Chat:  /xaydung <web|app|game|video|plugin|tool> <description>
  */
 
 const fs = require('fs');
@@ -28,17 +28,18 @@ console.log('\x1b[36m%s\x1b[0m', `
 `);
 console.log('\x1b[32m%s\x1b[0m', '>>> Autonomous Project Builder & Anti-Slop Scaffolder <<<\n');
 
-if (!type || !['web', 'app', 'game', 'plugin', 'tool'].includes(type)) {
+if (!type || !['web', 'app', 'game', 'video', 'plugin', 'tool'].includes(type)) {
   console.log(`\x1b[33mUsage in Terminal:\x1b[0m
-  xaydung <web|app|game|plugin|tool> [description]
+  xaydung <web|app|game|video|plugin|tool> [description]
 
 \x1b[33mUsage in AI Chat (Antigravity / Claude Code / Cursor):\x1b[0m
-  Type \x1b[32m/xaydung <web|app|game|plugin|tool> <description>\x1b[0m directly in the chat box!
+  Type \x1b[32m/xaydung <web|app|game|video|plugin|tool> <description>\x1b[0m directly in the chat box!
 
 \x1b[33mAvailable Project Types:\x1b[0m
   \x1b[36mweb\x1b[0m     - React 19 + Tailwind CSS + GSAP + Lenis + Animate UI (Anti-Slop)
   \x1b[36mapp\x1b[0m     - Lightweight Desktop App (Tauri v2 + Rust) or Mobile (Flutter)
   \x1b[36mgame\x1b[0m    - Godot 4.3+ GDScript (Call Down Signal Up, Game Feel Juice, EventBus)
+  \x1b[36mvideo\x1b[0m   - Programmatic Video (Remotion + Three.js + GSAP + Neural TTS)
   \x1b[36mplugin\x1b[0m  - Clean Minecraft Paper/Purpur Plugin (Adventure + Lamp + Triumph-GUI)
   \x1b[36mtool\x1b[0m    - Production-grade CLI Tool / Utility with automated testing loop
 
@@ -46,6 +47,7 @@ if (!type || !['web', 'app', 'game', 'plugin', 'tool'].includes(type)) {
   xaydung web "SaaS Landing page with dark mode and GSAP ScrollTrigger"
   xaydung app "Modern desktop markdown notes app with Tauri v2"
   xaydung game "2D Roguelite survivor game with hitstop, screen shake and EventBus"
+  xaydung video "Mathematical animation video with 3D canvas and Vietnamese voiceover"
   xaydung plugin "Multi-server economy synchronization with Adventure MiniMessage"
   xaydung tool "High-speed log analysis CLI with automated test suite"
 `);
@@ -90,6 +92,12 @@ ${
 - **Game Feel ("Juice")**: Screen shake, Hitstop micro-pause (60ms), Squash & stretch, Coyote Time & Jump Buffering
 - **Asset Directory**: Kenney.nl (CC0), Quaternius (CC0), Freesound.org audio
 - **Verification Loop**: Headless compilation check (godot --headless --quit)`
+    : type === 'video'
+    ? `- **Video Engine**: Remotion (React 19 + TypeScript) + Three.js (@remotion/three)
+- **Animation & Transitions**: Deterministic frame-accurate spring physics, GSAP Timelines
+- **Audio & Voiceover**: Vietnamese Neural TTS (VieNeu-TTS / ViFastTTS) + FFmpeg auto-ducking
+- **Resolution**: 1920x1080 (16:9 Landscape) or 1080x1920 (9:16 Shorts/Reels/TikTok)
+- **CLI Rendering**: Headless MP4 output with H.264 / NVENC encoding`
     : type === 'plugin'
     ? `- **Server API**: Paper / Purpur 1.21.x / 26.x
 - **Chat & UI**: Adventure Kyori MiniMessage (Hex gradients, custom fonts)
@@ -377,6 +385,110 @@ $$\\text{Engage Enemies} \\longrightarrow \\text{Evade & Defeat} \\longrightarro
 - Audio & SFX: [Freesound.org](https://freesound.org) / [Pixabay](https://pixabay.com)
 `;
   fs.writeFileSync(path.join(targetDir, 'GDD.md'), gddMd, 'utf8');
+} else if (type === 'video') {
+  const srcDir = path.join(targetDir, 'src');
+  fs.mkdirSync(srcDir, { recursive: true });
+
+  const pkgJson = {
+    name: projectName,
+    version: '1.0.0',
+    private: true,
+    scripts: {
+      start: 'remotion preview',
+      build: 'remotion render src/index.ts MainComposition out/video.mp4',
+      render: 'remotion render src/index.ts MainComposition out/video.mp4'
+    },
+    dependencies: {
+      '@remotion/cli': '^4.0.260',
+      '@remotion/three': '^4.0.260',
+      'react': '^19.0.0',
+      'react-dom': '^19.0.0',
+      'remotion': '^4.0.260',
+      'three': '^0.170.0'
+    },
+    devDependencies: {
+      'autoprefixer': '^10.4.20',
+      'postcss': '^8.4.49',
+      'tailwindcss': '^3.4.17',
+      'typescript': '^5.7.0'
+    }
+  };
+  fs.writeFileSync(path.join(targetDir, 'package.json'), JSON.stringify(pkgJson, null, 2), 'utf8');
+
+  const rootTsx = `import React from 'react';
+import { Composition } from 'remotion';
+import { MainComposition } from './Composition';
+
+export const RemotionRoot: React.FC = () => {
+  return (
+    <>
+      <Composition
+        id="MainComposition"
+        component={MainComposition}
+        durationInFrames={300}
+        fps={30}
+        width={1920}
+        height={1080}
+        defaultProps={{
+          title: "${description || 'Programmatic Motion Video'}",
+          subtitle: "Crafted with Remotion, Three.js & Vietnamese Neural TTS"
+        }}
+      />
+    </>
+  );
+};
+`;
+  fs.writeFileSync(path.join(srcDir, 'Root.tsx'), rootTsx, 'utf8');
+
+  const compositionTsx = `import React from 'react';
+import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } from 'remotion';
+
+export const MainComposition: React.FC<{ title: string; subtitle: string }> = ({ title, subtitle }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+
+  const entrance = spring({
+    frame,
+    fps,
+    config: { damping: 14, mass: 0.8, stiffness: 120 }
+  });
+
+  const opacity = interpolate(frame, [0, 20], [0, 1], { extrapolateRight: 'clamp' });
+  const translateY = interpolate(entrance, [0, 1], [80, 0]);
+  const scale = interpolate(entrance, [0, 1], [0.92, 1]);
+
+  return (
+    <AbsoluteFill className="bg-[#080808] flex items-center justify-center text-white font-sans selection:bg-blue-600">
+      <div
+        style={{
+          opacity,
+          transform: \`translateY(\${translateY}px) scale(\${scale})\`
+        }}
+        className="text-center space-y-6 max-w-4xl px-8"
+      >
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-900/60 bg-blue-950/40 text-blue-400 text-sm font-medium tracking-wide">
+          <span className="w-2.5 h-2.5 rounded-full bg-blue-400 animate-pulse"></span>
+          Programmatic Video Engine
+        </div>
+        <h1 className="text-6xl md:text-8xl font-black tracking-tight bg-gradient-to-r from-blue-400 via-indigo-200 to-white bg-clip-text text-transparent">
+          {title}
+        </h1>
+        <p className="text-2xl text-zinc-400 font-medium leading-relaxed max-w-2xl mx-auto">
+          {subtitle}
+        </p>
+      </div>
+    </AbsoluteFill>
+  );
+};
+`;
+  fs.writeFileSync(path.join(srcDir, 'Composition.tsx'), compositionTsx, 'utf8');
+
+  const indexTs = `import { registerRoot } from 'remotion';
+import { RemotionRoot } from './Root';
+
+registerRoot(RemotionRoot);
+`;
+  fs.writeFileSync(path.join(srcDir, 'index.ts'), indexTs, 'utf8');
 } else if (type === 'plugin') {
   const pomXml = `<project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"

@@ -7,7 +7,7 @@
 
 ## 🚀 Universal One-Liner Trigger: `!exec: <task>` or `/swarm: <task>`
 
-Whenever a prompt starts with `!exec:` or `/swarm:`, IMMEDIATELY execute all 325 skills end-to-end:
+Whenever a prompt starts with `!exec:` or `/swarm:`, IMMEDIATELY execute all 331 skills end-to-end:
 1. **Spec & Architecture**: Autonomous decomposition, edge cases handled.
 2. **Minimalist Code Discipline**: Ponytail YAGNI (-53% code) & Karpathy Guidelines (surgical changes, think before coding).
 3. **Alabaster Porcelain + GSAP 25+**: 6px radius, CNC sub-pixel 1px border, Plus Jakarta Sans, hardware-accelerated 120fps motion.
@@ -22,7 +22,7 @@ Before writing ANY code, generating files, or proposing architecture:
 1. **Skill Discovery**: If there is even a 1% chance a skill applies, invoke it immediately.
 2. **Priority Order**:
    - Process skills FIRST: `superpowers:brainstorming` (clarify spec in bite-sized chunks) or `superpowers:systematic-debugging` (root-cause isolation).
-   - Domain execution skills NEXT: `modern-fullstack-gsap-security`, `frontend-design`, `game-development-godot`, `game-design-and-feel`, `cloudflare-security-audit`.
+   - Domain execution skills NEXT: `modern-fullstack-gsap-security`, `frontend-design`, `game-development-godot`, `programmatic-video-remotion`, `math-animation-manim`, `cloudflare-security-audit`.
    - Quality gates LAST: `karpathy-guidelines`, `ponytail`, `verification-before-completion`.
 
 ---
@@ -51,7 +51,17 @@ Whenever working on Game Development tasks:
 
 ---
 
-## 🛡️ 4. Bank-Grade Security Invariants
+## 🎬 4. Programmatic Video & Motion Graphics Directives (Remotion / Manim / HyperFrames / TTS)
+
+Whenever working on programmatic video, mathematical animations, or media processing:
+- **Remotion Standards**: Use `useCurrentFrame()`, `useVideoConfig()`, `interpolate()` with clamping, and `spring()` for frame-accurate rendering. Embed 3D canvas via `@remotion/three` & Three.js.
+- **Manim Standards**: Use Manim Community (`manim`). Implement LaTeX formula morphing via `TransformMatchingTex`. Animate graphs with `Axes.plot()` and `get_area()`.
+- **Vietnamese Neural Voiceover**: Synthesize speech via `VieNeu-TTS` (natural regional cadence) or `ViFastTTS` (streaming inference). Normalize numbers, currency, and acronyms before synthesis.
+- **FFmpeg Invariants**: Enforce `sidechaincompress` audio ducking to lower BGM automatically during voiceover. Render with visual lossless H.264 (CRF 18) or NVENC.
+
+---
+
+## 🛡️ 5. Bank-Grade Security Invariants
 
 - **Mandatory 2FA**: Admin & sensitive actions require 6-digit numeric Gmail OTP verified via `HMAC-SHA256` (10-min expiration, max 5 attempts, IP-bound).
 - **Session Revocation**: Password reset increments `sessionVersion`, immediately invalidating all active sessions.
@@ -61,7 +71,7 @@ Whenever working on Game Development tasks:
 
 ---
 
-## ☕ 5. Code Discipline: Karpathy & Ponytail
+## ☕ 6. Code Discipline: Karpathy & Ponytail
 
 - **Think Before Coding**: Surface assumptions explicitly. Present tradeoffs.
 - **Simplicity First & YAGNI**: The minimum code that solves the user's task. No speculative boilerplate.
@@ -70,7 +80,7 @@ Whenever working on Game Development tasks:
 
 ---
 
-## 🧠 6. Cross-Agent Continuity (`ai-memory`)
+## 🧠 7. Cross-Agent Continuity (`ai-memory`)
 
 - When handing off tasks across models or sessions, update or read `handoff.md` with:
   1. Goal & Target State

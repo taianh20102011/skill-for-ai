@@ -1,4 +1,4 @@
-# ⚡ SKILL-FOR-AI: Ultimate 325+ Agent Skills & Autonomous /xaydung Scaffolder
+# ⚡ SKILL-FOR-AI: Ultimate 331+ Agent Skills & Autonomous /xaydung Scaffolder
 
 <div align="center">
 
@@ -6,7 +6,7 @@
 
 </div>
 
-> **Universal 325+ Autonomous Agent Skills, Autonomous `/xaydung` Project Scaffolder, Game Development Arsenal, and Anti-Slop Security Ecosystem** for modern AI Coding Agents: **Claude Code, Google Antigravity, Cursor, OpenAI Codex, OpenCode, Aider, and Cline**.
+> **Universal 331+ Autonomous Agent Skills, Autonomous `/xaydung` Project Scaffolder, Video/Motion Graphics Suite (Remotion / Manim / HyperFrames / TTS), Game Dev Arsenal, and Anti-Slop Security Ecosystem** for modern AI Coding Agents: **Claude Code, Google Antigravity, Cursor, OpenAI Codex, OpenCode, Aider, and Cline**.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node.js](https://img.shields.io/badge/Node.js-18+-green.svg)](https://nodejs.org/)
@@ -23,7 +23,7 @@ npx skill-for-ai
 ```
 *(Or install non-interactively with auto-confirmation: `npx skill-for-ai -y`)*
 
-This command automatically deploys and links **all 325+ Production Skills** across your agent runtimes:
+This command automatically deploys and links **all 331+ Production Skills** across your agent runtimes:
 * 🔹 **Google Antigravity / Gemini CLI**: `~/.gemini/config/skills`
 * 🔹 **Claude Code**: `~/.claude/skills`
 * 🔹 **OpenCode / Codex Agents**: `~/.agents/skills`
@@ -39,6 +39,7 @@ This command automatically deploys and links **all 325+ Production Skills** acro
 /xaydung web <web idea / specifications>
 /xaydung app <desktop or mobile application description>
 /xaydung game <game concept / mechanics>
+/xaydung video <video concept / motion graphics description>
 /xaydung plugin <minecraft paper/purpur plugin features>
 /xaydung tool <CLI utility or automation script>
 ```
@@ -48,6 +49,7 @@ This command automatically deploys and links **all 325+ Production Skills** acro
 xaydung web "SaaS Landing page with dark mode, GSAP ScrollTrigger and Lenis"
 xaydung app "Modern desktop markdown notes app with Tauri v2"
 xaydung game "2D Roguelite survivor game with hitstop, screen shake and EventBus"
+xaydung video "Mathematical calculus proof video with 3D canvas and Vietnamese voiceover"
 xaydung plugin "Multi-server economy synchronization with Adventure MiniMessage"
 xaydung tool "High-speed log analysis CLI with automated test suite"
 ```
@@ -56,34 +58,33 @@ xaydung tool "High-speed log analysis CLI with automated test suite"
 1. **`web`**: React 19 + Tailwind CSS + GSAP 25+ + Lenis Smooth Scroll + Animate UI (Anti-Slop standard `#080808`, Geist / Plus Jakarta Sans).
 2. **`app`**: High-performance Native Desktop App (Tauri v2 + Rust) or Cross-platform Mobile (Flutter).
 3. **`game`**: Godot 4.3+ GDScript (Strict static typing, CharacterBody2D/3D, "Call Down, Signal Up", Autoload EventBus, Hitstop 60ms, Camera shake, Coyote time & Jump buffering).
-4. **`plugin`**: Enterprise Minecraft Paper/Purpur 1.21.x+ Plugin (Adventure Kyori MiniMessage, Lamp command framework, Triumph-GUI).
-5. **`tool`**: Production-grade CLI Tool / Utility with self-healing compiler diagnostics and automated test suite.
+4. **`video`**: Programmatic Video with Remotion (React 19 + Three.js), 3Blue1Brown Manim animations, Vietnamese Neural TTS (VieNeu-TTS / ViFastTTS), and FFmpeg auto-ducking.
+5. **`plugin`**: Enterprise Minecraft Paper/Purpur 1.21.x+ Plugin (Adventure Kyori MiniMessage, Lamp command framework, Triumph-GUI).
+6. **`tool`**: Production-grade CLI Tool / Utility with self-healing compiler diagnostics and automated test suite.
+
+---
+
+## 🎬 Programmatic Video, Mathematical Motion & Neural TTS Suite
+
+* **`programmatic-video-remotion`**: React-based video generation with Remotion, `@remotion/three`, frame-accurate spring physics, and headless MP4 rendering.
+* **`math-animation-manim`**: 3Blue1Brown's Manim mathematical animation engine: formula morphing (`TransformMatchingTex`), 3D coordinate graphs, and visual geometric proofs.
+* **`vietnamese-neural-tts`**: Natural Vietnamese voiceover generation via **VieNeu-TTS** (regional accents Bắc/Trung/Nam) and **ViFastTTS** (low-latency streaming), word-level alignment, and `.srt` subtitle generation.
+* **`media-pipeline-ffmpeg`**: Universal FFmpeg media automation: audio ducking (`sidechaincompress` auto-lowers BGM during voiceover), subtitle burning, NVENC hardware encoding, and 16:9 to 9:16 Shorts/Reels conversion.
+* **`motion-graphics-hyperframes`**: HyperFrames, GSAP Timelines, and Three.js 60fps deterministic canvas frame capture for high-end web video rendering.
 
 ---
 
 ## 🎮 Game Development & Game Feel ("Juice") Arsenal
 
-`skill-for-ai` includes specialized game creation skills and curated asset libraries:
-
 * **`game-development-godot`**: Godot 4.3+ GDScript standards, strict static typing, node decoupling ("Call Down, Signal Up"), custom Resource (`.tres`) architecture, and headless verification (`godot --headless --quit`).
 * **`game-development-unity`**: Unity C# best practices, zero-GC object pooling (`UnityEngine.Pool`), ScriptableObjects data channels, and new Input System.
 * **`game-design-and-feel`**: Core Loop formulation (Action $\to$ Reward $\to$ Progression), Game Balancing formulas, GDD templates, and the 5 Game Feel Invariants (Screen shake, Hitstop micro-pause, Squash & stretch, Coyote time, Jump buffering).
-* **`game-assets-and-audio`**: Curated directory of 100% free commercial-grade game assets:
-  * *2D & UI*: Kenney.nl (CC0), Itch.io free assets, OpenGameArt.org, CraftPix, Game-icons.net (4,000+ vector icons).
-  * *3D & Materials*: Quaternius.com (Low-poly CC0), Poly.pizza, Adobe Mixamo (Rigs & animations), Poly Haven / AmbientCG (PBR textures & HDRIs CC0).
-  * *Audio & BGM*: Freesound.org (CC0), Pixabay SFX, Sonniss GDC Hollywood-grade audio bundles, Incompetech.
-  * *Open-Source Repositories*: `KenneyNL`, `Calinou/awesome-godot`, `ellisonleao/magictools`.
-* **`game-engine-mcp-integration`**: Model Context Protocol servers connecting AI Agents directly to engine runtimes:
-  * *Godot MCP*: Headless execution, live crash debug log parsing, `.tscn` editing.
-  * *Unity MCP*: Hierarchy inspection, prefab management, Play Mode error inspection.
-  * *Blender MCP*: Python API 3D procedural modeling and `.glb` asset export.
-  * *Aseprite MCP*: Automated sprite creation and spritesheet packing.
+* **`game-assets-and-audio`**: Curated directory of 100% free commercial-grade game assets: Kenney.nl (CC0), Quaternius (Low-poly CC0), Adobe Mixamo (Rigs & animations), Poly Haven / AmbientCG (PBR textures & HDRIs CC0), Freesound.org, Pixabay SFX, Sonniss GDC Hollywood-grade audio bundles.
+* **`game-engine-mcp-integration`**: Model Context Protocol servers connecting AI Agents directly to engine runtimes (Godot MCP, Unity MCP, Blender MCP, Aseprite MCP).
 
 ---
 
 ## 🌐 1-Click Web Control Center (Dashboard)
-
-Prefer a visual dashboard? Control your entire multi-agent ecosystem and scaffold projects with 1 click:
 
 ```bash
 # Launch from terminal
@@ -95,10 +96,11 @@ xaydung ui
 
 ---
 
-## 📦 Packaged Skills (325 Production Skills)
+## 📦 Packaged Skills (331 Production Skills)
 
-* **High-End Web UI & Anti-Slop**: `anti-slop-web-ui`, `react-bits`, `animate-ui`, `cinematic-3d-web`, `gsap-scroll-mastery`, `vercel-react-performance`.
+* **Programmatic Video & Motion Graphics**: `programmatic-video-remotion`, `math-animation-manim`, `vietnamese-neural-tts`, `media-pipeline-ffmpeg`, `motion-graphics-hyperframes`.
 * **Game Development**: `game-development-godot`, `game-development-unity`, `game-design-and-feel`, `game-assets-and-audio`, `game-engine-mcp-integration`.
+* **High-End Web UI & Anti-Slop**: `anti-slop-web-ui`, `react-bits`, `animate-ui`, `cinematic-3d-web`, `gsap-scroll-mastery`, `vercel-react-performance`.
 * **Autonomous Web & Mobile Agents**: `browser-use-agent`, `mobile-app-automation-agent`.
 * **Minecraft Clean Architecture**: 13 Paper/Purpur & modding skills (`minecraft-plugin-dev`, `minecraft-modding`, `minecraft-commands-scripting`, etc.).
 * **Enterprise CyberSecurity**: `cloudflare-security-audit`, `owasp-top-10-audit`, `owasp-security-cheatsheets`, `siem-detection-and-blue-team`, `secret-leak-detection`, `reverse-engineer-anything` (REA).
