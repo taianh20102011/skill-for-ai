@@ -7,7 +7,7 @@
 
 ## 🚀 Universal One-Liner Trigger: `!exec: <task>` or `/swarm: <task>`
 
-Whenever a prompt starts with `!exec:` or `/swarm:`, IMMEDIATELY execute all 331 skills end-to-end:
+Whenever a prompt starts with `!exec:` or `/swarm:`, IMMEDIATELY execute all 332 skills end-to-end:
 1. **Spec & Architecture**: Autonomous decomposition, edge cases handled.
 2. **Minimalist Code Discipline**: Ponytail YAGNI (-53% code) & Karpathy Guidelines (surgical changes, think before coding).
 3. **Alabaster Porcelain + GSAP 25+**: 6px radius, CNC sub-pixel 1px border, Plus Jakarta Sans, hardware-accelerated 120fps motion.
@@ -22,7 +22,7 @@ Before writing ANY code, generating files, or proposing architecture:
 1. **Skill Discovery**: If there is even a 1% chance a skill applies, invoke it immediately.
 2. **Priority Order**:
    - Process skills FIRST: `superpowers:brainstorming` (clarify spec in bite-sized chunks) or `superpowers:systematic-debugging` (root-cause isolation).
-   - Domain execution skills NEXT: `modern-fullstack-gsap-security`, `frontend-design`, `game-development-godot`, `programmatic-video-remotion`, `math-animation-manim`, `cloudflare-security-audit`.
+   - Domain execution skills NEXT: `modern-fullstack-gsap-security`, `frontend-design`, `meta-astryx-design-system`, `game-development-godot`, `programmatic-video-remotion`, `math-animation-manim`, `cloudflare-security-audit`.
    - Quality gates LAST: `karpathy-guidelines`, `ponytail`, `verification-before-completion`.
 
 ---
