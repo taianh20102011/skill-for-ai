@@ -1,7 +1,7 @@
 {
   "name": "skill-for-ai",
-  "version": "1.1.0",
-  "description": "Universal 320+ Anti-Slop Agent Skills, Autonomous /xaydung Scaffolder, and Security Suite for Claude Code, Antigravity, Cursor, Codex, and OpenCode.",
+  "version": "1.2.0",
+  "description": "Universal 337+ Anti-Slop Agent Skills, Autonomous /xaydung Scaffolder, and Security Suite for Claude Code, Antigravity, Cursor, Codex, and OpenCode.",
   "main": "bin/cli.js",
   "bin": {
     "skill-for-ai": "bin/cli.js",
