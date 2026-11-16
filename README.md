@@ -1,4 +1,4 @@
-# ⚡ SKILL-FOR-AI: Ultimate 332+ Agent Skills & Autonomous /xaydung Scaffolder
+# ⚡ SKILL-FOR-AI: Ultimate 337+ Agent Skills & Autonomous /xaydung Scaffolder
 
 <div align="center">
 
@@ -6,7 +6,7 @@
 
 </div>
 
-> **Universal 332+ Autonomous Agent Skills, Autonomous `/xaydung` Project Scaffolder, Meta Astryx Design System, Video/Motion Graphics Suite (Remotion / Manim / HyperFrames / TTS), Game Dev Arsenal, and Anti-Slop Security Ecosystem** for modern AI Coding Agents: **Claude Code, Google Antigravity, Cursor, OpenAI Codex, OpenCode, Aider, and Cline**.
+> **Universal 337+ Autonomous Agent Skills, Autonomous `/xaydung` Project Scaffolder, De-Slopping Engine (`/unslop`), Google Chrome Modern Web Guidance, OpenAI Codex Security, Meta Astryx, Video/Motion Graphics Suite, Game Dev Arsenal, and Anti-Slop Security Ecosystem** for modern AI Coding Agents: **Claude Code, Google Antigravity, Cursor, OpenAI Codex, OpenCode, Aider, and Cline**.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node.js](https://img.shields.io/badge/Node.js-18+-green.svg)](https://nodejs.org/)
@@ -23,7 +23,7 @@ npx skill-for-ai
 ```
 *(Or install non-interactively with auto-confirmation: `npx skill-for-ai -y`)*
 
-This command automatically deploys and links **all 332+ Production Skills** across your agent runtimes:
+This command automatically deploys and links **all 337+ Production Skills** across your agent runtimes:
 * 🔹 **Google Antigravity / Gemini CLI**: `~/.gemini/config/skills`
 * 🔹 **Claude Code**: `~/.claude/skills`
 * 🔹 **OpenCode / Codex Agents**: `~/.agents/skills`
@@ -31,9 +31,10 @@ This command automatically deploys and links **all 332+ Production Skills** acro
 
 ---
 
-## 🛠️ Autonomous Super-Command: `/xaydung`
+## 🛠️ Autonomous Super-Commands: `/xaydung` & `/unslop`
 
-`skill-for-ai` comes with an integrated autonomous project scaffolder. You can invoke it in your terminal or **directly inside the chat window of Antigravity, Claude Code, or Cursor**:
+### 1. Project Scaffolder (`/xaydung`)
+Invoke directly inside **Antigravity, Claude Code, or Cursor**:
 
 ```text
 /xaydung web <web idea / specifications>
@@ -44,26 +45,24 @@ This command automatically deploys and links **all 332+ Production Skills** acro
 /xaydung tool <CLI utility or automation script>
 ```
 
-### Or run directly from terminal:
-```bash
-xaydung web "SaaS Landing page with dark mode, Meta Astryx design tokens and GSAP ScrollTrigger"
-xaydung app "Modern desktop markdown notes app with Tauri v2"
-xaydung game "2D Roguelite survivor game with hitstop, screen shake and EventBus"
-xaydung video "Mathematical calculus proof video with 3D canvas and Vietnamese voiceover"
-xaydung plugin "Multi-server economy synchronization with Adventure MiniMessage"
-xaydung tool "High-speed log analysis CLI with automated test suite"
+### 2. UI De-Slopping Engine (`/unslop`)
+Audit and refine AI-generated user interfaces into intentional, human-crafted designs:
+
+```text
+/unslop [file | URL | component]
 ```
+Executes **9 sequential review passes**: *Spacing $\to$ Color $\to$ Icons $\to$ Copy $\to$ Typography $\to$ Layout $\to$ Details $\to$ Visuals $\to$ Motion*.
 
 ---
 
-## 🌐 Meta Astryx Design System (`meta/astryx`)
+## 💎 Advanced Frontend, Modern Web & Security Ecosystem
 
-* **`meta-astryx-design-system`**: Full integration of Meta's open-source design system powering thousands of internal tools over 8+ years:
-  * **Agent-Ready Shared Architecture**: Both human developers and AI assistants reference the exact same component schemas, props, and design tokens.
-  * **React 19 + StyleX**: High-performance compile-time CSS with decoupled cascade custom properties.
-  * **Cascade Theming**: Seamless switching between themes (*neutral*, *matcha*, *gothic*, *y2k*, dark/light) without React tree re-renders.
-  * **150+ Accessible Primitives**: Accessible, production-tested components with open internals (`npx astryx swizzle <Component>`).
-  * **Native MCP Server**: Launch with `npx @astryxdesign/cli mcp` for zero-hallucination agent code generation.
+* **`unslop`** (`heydamir/unslop`): De-slop generic AI UI (eliminate purple neon glows, random emoji labels, and shouty copy) across 9 ordered design passes.
+* **`modern-web-guidance`** (`googlechrome/modern-web-guidance`): Google Chrome's official web platform standards for coding agents: CSS Container Queries (`@container`), CSS Anchor Positioning, native Popover API, `<dialog>`, View Transitions, and Core Web Vitals (LCP < 2.5s, INP < 200ms, CLS < 0.1).
+* **`codex-security`** (`openai/codex-security`): OpenAI's repository security auditing, autonomous vulnerability remediation, minimal-blast-radius patches, and zero-trust secret protection.
+* **`watermarks-remover`** (`guillaumemeyer/watermarks-remover`): Inspect and strip AI provenance watermarks, hidden Unicode variation selectors, zero-width tracking characters, and metadata from owned files.
+* **`agentes-chat`** (`agentes-chat/agentes-chat`): Open-source self-hosted human-AI team collaboration hub with shared channels, DMs, and Model Context Protocol (MCP) tool dispatch.
+* **`meta-astryx-design-system`** (`meta/astryx`): Meta's open-source design system powering internal tools over 8+ years with React 19, StyleX, cascade theming, and native MCP server.
 
 ---
 
@@ -99,16 +98,14 @@ xaydung ui
 
 ---
 
-## 📦 Packaged Skills (332 Production Skills)
+## 📦 Packaged Skills (337 Production Skills)
 
-* **Meta Design System**: `meta-astryx-design-system`.
+* **Design De-Slopping & Modern Web**: `unslop`, `modern-web-guidance`, `meta-astryx-design-system`, `anti-slop-web-ui`, `react-bits`, `animate-ui`, `cinematic-3d-web`, `gsap-scroll-mastery`, `vercel-react-performance`.
+* **Enterprise Security & Privacy**: `codex-security`, `watermarks-remover`, `cloudflare-security-audit`, `owasp-top-10-audit`, `owasp-security-cheatsheets`, `siem-detection-and-blue-team`, `secret-leak-detection`, `reverse-engineer-anything` (REA).
+* **Multi-Agent Collaboration**: `agentes-chat`, `superpowers`, `ponytail`, `local-ai-engine`, `autonomous-execution-loop`.
 * **Programmatic Video & Motion Graphics**: `programmatic-video-remotion`, `math-animation-manim`, `vietnamese-neural-tts`, `media-pipeline-ffmpeg`, `motion-graphics-hyperframes`.
 * **Game Development**: `game-development-godot`, `game-development-unity`, `game-design-and-feel`, `game-assets-and-audio`, `game-engine-mcp-integration`.
-* **High-End Web UI & Anti-Slop**: `anti-slop-web-ui`, `react-bits`, `animate-ui`, `cinematic-3d-web`, `gsap-scroll-mastery`, `vercel-react-performance`.
-* **Autonomous Web & Mobile Agents**: `browser-use-agent`, `mobile-app-automation-agent`.
 * **Minecraft Clean Architecture**: 13 Paper/Purpur & modding skills (`minecraft-plugin-dev`, `minecraft-modding`, `minecraft-commands-scripting`, etc.).
-* **Enterprise CyberSecurity**: `cloudflare-security-audit`, `owasp-top-10-audit`, `owasp-security-cheatsheets`, `siem-detection-and-blue-team`, `secret-leak-detection`, `reverse-engineer-anything` (REA).
-* **Autonomous Loops**: `superpowers`, `ponytail`, `local-ai-engine` (Ollama/LM Studio offline), `autonomous-execution-loop`.
 
 ---
 

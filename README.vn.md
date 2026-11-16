@@ -1,4 +1,4 @@
-# ⚡ SKILL-FOR-AI: Hệ Sinh Thái 332+ Kỹ Năng Agent, Meta Astryx & /xaydung
+# ⚡ SKILL-FOR-AI: Hệ Sinh Thái 337+ Kỹ Năng Agent, Khử Rác UI /unslop, Chrome Web Guidance & Codex Security
 
 <div align="center">
 
@@ -6,7 +6,7 @@
 
 </div>
 
-> **Bộ 332+ kỹ năng tự hành (Autonomous Agent Skills), công cụ khởi tạo dự án siêu tốc `/xaydung`, tích hợp hệ thống thiết kế Meta Astryx (`meta/astryx`), bộ video lập trình (Remotion, Manim, HyperFrames, VieNeu-TTS) và Game Dev toàn diện** dành cho các AI Coding Agents: **Claude Code, Google Antigravity, Cursor, OpenAI Codex, OpenCode, Aider, và Cline**.
+> **Bộ 337+ kỹ năng tự hành (Autonomous Agent Skills), công cụ khởi tạo dự án siêu tốc `/xaydung`, quy trình khử rác giao diện AI (`/unslop`), Google Chrome Modern Web Guidance, OpenAI Codex Security, Meta Astryx, bộ video lập trình và Game Dev toàn diện** dành cho các AI Coding Agents: **Claude Code, Google Antigravity, Cursor, OpenAI Codex, OpenCode, Aider, và Cline**.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node.js](https://img.shields.io/badge/Node.js-18+-green.svg)](https://nodejs.org/)
@@ -23,7 +23,7 @@ npx skill-for-ai
 ```
 *(Hoặc chạy tự động bỏ qua xác nhận: `npx skill-for-ai -y`)*
 
-Lệnh trên sẽ tự động cài đặt và liên kết toàn bộ **332+ Kỹ Năng** vào môi trường làm việc của bạn:
+Lệnh trên sẽ tự động cài đặt và liên kết toàn bộ **337+ Kỹ Năng** vào môi trường làm việc của bạn:
 * 🔹 **Google Antigravity / Gemini CLI**: `~/.gemini/config/skills`
 * 🔹 **Claude Code**: `~/.claude/skills`
 * 🔹 **OpenCode / Codex Agents**: `~/.agents/skills`
@@ -31,9 +31,10 @@ Lệnh trên sẽ tự động cài đặt và liên kết toàn bộ **332+ K�
 
 ---
 
-## 🛠️ Siêu Lệnh Tự Hành Khởi Tạo Dự Án: `/xaydung`
+## 🛠️ Siêu Lệnh Tự Hành: `/xaydung` & `/unslop`
 
-`skill-for-ai` tích hợp sẵn bộ khung tự động khởi tạo dự án. Bạn có thể gọi trực tiếp trong **Terminal** hoặc **gõ ngay trong khung chat của Antigravity, Claude Code, Cursor**:
+### 1. Khởi Tạo Dự Án Siêu Tốc (`/xaydung`)
+Gõ ngay trong khung chat của **Antigravity, Claude Code, Cursor**:
 
 ```text
 /xaydung web <mô tả dự án web>
@@ -44,26 +45,24 @@ Lệnh trên sẽ tự động cài đặt và liên kết toàn bộ **332+ K�
 /xaydung tool <công cụ CLI hoặc script tự động hóa>
 ```
 
-### Hoặc chạy trực tiếp từ Terminal:
-```bash
-xaydung web "SaaS Landing page dark mode với Meta Astryx design tokens và GSAP ScrollTrigger"
-xaydung app "Ứng dụng ghi chú markdown cho desktop bằng Tauri v2"
-xaydung game "Game 2D Roguelite survivor có hitstop, rung màn hình và EventBus"
-xaydung video "Video chứng minh giải tích toán học 3D có thuyết minh tiếng Việt"
-xaydung plugin "Plugin đồng bộ kinh tế đa server dùng Adventure MiniMessage"
-xaydung tool "Công cụ CLI phân tích log tốc độ cao có kèm unit test"
+### 2. Khử Rác Giao Diện AI (`/unslop`)
+Kiểm toán và thiết kế lại giao diện AI cẩu thả thành sản phẩm chỉn chu có chiều sâu:
+
+```text
+/unslop [tệp tin | đường dẫn URL | component]
 ```
+Kích hoạt chu trình **9 bước tuần tự**: *Khoảng cách (Spacing) $\to$ Màu sắc (Color) $\to$ Biểu tượng (Icons) $\to$ Nội dung chữ (Copy) $\to$ Kiểu chữ (Typography) $\to$ Bố cục (Layout) $\to$ Chi tiết phay viền (Details) $\to$ Đồ họa hình ảnh (Visuals) $\to$ Chuyển động lò xo (Motion)*.
 
 ---
 
-## 🌐 Hệ Thống Thiết Kế Meta Astryx (`meta/astryx`)
+## 💎 Hệ Sinh Thái Web Hiện Đại, Thiết Kế & Bảo Mật
 
-* **`meta-astryx-design-system`**: Tích hợp toàn diện Design System mã nguồn mở từ Meta, kế thừa 8 năm phát triển nội bộ cho hàng ngàn ứng dụng:
-  * **Chuẩn chung cho Developer & AI Agent**: Lập trình viên và AI Coding Agents sử dụng chung một bộ schema component, prop typing và design tokens.
-  * **React 19 + StyleX**: Động cơ CSS biên dịch trước (compile-time) kết hợp biến CSS tuân theo phân cấp (cascade) mượt mà.
-  * **Đổi Theme Không Cần Render Lại**: Chuyển đổi giữa các giao diện (*neutral*, *matcha*, *gothic*, *y2k*, dark/light) tức thì tại tầng CSS cascade.
-  * **Hơn 150 Component Chuẩn**: Hỗ trợ xuất mã nguồn gốc ra ngoài (`npx astryx swizzle <Component>`) để tùy biến không giới hạn.
-  * **Tích Hợp MCP Server Trực Tiếp**: Chạy `npx @astryxdesign/cli mcp` để AI coding agents tra cứu chính xác thuộc tính mà không bao giờ bị bịa code (hallucination).
+* **`unslop`** (`heydamir/unslop`): Triệt tiêu phong cách AI Slop (xóa viền neon tím, nhãn emoji tùy tiện, sáo ngữ quảng cáo rỗng tuếch) qua 9 bước kiểm định thiết kế khắt khe.
+* **`modern-web-guidance`** (`googlechrome/modern-web-guidance`): Quy chuẩn nền tảng Web hiện đại chính thức từ đội ngũ Google Chrome: CSS Container Queries (`@container`), CSS Anchor Positioning, Popover API, `<dialog>`, View Transitions API, tối ưu Core Web Vitals (LCP < 2.5s, INP < 200ms, CLS < 0.1).
+* **`codex-security`** (`openai/codex-security`): Bộ công cụ kiểm toán mã nguồn từ OpenAI, tự động tạo bản vá lỗ hổng (patch) với phạm vi ảnh hưởng tối thiểu, kiểm tra chống rò rỉ secret key.
+* **`watermarks-remover`** (`guillaumemeyer/watermarks-remover`): Kiểm tra và loại bỏ các loại watermark AI ẩn, ký tự Unicode biến thể (variation selectors), khoảng trắng ẩn (zero-width spaces) và metadata định danh trên tài liệu/hình ảnh bạn sở hữu.
+* **`agentes-chat`** (`agentes-chat/agentes-chat`): Nền tảng cộng tác nhóm tự lưu trữ (self-hosted) kết nối con người và các AI Agent (Claude, GPT, Gemini) trong các kênh thảo luận chung có gắn công cụ MCP.
+* **`meta-astryx-design-system`** (`meta/astryx`): Hệ thống thiết kế của Meta với React 19, StyleX, cascade theming đổi giao diện không cần render lại, và MCP server tra cứu token chuẩn.
 
 ---
 
@@ -99,16 +98,14 @@ xaydung ui
 
 ---
 
-## 📦 Danh Mục Kỹ Năng Đóng Gói (332 Kỹ Năng)
+## 📦 Danh Mục Kỹ Năng Đóng Gói (337 Kỹ Năng)
 
-* **Meta Design System**: `meta-astryx-design-system`.
+* **Khử Rác Giao Diện & Web Hiện Đại**: `unslop`, `modern-web-guidance`, `meta-astryx-design-system`, `anti-slop-web-ui`, `react-bits`, `animate-ui`, `cinematic-3d-web`, `gsap-scroll-mastery`, `vercel-react-performance`.
+* **An Toàn Mã Nguồn & Riêng Tư**: `codex-security`, `watermarks-remover`, `cloudflare-security-audit`, `owasp-top-10-audit`, `owasp-security-cheatsheets`, `siem-detection-and-blue-team`, `secret-leak-detection`, `reverse-engineer-anything` (REA).
+* **Cộng Tác Nhóm Đa Agent**: `agentes-chat`, `superpowers`, `ponytail`, `local-ai-engine`, `autonomous-execution-loop`.
 * **Video Lập Trình & Đồ Họa Toán Học**: `programmatic-video-remotion`, `math-animation-manim`, `vietnamese-neural-tts`, `media-pipeline-ffmpeg`, `motion-graphics-hyperframes`.
 * **Làm Game Chuyên Nghiệp**: `game-development-godot`, `game-development-unity`, `game-design-and-feel`, `game-assets-and-audio`, `game-engine-mcp-integration`.
-* **Giao Diện Web Cao Cấp (Anti-Slop)**: `anti-slop-web-ui`, `react-bits`, `animate-ui`, `cinematic-3d-web`, `gsap-scroll-mastery`, `vercel-react-performance`.
-* **Tự Động Hóa Web & Mobile**: `browser-use-agent`, `mobile-app-automation-agent`.
 * **Kiến Trúc Sạch Minecraft**: 13 kỹ năng Paper/Purpur & modding (`minecraft-plugin-dev`, `minecraft-modding`, `minecraft-commands-scripting`, v.v.).
-* **Bảo Mật & Phòng Thủ Doanh Nghiệp**: `cloudflare-security-audit`, `owasp-top-10-audit`, `owasp-security-cheatsheets`, `siem-detection-and-blue-team`, `secret-leak-detection`, `reverse-engineer-anything` (REA).
-* **Vòng Lặp Tự Hành**: `superpowers`, `ponytail`, `local-ai-engine` (Ollama/LM Studio offline), `autonomous-execution-loop`.
 
 ---
 

@@ -7,7 +7,7 @@
 
 ## 🚀 Universal One-Liner Trigger: `!exec: <task>` or `/swarm: <task>`
 
-Whenever a prompt starts with `!exec:` or `/swarm:`, IMMEDIATELY execute all 332 skills end-to-end:
+Whenever a prompt starts with `!exec:` or `/swarm:`, IMMEDIATELY execute all 337 skills end-to-end:
 1. **Spec & Architecture**: Autonomous decomposition, edge cases handled.
 2. **Minimalist Code Discipline**: Ponytail YAGNI (-53% code) & Karpathy Guidelines (surgical changes, think before coding).
 3. **Alabaster Porcelain + GSAP 25+**: 6px radius, CNC sub-pixel 1px border, Plus Jakarta Sans, hardware-accelerated 120fps motion.
@@ -22,12 +22,12 @@ Before writing ANY code, generating files, or proposing architecture:
 1. **Skill Discovery**: If there is even a 1% chance a skill applies, invoke it immediately.
 2. **Priority Order**:
    - Process skills FIRST: `superpowers:brainstorming` (clarify spec in bite-sized chunks) or `superpowers:systematic-debugging` (root-cause isolation).
-   - Domain execution skills NEXT: `modern-fullstack-gsap-security`, `frontend-design`, `meta-astryx-design-system`, `game-development-godot`, `programmatic-video-remotion`, `math-animation-manim`, `cloudflare-security-audit`.
+   - Domain execution skills NEXT: `modern-fullstack-gsap-security`, `frontend-design`, `meta-astryx-design-system`, `unslop`, `modern-web-guidance`, `codex-security`, `watermarks-remover`, `game-development-godot`, `programmatic-video-remotion`, `math-animation-manim`, `cloudflare-security-audit`.
    - Quality gates LAST: `karpathy-guidelines`, `ponytail`, `verification-before-completion`.
 
 ---
 
-## 💎 2. Visual & Frontend Invariants (Alabaster Porcelain + GSAP)
+## 💎 2. Visual & Frontend Invariants (Alabaster Porcelain + GSAP + Unslop)
 
 Every UI component built in this repository MUST strictly follow:
 - **Theme**: Alabaster Porcelain canvas `#F7F8FA`, cards `#FFFFFF`, ink `#0F172A`, sapphire accent `#2563EB`.
@@ -37,6 +37,7 @@ Every UI component built in this repository MUST strictly follow:
   - Light: `border border-[#E2E8F0] shadow-[0_4px_20px_-2px_rgba(15,23,42,0.05),0_1px_2px_0_rgba(15,23,42,0.04)]`
 - **Typography**: `Plus Jakarta Sans` for UI, `JetBrains Mono` with `tabular-nums` for code/numbers.
 - **GSAP 25+ Engine**: Hardware-accelerated 120fps animations wrapped in `useGSAP` with auto-cleanup. Use `ScrollSmoother`, `ScrollTrigger`, `Flip`, `DrawSVG`, `CustomBounce`, and `CustomWiggle`.
+- **Unslop Quality Gate**: Pass all 9 review passes (spacing, color, icons, copy, typography, layout, details, visuals, motion) to eliminate generic AI aesthetic tells.
 
 ---
 
@@ -61,13 +62,14 @@ Whenever working on programmatic video, mathematical animations, or media proces
 
 ---
 
-## 🛡️ 5. Bank-Grade Security Invariants
+## 🛡️ 5. Bank-Grade Security Invariants (Codex Security & Cloudflare Standards)
 
 - **Mandatory 2FA**: Admin & sensitive actions require 6-digit numeric Gmail OTP verified via `HMAC-SHA256` (10-min expiration, max 5 attempts, IP-bound).
 - **Session Revocation**: Password reset increments `sessionVersion`, immediately invalidating all active sessions.
 - **Zero-Trust RBAC**: Server-side role checks on all mutations; never trust client-side claims.
 - **Cookies**: `HttpOnly; Secure; SameSite=Strict; Path=/`.
 - **ID Obfuscation**: Never expose autoincrement integer IDs. Use UUID v4 or Hashids.
+- **Codex Security Patching**: Surgical vulnerability patches with minimal blast radius, automated regression verification, and parameter binding.
 
 ---
 
