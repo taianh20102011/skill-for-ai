@@ -31,7 +31,7 @@ This command automatically deploys and links **all 337+ Production Skills** acro
 
 ---
 
-## 🛠️ Autonomous Super-Commands: `/xaydung` & `/unslop`
+## 🛠 Autonomous Super-Commands: `/xaydung` & `/unslop`
 
 ### 1. Project Scaffolder (`/xaydung`)
 Invoke directly inside **Antigravity, Claude Code, or Cursor**:
@@ -58,6 +58,46 @@ unslop <file|dir> [--fix]
 /unslop [file | URL | component]
 ```
 Executes **9 sequential review passes**: *Spacing → Color → Icons → Copy → Typography → Layout → Details → Visuals → Motion*.
+
+### 3. AI Provenance & Watermark Sanitizer (`watermarks-remover`)
+```bash
+# In Terminal
+npx skill-for-ai watermarks-remover <file|dir> [--fix]
+
+# In AI Chat
+/watermarks-remover [file|dir]
+```
+Strips zero-width spaces (`\u200B`, `\u200C`, `\u200D`), variation selectors (`\uFE00`–`\uFE0F`), AI comments, and document metadata.
+
+### 4. Modern Web Standards Auditor (`modern-web-guidance`)
+```bash
+# In Terminal
+npx skill-for-ai modern-web-guidance <file|dir>
+
+# In AI Chat
+/modern-web-guidance [file|dir]
+```
+Audits web apps against Google Chrome modern platform features (Container Queries, Anchor Positioning, native `<dialog>`, and Core Web Vitals).
+
+### 5. Codex Security Vulnerability Scanner (`codex-security`)
+```bash
+# In Terminal
+npx skill-for-ai codex-security <file|dir>
+
+# In AI Chat
+/codex-security [file|dir]
+```
+Scans for exposed API keys, SQL/command injection vectors, and generates surgical minimal-blast-radius security patches.
+
+### 6. Multi-Agent Team Collaboration Hub (`agentes-chat`)
+```bash
+# In Terminal
+npx skill-for-ai agentes-chat [init|start|status]
+
+# In AI Chat
+/agentes-chat [init|start|status]
+```
+Spins up a self-hosted team collaboration hub via Docker Compose with dedicated agent channels and MCP tool bus.
 
 ---
 

@@ -59,6 +59,46 @@ unslop <file|dir> [--fix]
 ```
 Kích hoạt chu trình **9 bước tuần tự**: *Khoảng cách (Spacing) → Màu sắc (Color) → Biểu tượng (Icons) → Nội dung chữ (Copy) → Kiểu chữ (Typography) → Bố cục (Layout) → Chi tiết phay viền (Details) → Đồ họa hình ảnh (Visuals) → Chuyển động lò xo (Motion)*.
 
+### 3. Tẩy Rửa Dấu Vết & Watermark AI (`watermarks-remover`)
+```bash
+# Trong Terminal
+npx skill-for-ai watermarks-remover <tệp-tin|thư-mục> [--fix]
+
+# Trong AI Chat
+/watermarks-remover [tệp tin | thư mục]
+```
+Làm sạch các ký tự tàng hình (`\u200B`, `\u200C`, `\u200D`), mã biến thể ẩn (`\uFE00`–`\uFE0F`), comment phát sinh của AI và siêu dữ liệu tài liệu.
+
+### 4. Kiểm Định Chuẩn Web Hiện Đại Google Chrome (`modern-web-guidance`)
+```bash
+# Trong Terminal
+npx skill-for-ai modern-web-guidance <tệp-tin|thư-mục>
+
+# Trong AI Chat
+/modern-web-guidance [tệp tin | thư mục]
+```
+Kiểm tra và nâng cấp giao diện theo quy chuẩn Chrome DevRel (Container Queries, Anchor Positioning, native `<dialog>`, và Core Web Vitals).
+
+### 5. Quét Lỗ Hổng & Bản Vá Bảo Mật OpenAI Codex (`codex-security`)
+```bash
+# Trong Terminal
+npx skill-for-ai codex-security <tệp-tin|thư-mục>
+
+# Trong AI Chat
+/codex-security [tệp tin | thư mục]
+```
+Rà quét khóa bí mật bị lộ, nguy cơ injection và tự động tạo bản vá phẫu thuật an toàn với bán kính tác động tối thiểu.
+
+### 6. Trung Tâm Cộng Tác Đa Agent Tự Host (`agentes-chat`)
+```bash
+# Trong Terminal
+npx skill-for-ai agentes-chat [init|start|status]
+
+# Trong AI Chat
+/agentes-chat [init|start|status]
+```
+Khởi tạo và chạy trung tâm chat cộng tác đa Agent qua Docker Compose với bus công cụ MCP tích hợp sẵn.
+
 ---
 
 ## 💎 Hệ Sinh Thái Web Hiện Đại, Thiết Kế & Bảo Mật
