@@ -48,10 +48,16 @@ Gõ ngay trong khung chat của **Antigravity, Claude Code, Cursor**:
 ### 2. Khử Rác Giao Diện AI (`/unslop`)
 Kiểm toán và thiết kế lại giao diện AI cẩu thả thành sản phẩm chỉn chu có chiều sâu:
 
-```text
+```bash
+# Trong Terminal
+npx skill-for-ai unslop <file|dir> [--fix]
+# hoặc
+unslop <file|dir> [--fix]
+
+# Trong AI Chat
 /unslop [tệp tin | đường dẫn URL | component]
 ```
-Kích hoạt chu trình **9 bước tuần tự**: *Khoảng cách (Spacing) $\to$ Màu sắc (Color) $\to$ Biểu tượng (Icons) $\to$ Nội dung chữ (Copy) $\to$ Kiểu chữ (Typography) $\to$ Bố cục (Layout) $\to$ Chi tiết phay viền (Details) $\to$ Đồ họa hình ảnh (Visuals) $\to$ Chuyển động lò xo (Motion)*.
+Kích hoạt chu trình **9 bước tuần tự**: *Khoảng cách (Spacing) → Màu sắc (Color) → Biểu tượng (Icons) → Nội dung chữ (Copy) → Kiểu chữ (Typography) → Bố cục (Layout) → Chi tiết phay viền (Details) → Đồ họa hình ảnh (Visuals) → Chuyển động lò xo (Motion)*.
 
 ---
 

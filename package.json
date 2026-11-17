@@ -6,6 +6,7 @@
   "bin": {
     "skill-for-ai": "bin/cli.js",
     "xaydung": "bin/xaydung.js",
+    "unslop": "bin/unslop.js",
     "skill-ui": "bin/dashboard.js"
   },
   "files": [
@@ -22,6 +23,7 @@
     "ui": "node bin/dashboard.js",
     "dashboard": "node bin/dashboard.js",
     "xaydung": "node bin/xaydung.js",
+    "unslop": "node bin/unslop.js",
     "install-skills": "node bin/cli.js"
   },
   "keywords": [

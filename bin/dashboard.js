@@ -17,7 +17,7 @@ const globalMeshDir = path.join(homeDir, '.unified-ai-mesh');
 
 let systemLogs = [
   `[${new Date().toLocaleTimeString()}] Unified AI Mesh Dashboard initialized.`,
-  `[${new Date().toLocaleTimeString()}] Loaded 119 autonomous agent skills.`,
+  `[${new Date().toLocaleTimeString()}] Loaded 337 autonomous agent skills.`,
   `[${new Date().toLocaleTimeString()}] Local AI Engine listener ready.`
 ];
 
@@ -158,7 +158,7 @@ function getHTML() {
   </script>
   <style>
     body { background-color: #080808; color: #f4f4f5; }
-    .glass { background: rgba(17, 17, 19, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.07); }
+    .glass { background: rgba(17, 17, 19, 0.7); border: 1px solid rgba(255, 255, 255, 0.07); }
     .glass-card { background: #111113; border: 1px solid #202024; transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1); }
     .glass-card:hover { border-color: #3b82f6; transform: translateY(-2px); box-shadow: 0 8px 24px -8px rgba(59, 130, 246, 0.15); }
     .pulse-dot { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
@@ -170,18 +170,16 @@ function getHTML() {
   <!-- Header -->
   <header class="sticky top-0 z-50 glass border-b border-zinc-800/80 px-6 py-4 flex items-center justify-between">
     <div class="flex items-center gap-3">
-      <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center shadow-lg shadow-blue-500/20 font-mono font-bold text-lg text-white">
-        ⚡
-      </div>
+      <div class="w-10 h-10 rounded-[6px] bg-[#2563EB] flex items-center justify-center shadow-lg shadow-sm font-mono font-bold text-lg text-white"> </div>
       <div>
         <div class="flex items-center gap-2">
           <h1 class="text-lg font-bold tracking-tight text-white">SKILL-FOR-AI</h1>
-          <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/20">v1.0.0</span>
+          <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/20">v1.2.0</span>
           <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center gap-1">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 pulse-dot"></span> 119 Skills Active
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 pulse-dot"></span> 337 Skills Active
           </span>
-          <span id="badge-local-ai" class="px-2 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-purple-500/10 text-purple-400 border border-purple-500/20 flex items-center gap-1">
-            <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span> Local AI Ready
+          <span id="badge-local-ai" class="px-2 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-zinc-800 text-zinc-300 border border-zinc-700 flex items-center gap-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Local AI Ready
           </span>
         </div>
         <p class="text-xs text-zinc-400">Autonomous Multi-Agent Mesh & Local AI Engine (Zero API Cost)</p>
@@ -190,15 +188,13 @@ function getHTML() {
 
     <!-- Mode Selector & Quick Links -->
     <div class="flex items-center gap-3">
-      <div class="flex items-center bg-zinc-900 border border-zinc-800 rounded-xl p-1">
-        <button id="btn-senior" onclick="setMode('senior')" class="px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-200">
-          🌟 Senior Mode
+      <div class="flex items-center bg-zinc-900 border border-zinc-800 rounded-[6px] p-1">
+        <button id="btn-senior" onclick="setMode('senior')" class="px-3 py-1.5 rounded-[6px] text-xs font-medium transition-all duration-200"> Senior Mode
         </button>
-        <button id="btn-junior" onclick="setMode('junior')" class="px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-200">
-          🎓 Junior Mode
+        <button id="btn-junior" onclick="setMode('junior')" class="px-3 py-1.5 rounded-[6px] text-xs font-medium transition-all duration-200"> Junior Mode
         </button>
       </div>
-      <a href="https://github.com/taianh20102011/skill-for-ai" target="_blank" class="px-3.5 py-1.5 rounded-xl border border-zinc-800 hover:border-zinc-700 bg-zinc-900 text-xs text-zinc-300 font-medium transition-all flex items-center gap-1.5">
+      <a href="https://github.com/taianh20102011/skill-for-ai" target="_blank" class="px-3.5 py-1.5 rounded-[6px] border border-zinc-800 hover:border-zinc-700 bg-zinc-900 text-xs text-zinc-300 font-medium transition-all flex items-center gap-1.5">
         <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
         GitHub
       </a>
@@ -212,41 +208,41 @@ function getHTML() {
     <section>
       <div class="flex items-center justify-between mb-3">
         <h2 class="text-xs font-mono uppercase tracking-wider text-zinc-400 flex items-center gap-2">
-          <span>🤖 Connected Agent Ecosystem (Unified Mesh)</span>
+          <span> Connected Agent Ecosystem (Unified Mesh)</span>
         </h2>
         <span class="text-xs text-zinc-500 font-mono">Shared Memory: ~/.unified-ai-mesh/MEMORY.md</span>
       </div>
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
-        <div class="glass p-3.5 rounded-xl border border-zinc-800/80 flex items-center gap-3">
-          <div class="w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center font-bold text-xs">AG</div>
+        <div class="glass p-3.5 rounded-[6px] border border-[#202024] flex items-center gap-3">
+          <div class="w-8 h-8 rounded-[6px] bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center font-bold text-xs">AG</div>
           <div>
             <div class="text-xs font-semibold text-zinc-200">Antigravity</div>
             <div class="text-[10px] text-emerald-400 flex items-center gap-1 font-mono"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Synced</div>
           </div>
         </div>
-        <div class="glass p-3.5 rounded-xl border border-zinc-800/80 flex items-center gap-3">
-          <div class="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-xs">CC</div>
+        <div class="glass p-3.5 rounded-[6px] border border-[#202024] flex items-center gap-3">
+          <div class="w-8 h-8 rounded-[6px] bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-xs">CC</div>
           <div>
             <div class="text-xs font-semibold text-zinc-200">Claude Code</div>
             <div class="text-[10px] text-emerald-400 flex items-center gap-1 font-mono"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Synced</div>
           </div>
         </div>
-        <div class="glass p-3.5 rounded-xl border border-zinc-800/80 flex items-center gap-3">
-          <div class="w-8 h-8 rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center font-bold text-xs">CU</div>
+        <div class="glass p-3.5 rounded-[6px] border border-[#202024] flex items-center gap-3">
+          <div class="w-8 h-8 rounded-[6px] bg-zinc-800 border border-zinc-800 text-blue-400 flex items-center justify-center font-bold text-xs">CU</div>
           <div>
             <div class="text-xs font-semibold text-zinc-200">Cursor IDE</div>
             <div class="text-[10px] text-emerald-400 flex items-center gap-1 font-mono"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Rules Ready</div>
           </div>
         </div>
-        <div class="glass p-3.5 rounded-xl border border-zinc-800/80 flex items-center gap-3">
-          <div class="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-xs">CX</div>
+        <div class="glass p-3.5 rounded-[6px] border border-[#202024] flex items-center gap-3">
+          <div class="w-8 h-8 rounded-[6px] bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-xs">CX</div>
           <div>
             <div class="text-xs font-semibold text-zinc-200">Codex / Open</div>
             <div class="text-[10px] text-emerald-400 flex items-center gap-1 font-mono"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Connected</div>
           </div>
         </div>
-        <div class="glass p-3.5 rounded-xl border border-zinc-800/80 flex items-center gap-3">
-          <div class="w-8 h-8 rounded-lg bg-pink-500/10 border border-pink-500/20 text-pink-400 flex items-center justify-center font-bold text-xs">AI</div>
+        <div class="glass p-3.5 rounded-[6px] border border-[#202024] flex items-center gap-3">
+          <div class="w-8 h-8 rounded-[6px] bg-pink-500/10 border border-pink-500/20 text-pink-400 flex items-center justify-center font-bold text-xs">AI</div>
           <div>
             <div class="text-xs font-semibold text-zinc-200">Aider / Cline</div>
             <div class="text-[10px] text-emerald-400 flex items-center gap-1 font-mono"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Linked</div>
@@ -256,17 +252,15 @@ function getHTML() {
     </section>
 
     <!-- NEW SECTION: LOCAL AI ENGINE (OLLAMA / LM STUDIO) -->
-    <section class="glass-card rounded-2xl p-6 relative overflow-hidden border-purple-500/30 shadow-lg shadow-purple-500/5">
+    <section class="glass-card rounded-[6px] p-6 relative overflow-hidden border-zinc-700 shadow-lg shadow-sm/5">
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
         <div class="flex items-center gap-3">
-          <div class="w-9 h-9 rounded-xl bg-purple-600/20 text-purple-400 flex items-center justify-center font-bold text-base shadow-inner">
-            💻
+          <div class="w-9 h-9 rounded-[6px] bg-zinc-800 text-blue-400 flex items-center justify-center font-bold text-base shadow-inner">
           </div>
           <div>
             <div class="flex items-center gap-2">
               <h3 class="text-base font-bold text-white">Local AI Engine (Chạy Hoàn Toàn Offline / Miễn Phí 100%)</h3>
-              <span id="local-ai-status-pill" class="px-2 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                🟢 Ollama Connected
+              <span id="local-ai-status-pill" class="px-2 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"> Ollama Connected
               </span>
             </div>
             <p class="text-xs text-zinc-400">Không tốn tiền API, không cần mạng internet, giữ kín tuyệt đối dữ liệu mã nguồn.</p>
@@ -275,11 +269,11 @@ function getHTML() {
 
         <div class="flex items-center gap-2">
           <span class="text-xs text-zinc-400 font-mono">Model Local:</span>
-          <select id="local-model-select" class="bg-zinc-900 border border-zinc-700/80 rounded-xl px-3 py-1.5 text-xs font-mono font-semibold text-purple-300 focus:outline-none focus:border-purple-500">
+          <select id="local-model-select" class="bg-zinc-900 border border-zinc-700/80 rounded-[6px] px-3 py-1.5 text-xs font-mono font-semibold text-zinc-200 focus:outline-none focus:border-zinc-700">
             <option value="gemma4:12b">gemma4:12b (Active)</option>
           </select>
-          <button onclick="connectLocalToAgents()" id="btn-connect-local" class="px-3.5 py-1.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-semibold transition-all shadow-md shadow-purple-600/20 active:scale-95 flex items-center gap-1.5">
-            <span>⚡ Nối Vào Toàn Bộ Coding Agents</span>
+          <button onclick="connectLocalToAgents()" id="btn-connect-local" class="px-3.5 py-1.5 rounded-[6px] bg-purple-600 hover:bg-purple-500 text-white text-xs font-semibold transition-all shadow-md shadow-sm active:scale-95 flex items-center gap-1.5">
+            <span>Nối Vào Toàn Bộ Coding Agents</span>
           </button>
         </div>
       </div>
@@ -287,13 +281,13 @@ function getHTML() {
       <!-- Test Prompt & Instant Local Inference -->
       <div class="space-y-3 pt-2">
         <div class="flex gap-2">
-          <input id="local-test-prompt" type="text" placeholder="Gõ thử lệnh để kiểm tra AI Local (Ví dụ: Viết hàm debounce trong TypeScript...)" class="flex-1 bg-zinc-900/90 border border-zinc-800 rounded-xl px-4 py-2.5 text-xs text-zinc-200 placeholder-zinc-500 focus:outline-none focus:border-purple-500" />
-          <button onclick="runLocalPrompt()" id="btn-run-local" class="px-5 py-2.5 rounded-xl bg-zinc-100 hover:bg-white text-zinc-950 font-bold text-xs transition-all duration-200 flex items-center gap-2 active:scale-95">
+          <input id="local-test-prompt" type="text" placeholder="Gõ thử lệnh để kiểm tra AI Local (Ví dụ: Viết hàm debounce trong TypeScript...)" class="flex-1 bg-zinc-900/90 border border-zinc-800 rounded-[6px] px-4 py-2.5 text-xs text-zinc-200 placeholder-zinc-500 focus:outline-none focus:border-zinc-700" />
+          <button onclick="runLocalPrompt()" id="btn-run-local" class="px-5 py-2.5 rounded-[6px] bg-zinc-100 hover:bg-white text-zinc-950 font-bold text-xs transition-all duration-200 flex items-center gap-2 active:scale-95">
             <span>Chạy AI Local</span>
           </button>
         </div>
 
-        <div id="local-ai-response-box" class="hidden p-4 rounded-xl bg-zinc-950 border border-zinc-800/80 font-mono text-xs text-zinc-300 leading-relaxed max-h-48 overflow-y-auto whitespace-pre-wrap">
+        <div id="local-ai-response-box" class="hidden p-4 rounded-[6px] bg-zinc-950 border border-[#202024] font-mono text-xs text-zinc-300 leading-relaxed max-h-48 overflow-y-auto whitespace-pre-wrap">
         </div>
       </div>
     </section>
@@ -305,10 +299,10 @@ function getHTML() {
       <div class="lg:col-span-2 space-y-6">
 
         <!-- 1-Click Project Builder (/xaydung) -->
-        <div class="glass-card rounded-2xl p-6 relative overflow-hidden">
+        <div class="glass-card rounded-[6px] p-6 relative overflow-hidden">
           <div class="flex items-center justify-between mb-4">
             <div class="flex items-center gap-2.5">
-              <span class="w-7 h-7 rounded-lg bg-blue-600/20 text-blue-400 flex items-center justify-center font-bold text-sm">🚀</span>
+              <span class="w-7 h-7 rounded-[6px] bg-blue-600/20 text-blue-400 flex items-center justify-center font-bold text-sm"></span>
               <h3 class="text-base font-bold text-white">1-Click Autonomous Builder (/xaydung)</h3>
             </div>
             <span class="text-xs text-zinc-400 font-mono">React 19 • Tauri v2 • Paper • CLI</span>
@@ -320,79 +314,79 @@ function getHTML() {
 
           <div class="space-y-3">
             <div class="flex gap-2">
-              <select id="build-type" class="bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-xs font-medium text-zinc-200 focus:outline-none focus:border-blue-500">
-                <option value="web">🌐 Web App (Vite + React 19 + GSAP + Tailwind)</option>
-                <option value="app">📱 Desktop App (Tauri v2 + Rust) / Mobile</option>
+              <select id="build-type" class="bg-zinc-900 border border-zinc-800 rounded-[6px] px-3 py-2 text-xs font-medium text-zinc-200 focus:outline-none focus:border-blue-500">
+                <option value="web"> Web App (Vite + React 19 + GSAP + Tailwind)</option>
+                <option value="app"> Desktop App (Tauri v2 + Rust) / Mobile</option>
                 <option value="plugin">⚔️ Minecraft Plugin (Paper Adventure + Lamp)</option>
-                <option value="tool">🛠️ CLI Utility / Tool (High-speed)</option>
+                <option value="tool">️ CLI Utility / Tool (High-speed)</option>
               </select>
-              <input id="build-desc" type="text" placeholder="Ví dụ: SaaS Dashboard với dark mode và GSAP animations..." class="flex-1 bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-2 text-xs text-zinc-200 placeholder-zinc-500 focus:outline-none focus:border-blue-500" />
+              <input id="build-desc" type="text" placeholder="Ví dụ: SaaS Dashboard với dark mode và GSAP animations..." class="flex-1 bg-zinc-900 border border-zinc-800 rounded-[6px] px-4 py-2 text-xs text-zinc-200 placeholder-zinc-500 focus:outline-none focus:border-blue-500" />
             </div>
 
             <!-- Quick Preset Chips -->
             <div class="flex flex-wrap items-center gap-1.5 pt-1">
               <span class="text-[11px] text-zinc-500 mr-1">Gợi ý 1-chạm:</span>
-              <button onclick="setPreset('web', 'SaaS Landing Page with 3D Canvas and GSAP ScrollTrigger')" class="px-2.5 py-1 rounded-lg bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-[11px] text-zinc-300 transition-all">SaaS Landing</button>
-              <button onclick="setPreset('app', 'Lightweight Markdown Notes Desktop App with Tauri v2')" class="px-2.5 py-1 rounded-lg bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-[11px] text-zinc-300 transition-all">Tauri App</button>
-              <button onclick="setPreset('plugin', 'Multi-server Economy Vault sync with Adventure MiniMessage')" class="px-2.5 py-1 rounded-lg bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-[11px] text-zinc-300 transition-all">Minecraft Vault</button>
-              <button onclick="setPreset('tool', 'High-speed log analysis CLI with automated tests')" class="px-2.5 py-1 rounded-lg bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-[11px] text-zinc-300 transition-all">Log CLI</button>
+              <button onclick="setPreset('web', 'SaaS Landing Page with 3D Canvas and GSAP ScrollTrigger')" class="px-2.5 py-1 rounded-[6px] bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-[11px] text-zinc-300 transition-all">SaaS Landing</button>
+              <button onclick="setPreset('app', 'Lightweight Markdown Notes Desktop App with Tauri v2')" class="px-2.5 py-1 rounded-[6px] bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-[11px] text-zinc-300 transition-all">Tauri App</button>
+              <button onclick="setPreset('plugin', 'Multi-server Economy Vault sync with Adventure MiniMessage')" class="px-2.5 py-1 rounded-[6px] bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-[11px] text-zinc-300 transition-all">Minecraft Vault</button>
+              <button onclick="setPreset('tool', 'High-speed log analysis CLI with automated tests')" class="px-2.5 py-1 rounded-[6px] bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-[11px] text-zinc-300 transition-all">Log CLI</button>
             </div>
 
             <div class="pt-2 flex justify-end">
-              <button onclick="triggerScaffold()" id="btn-scaffold" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold text-xs transition-all duration-200 flex items-center gap-2 shadow-lg shadow-blue-500/25 active:scale-95">
-                <span>⚡ Khởi Tạo Dự Án 1-Chạm</span>
+              <button onclick="triggerScaffold()" id="btn-scaffold" class="px-5 py-2.5 rounded-[6px] bg-[#2563EB] hover:bg-blue-600 text-white font-semibold text-xs transition-all duration-200 flex items-center gap-2 shadow-lg shadow-sm active:scale-95">
+                <span>Khởi Tạo Dự Án 1-Chạm</span>
               </button>
             </div>
           </div>
         </div>
 
         <!-- 1-Click Visual & Media Tools (Baoyu Suite) -->
-        <div class="glass-card rounded-2xl p-6">
+        <div class="glass-card rounded-[6px] p-6">
           <div class="flex items-center justify-between mb-4">
             <div class="flex items-center gap-2.5">
-              <span class="w-7 h-7 rounded-lg bg-purple-600/20 text-purple-400 flex items-center justify-center font-bold text-sm">🎨</span>
+              <span class="w-7 h-7 rounded-[6px] bg-zinc-800 text-blue-400 flex items-center justify-center font-bold text-sm"></span>
               <h3 class="text-base font-bold text-white">1-Click Visuals & Presentations (Baoyu Suite)</h3>
             </div>
             <span class="text-xs text-zinc-400 font-mono">100% Offline • Free</span>
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <div class="p-4 rounded-xl bg-zinc-900/60 border border-zinc-800/80 hover:border-purple-500/40 transition-all">
+            <div class="p-4 rounded-[6px] bg-zinc-900/60 border border-[#202024] hover:border-blue-500/40 transition-all">
               <div class="text-xs font-semibold text-zinc-200 mb-1 flex items-center gap-1.5">
-                <span>📊 Sơ Đồ Kiến Trúc (Diagram)</span>
+                <span> Sơ Đồ Kiến Trúc (Diagram)</span>
               </div>
               <p class="text-[11px] text-zinc-400 mb-3">Tự động vẽ System Architecture hoặc Flowchart chuẩn Mermaid/SVG.</p>
-              <button onclick="triggerQuickAction('baoyu-diagram', 'Vẽ sơ đồ kiến trúc hệ thống Multi-Agent Mesh')" class="w-full py-1.5 px-3 rounded-lg bg-purple-600/20 hover:bg-purple-600/30 text-purple-300 border border-purple-500/30 text-xs font-medium transition-all">
+              <button onclick="triggerQuickAction('baoyu-diagram', 'Vẽ sơ đồ kiến trúc hệ thống Multi-Agent Mesh')" class="w-full py-1.5 px-3 rounded-[6px] bg-zinc-800 hover:bg-zinc-700 text-zinc-200 border border-zinc-700 text-xs font-medium transition-all">
                 Vẽ Diagram Ngay
               </button>
             </div>
 
-            <div class="p-4 rounded-xl bg-zinc-900/60 border border-zinc-800/80 hover:border-purple-500/40 transition-all">
+            <div class="p-4 rounded-[6px] bg-zinc-900/60 border border-[#202024] hover:border-blue-500/40 transition-all">
               <div class="text-xs font-semibold text-zinc-200 mb-1 flex items-center gap-1.5">
-                <span>📑 Tạo Slide Thuyết Trình (.PPTX)</span>
+                <span> Tạo Slide Thuyết Trình (.PPTX)</span>
               </div>
               <p class="text-[11px] text-zinc-400 mb-3">Tạo slide thuyết trình HTML động và xuất trực tiếp ra file PowerPoint.</p>
-              <button onclick="triggerQuickAction('claude-slides', 'Tạo bộ slide giới thiệu hệ sinh thái AI Coding Agents')" class="w-full py-1.5 px-3 rounded-lg bg-purple-600/20 hover:bg-purple-600/30 text-purple-300 border border-purple-500/30 text-xs font-medium transition-all">
+              <button onclick="triggerQuickAction('claude-slides', 'Tạo bộ slide giới thiệu hệ sinh thái AI Coding Agents')" class="w-full py-1.5 px-3 rounded-[6px] bg-zinc-800 hover:bg-zinc-700 text-zinc-200 border border-zinc-700 text-xs font-medium transition-all">
                 Tạo Slide Deck
               </button>
             </div>
 
-            <div class="p-4 rounded-xl bg-zinc-900/60 border border-zinc-800/80 hover:border-purple-500/40 transition-all">
+            <div class="p-4 rounded-[6px] bg-zinc-900/60 border border-[#202024] hover:border-blue-500/40 transition-all">
               <div class="text-xs font-semibold text-zinc-200 mb-1 flex items-center gap-1.5">
-                <span>🌐 Cào Web Sang Markdown</span>
+                <span> Cào Web Sang Markdown</span>
               </div>
               <p class="text-[11px] text-zinc-400 mb-3">Nhập link URL -> Cào sạch nội dung bài viết thành Markdown không rác.</p>
-              <button onclick="promptScrapeUrl()" class="w-full py-1.5 px-3 rounded-lg bg-blue-600/20 hover:bg-blue-600/30 text-blue-300 border border-blue-500/30 text-xs font-medium transition-all">
+              <button onclick="promptScrapeUrl()" class="w-full py-1.5 px-3 rounded-[6px] bg-blue-600/20 hover:bg-blue-600/30 text-blue-300 border border-blue-500/30 text-xs font-medium transition-all">
                 Cào Link Web
               </button>
             </div>
 
-            <div class="p-4 rounded-xl bg-zinc-900/60 border border-zinc-800/80 hover:border-purple-500/40 transition-all">
+            <div class="p-4 rounded-[6px] bg-zinc-900/60 border border-[#202024] hover:border-blue-500/40 transition-all">
               <div class="text-xs font-semibold text-zinc-200 mb-1 flex items-center gap-1.5">
-                <span>🛡️ Kiểm Toán OWASP & Cloudflare</span>
+                <span>️ Kiểm Toán OWASP & Cloudflare</span>
               </div>
               <p class="text-[11px] text-zinc-400 mb-3">Rà soát lỗ hổng bảo mật Top 10 OWASP và quét rò rỉ khóa bí mật.</p>
-              <button onclick="triggerQuickAction('security-audit', 'Rà soát bảo mật toàn diện cho codebase hiện tại')" class="w-full py-1.5 px-3 rounded-lg bg-emerald-600/20 hover:bg-emerald-600/30 text-emerald-300 border border-emerald-500/30 text-xs font-medium transition-all">
+              <button onclick="triggerQuickAction('security-audit', 'Rà soát bảo mật toàn diện cho codebase hiện tại')" class="w-full py-1.5 px-3 rounded-[6px] bg-emerald-600/20 hover:bg-emerald-600/30 text-emerald-300 border border-emerald-500/30 text-xs font-medium transition-all">
                 Chạy Security Audit
               </button>
             </div>
@@ -405,7 +399,7 @@ function getHTML() {
       <div class="space-y-6">
 
         <!-- Quick AI Command Cheatsheet -->
-        <div class="glass-card rounded-2xl p-5">
+        <div class="glass-card rounded-[6px] p-5">
           <h3 class="text-xs font-mono uppercase tracking-wider text-zinc-400 mb-3 flex items-center gap-2">
             <span>⌨️ Khung Lệnh Chat Tự Hành</span>
           </h3>
@@ -413,19 +407,19 @@ function getHTML() {
             Copy hoặc gõ các lệnh sau trực tiếp trong Antigravity / Claude Code:
           </p>
           <div class="space-y-2 font-mono text-[11px]">
-            <div class="p-2.5 rounded-lg bg-zinc-950 border border-zinc-800/90 text-zinc-300 flex items-center justify-between cursor-pointer hover:border-zinc-700" onclick="copyText('/xaydung web Modern SaaS Dashboard')">
+            <div class="p-2.5 rounded-[6px] bg-zinc-950 border border-zinc-800/90 text-zinc-300 flex items-center justify-between cursor-pointer hover:border-zinc-700" onclick="copyText('/xaydung web Modern SaaS Dashboard')">
               <span>/xaydung web &lt;ý tưởng&gt;</span>
               <span class="text-zinc-500 text-[10px]">copy</span>
             </div>
-            <div class="p-2.5 rounded-lg bg-zinc-950 border border-zinc-800/90 text-zinc-300 flex items-center justify-between cursor-pointer hover:border-zinc-700" onclick="copyText('/xaydung app Tauri v2 Markdown Notes')">
+            <div class="p-2.5 rounded-[6px] bg-zinc-950 border border-zinc-800/90 text-zinc-300 flex items-center justify-between cursor-pointer hover:border-zinc-700" onclick="copyText('/xaydung app Tauri v2 Markdown Notes')">
               <span>/xaydung app &lt;ý tưởng&gt;</span>
               <span class="text-zinc-500 text-[10px]">copy</span>
             </div>
-            <div class="p-2.5 rounded-lg bg-zinc-950 border border-zinc-800/90 text-zinc-300 flex items-center justify-between cursor-pointer hover:border-zinc-700" onclick="copyText('/xaydung plugin Economy Vault Adventure')">
+            <div class="p-2.5 rounded-[6px] bg-zinc-950 border border-zinc-800/90 text-zinc-300 flex items-center justify-between cursor-pointer hover:border-zinc-700" onclick="copyText('/xaydung plugin Economy Vault Adventure')">
               <span>/xaydung plugin &lt;ý tưởng&gt;</span>
               <span class="text-zinc-500 text-[10px]">copy</span>
             </div>
-            <div class="p-2.5 rounded-lg bg-zinc-950 border border-zinc-800/90 text-zinc-300 flex items-center justify-between cursor-pointer hover:border-zinc-700" onclick="copyText('/xaydung tool Log Analyzer CLI')">
+            <div class="p-2.5 rounded-[6px] bg-zinc-950 border border-zinc-800/90 text-zinc-300 flex items-center justify-between cursor-pointer hover:border-zinc-700" onclick="copyText('/xaydung tool Log Analyzer CLI')">
               <span>/xaydung tool &lt;ý tưởng&gt;</span>
               <span class="text-zinc-500 text-[10px]">copy</span>
             </div>
@@ -433,7 +427,7 @@ function getHTML() {
         </div>
 
         <!-- Real-Time Activity Log -->
-        <div class="glass-card rounded-2xl p-5 flex flex-col h-[320px]">
+        <div class="glass-card rounded-[6px] p-5 flex flex-col h-[320px]">
           <div class="flex items-center justify-between mb-2">
             <h3 class="text-xs font-mono uppercase tracking-wider text-zinc-400 flex items-center gap-2">
               <span class="w-2 h-2 rounded-full bg-emerald-500 pulse-dot"></span>
@@ -441,7 +435,7 @@ function getHTML() {
             </h3>
             <button onclick="fetchLogs()" class="text-[10px] font-mono text-zinc-500 hover:text-zinc-300">Làm mới</button>
           </div>
-          <div id="log-box" class="flex-1 bg-zinc-950 rounded-xl p-3 border border-zinc-800/80 font-mono text-[11px] text-zinc-400 overflow-y-auto space-y-1">
+          <div id="log-box" class="flex-1 bg-zinc-950 rounded-[6px] p-3 border border-[#202024] font-mono text-[11px] text-zinc-400 overflow-y-auto space-y-1">
           </div>
         </div>
 
@@ -452,7 +446,7 @@ function getHTML() {
   </main>
 
   <!-- Notification Toast -->
-  <div id="toast" class="fixed bottom-6 right-6 px-4 py-3 rounded-xl glass border border-blue-500/40 text-xs font-medium text-blue-300 shadow-2xl transition-all duration-300 transform translate-y-20 opacity-0 pointer-events-none flex items-center gap-2">
+  <div id="toast" class="fixed bottom-6 right-6 px-4 py-3 rounded-[6px] glass border border-blue-500/40 text-xs font-medium text-blue-300 shadow-2xl transition-all duration-300 transform translate-y-20 opacity-0 pointer-events-none flex items-center gap-2">
     <span>✓</span> <span id="toast-msg">Success</span>
   </div>
 
@@ -505,11 +499,11 @@ function getHTML() {
       const btnSenior = document.getElementById('btn-senior');
       const btnJunior = document.getElementById('btn-junior');
       if (activeMode === 'senior') {
-        btnSenior.className = 'px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-600 text-white shadow-sm';
-        btnJunior.className = 'px-3 py-1.5 rounded-lg text-xs font-medium text-zinc-400 hover:text-white';
+        btnSenior.className = 'px-3 py-1.5 rounded-[6px] text-xs font-semibold bg-blue-600 text-white shadow-sm';
+        btnJunior.className = 'px-3 py-1.5 rounded-[6px] text-xs font-medium text-zinc-400 hover:text-white';
       } else {
-        btnSenior.className = 'px-3 py-1.5 rounded-lg text-xs font-medium text-zinc-400 hover:text-white';
-        btnJunior.className = 'px-3 py-1.5 rounded-lg text-xs font-semibold bg-amber-600 text-white shadow-sm';
+        btnSenior.className = 'px-3 py-1.5 rounded-[6px] text-xs font-medium text-zinc-400 hover:text-white';
+        btnJunior.className = 'px-3 py-1.5 rounded-[6px] text-xs font-semibold bg-amber-600 text-white shadow-sm';
       }
     }
 
@@ -612,7 +606,7 @@ function getHTML() {
         alert('Lỗi khi khởi tạo');
       } finally {
         btn.disabled = false;
-        btn.innerHTML = '<span>⚡ Khởi Tạo Dự Án 1-Chạm</span>';
+        btn.innerHTML = '<span>Khởi Tạo Dự Án 1-Chạm</span>';
       }
     }
 

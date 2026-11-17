@@ -48,10 +48,16 @@ Invoke directly inside **Antigravity, Claude Code, or Cursor**:
 ### 2. UI De-Slopping Engine (`/unslop`)
 Audit and refine AI-generated user interfaces into intentional, human-crafted designs:
 
-```text
+```bash
+# In Terminal
+npx skill-for-ai unslop <file|dir> [--fix]
+# or
+unslop <file|dir> [--fix]
+
+# In AI Chat
 /unslop [file | URL | component]
 ```
-Executes **9 sequential review passes**: *Spacing $\to$ Color $\to$ Icons $\to$ Copy $\to$ Typography $\to$ Layout $\to$ Details $\to$ Visuals $\to$ Motion*.
+Executes **9 sequential review passes**: *Spacing → Color → Icons → Copy → Typography → Layout → Details → Visuals → Motion*.
 
 ---
 
