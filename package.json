@@ -1,7 +1,7 @@
 {
   "name": "skill-for-ai",
-  "version": "1.2.0",
-  "description": "Universal 337+ Anti-Slop Agent Skills, Autonomous /xaydung Scaffolder, and Security Suite for Claude Code, Antigravity, Cursor, Codex, and OpenCode.",
+  "version": "1.3.0",
+  "description": "Universal 341+ Anti-Slop Agent Skills, Autonomous /xaydung Scaffolder, 3D Asset Generator (TRELLIS/Hunyuan3D/Blender MCP), De-Slopping Engine (/unslop), and Security Suite",
   "main": "bin/cli.js",
   "bin": {
     "skill-for-ai": "bin/cli.js",
@@ -11,6 +11,9 @@
     "modern-web-guidance": "bin/modern-web-guidance.js",
     "codex-security": "bin/codex-security.js",
     "agentes-chat": "bin/agentes-chat.js",
+    "ai-3d-gen": "bin/ai-3d-gen.js",
+    "blender-mcp": "bin/blender-mcp.js",
+    "gradio-client": "bin/gradio-client.js",
     "skill-ui": "bin/dashboard.js"
   },
   "files": [
@@ -32,6 +35,9 @@
     "modern-web-guidance": "node bin/modern-web-guidance.js",
     "codex-security": "node bin/codex-security.js",
     "agentes-chat": "node bin/agentes-chat.js",
+    "ai-3d-gen": "node bin/ai-3d-gen.js",
+    "blender-mcp": "node bin/blender-mcp.js",
+    "gradio-client": "node bin/gradio-client.js",
     "install-skills": "node bin/cli.js"
   },
   "keywords": [

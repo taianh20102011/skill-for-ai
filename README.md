@@ -1,4 +1,4 @@
-# ⚡ SKILL-FOR-AI: Ultimate 337+ Agent Skills & Autonomous /xaydung Scaffolder
+# ⚡ SKILL-FOR-AI: Ultimate 341+ Agent Skills & Autonomous /xaydung Scaffolder
 
 <div align="center">
 
@@ -6,7 +6,7 @@
 
 </div>
 
-> **Universal 337+ Autonomous Agent Skills, Autonomous `/xaydung` Project Scaffolder, De-Slopping Engine (`/unslop`), Google Chrome Modern Web Guidance, OpenAI Codex Security, Meta Astryx, Video/Motion Graphics Suite, Game Dev Arsenal, and Anti-Slop Security Ecosystem** for modern AI Coding Agents: **Claude Code, Google Antigravity, Cursor, OpenAI Codex, OpenCode, Aider, and Cline**.
+> **Universal 341+ Autonomous Agent Skills, Autonomous `/xaydung` Project Scaffolder, 3D Asset Generator (`/3d-gen`), Blender MCP Controller (`/blender`), De-Slopping Engine (`/unslop`), Google Chrome Modern Web Guidance, OpenAI Codex Security, Meta Astryx, Video/Motion Graphics Suite, Game Dev Arsenal, and Anti-Slop Security Ecosystem** for modern AI Coding Agents: **Claude Code, Google Antigravity, Cursor, OpenAI Codex, OpenCode, Aider, and Cline**.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node.js](https://img.shields.io/badge/Node.js-18+-green.svg)](https://nodejs.org/)
@@ -98,6 +98,35 @@ npx skill-for-ai agentes-chat [init|start|status]
 /agentes-chat [init|start|status]
 ```
 Spins up a self-hosted team collaboration hub via Docker Compose with dedicated agent channels and MCP tool bus.
+
+### 7. Autonomous 3D Asset Generator (`ai-3d-gen`)
+```bash
+# In Terminal
+npx skill-for-ai ai-3d-gen <prompt|image_path> [--engine trellis|hunyuan|triposr|llama-mesh]
+
+# In AI Chat
+/3d-gen <prompt hoặc đường dẫn ảnh>
+```
+Generates production-ready 3D meshes (GLB/OBJ) using TRELLIS, Tencent Hunyuan3D-2, TripoSR, or LLaMA-Mesh.
+
+### 8. Blender MCP Controller (`blender-mcp`)
+```bash
+# In Terminal
+npx skill-for-ai blender-mcp [setup|run|optimize|status]
+
+# In AI Chat
+/blender [setup|run|optimize]
+```
+Automates Blender via Model Context Protocol (MCP) or headless `bpy` Python scripts for mesh decimation, PBR baking, and game asset export.
+
+---
+
+## 🧊 Generative 3D, Blender MCP & Cloud Model Ecosystem
+
+* **`ai-3d-generation`**: Unified multi-engine 3D pipeline integrating **TRELLIS** (`JeffreyXiang/TRELLIS`), **Hunyuan3D-2** (`Tencent/Hunyuan3D-2`), **TripoSR** (`camenduru/TripoSR-jupyter`), **InstantMesh** (`camenduru/InstantMesh-jupyter`), **3DTopia-XL** (`3DTopia/3DTopia-XL`), and **LLaMA-Mesh** (`OpenGVLab/LLaMA-Mesh`).
+* **`blender-mcp`** (`ahujasid/mcp-for-blender`): Model Context Protocol server and headless `bpy` script runner for interactive AI 3D modeling, UV unwrapping, and Godot/Unity export optimization.
+* **`comfyui-3d-pack`** (`MrForExample/ComfyUI-3D-Pack`): Node-based 3D generation, multi-view diffusion (SV3D/MVDream), 3D Gaussian Splatting, and normal/roughness baking workflows.
+* **`gradio-ai-client`** (`gradio_client`): Programmatic bridge allowing AI agents to invoke heavy cloud models on Hugging Face Spaces with zero local GPU overhead.
 
 ---
 

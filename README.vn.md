@@ -1,4 +1,4 @@
-# ⚡ SKILL-FOR-AI: Hệ Sinh Thái 337+ Kỹ Năng Agent, Khử Rác UI /unslop, Chrome Web Guidance & Codex Security
+# ⚡ SKILL-FOR-AI: Hệ Sinh Thái 341+ Kỹ Năng Agent, Tạo 3D /3d-gen, Blender MCP, Khử Rác UI /unslop
 
 <div align="center">
 
@@ -6,7 +6,7 @@
 
 </div>
 
-> **Bộ 337+ kỹ năng tự hành (Autonomous Agent Skills), công cụ khởi tạo dự án siêu tốc `/xaydung`, quy trình khử rác giao diện AI (`/unslop`), Google Chrome Modern Web Guidance, OpenAI Codex Security, Meta Astryx, bộ video lập trình và Game Dev toàn diện** dành cho các AI Coding Agents: **Claude Code, Google Antigravity, Cursor, OpenAI Codex, OpenCode, Aider, và Cline**.
+> **Bộ 341+ kỹ năng tự hành (Autonomous Agent Skills), công cụ khởi tạo dự án siêu tốc `/xaydung`, tạo tài nguyên 3D tự hành (`/3d-gen`), điều khiển Blender MCP (`/blender`), khử rác giao diện AI (`/unslop`), Google Chrome Modern Web Guidance, OpenAI Codex Security, Meta Astryx, bộ video lập trình và Game Dev toàn diện** dành cho các AI Coding Agents: **Claude Code, Google Antigravity, Cursor, OpenAI Codex, OpenCode, Aider, và Cline**.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node.js](https://img.shields.io/badge/Node.js-18+-green.svg)](https://nodejs.org/)
@@ -98,6 +98,35 @@ npx skill-for-ai agentes-chat [init|start|status]
 /agentes-chat [init|start|status]
 ```
 Khởi tạo và chạy trung tâm chat cộng tác đa Agent qua Docker Compose với bus công cụ MCP tích hợp sẵn.
+
+### 7. Tạo Tài Nguyên 3D Tự Hành (`ai-3d-gen`)
+```bash
+# Trong Terminal
+npx skill-for-ai ai-3d-gen <mô-tả-prompt|đường-dẫn-ảnh> [--engine trellis|hunyuan|triposr|llama-mesh]
+
+# Trong AI Chat
+/3d-gen <mô tả prompt hoặc đường dẫn ảnh>
+```
+Tạo mô hình 3D (GLB/OBJ) sẵn sàng cho Game/Web bằng **TRELLIS**, **Tencent Hunyuan3D-2**, **TripoSR**, hoặc **LLaMA-Mesh**.
+
+### 8. Điều Khiển & Tự Động Hóa Blender MCP (`blender-mcp`)
+```bash
+# Trong Terminal
+npx skill-for-ai blender-mcp [setup|run|optimize|status]
+
+# Trong AI Chat
+/blender [setup|run|optimize]
+```
+Kết nối điều khiển Blender qua Model Context Protocol (MCP) hoặc chạy kịch bản Python `bpy` headless để giảm đa giác (decimate), nướng chất liệu PBR và xuất game assets.
+
+---
+
+## 🧊 Hệ Sinh Thái AI 3D Thế Hệ Mới, Blender MCP & Cloud Model Bridge
+
+* **`ai-3d-generation`**: Quy trình tạo 3D đa động cơ tích hợp **TRELLIS** (`JeffreyXiang/TRELLIS`), **Hunyuan3D-2** (`Tencent/Hunyuan3D-2`), **TripoSR** (`camenduru/TripoSR-jupyter`), **InstantMesh** (`camenduru/InstantMesh-jupyter`), **3DTopia-XL** (`3DTopia/3DTopia-XL`), và **LLaMA-Mesh** (`OpenGVLab/LLaMA-Mesh`).
+* **`blender-mcp`** (`ahujasid/mcp-for-blender`): Máy chủ Model Context Protocol và trình chạy kịch bản `bpy` headless giúp AI Agent tự dựng hình, trải UV, nướng PBR và xuất model sang Godot/Unity.
+* **`comfyui-3d-pack`** (`MrForExample/ComfyUI-3D-Pack`): Mạng lưới node tạo 3D, khuếch tán đa góc nhìn (SV3D/MVDream), 3D Gaussian Splatting và trích xuất polygon.
+* **`gradio-ai-client`** (`gradio_client`): Cầu nối lập trình cho phép AI Agent gọi trực tiếp hàng ngàn model 3D AI khổng lồ trên Hugging Face Spaces mà không tốn GPU máy cá nhân.
 
 ---
 

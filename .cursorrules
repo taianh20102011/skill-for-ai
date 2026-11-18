@@ -7,7 +7,7 @@
 
 ## 🚀 Universal One-Liner Trigger: `!exec: <task>` or `/swarm: <task>`
 
-Whenever a prompt starts with `!exec:` or `/swarm:`, IMMEDIATELY execute all 337 skills end-to-end:
+Whenever a prompt starts with `!exec:` or `/swarm:`, IMMEDIATELY execute all 341 skills end-to-end:
 1. **Spec & Architecture**: Autonomous decomposition, edge cases handled.
 2. **Minimalist Code Discipline**: Ponytail YAGNI (-53% code) & Karpathy Guidelines (surgical changes, think before coding).
 3. **Alabaster Porcelain + GSAP 25+**: 6px radius, CNC sub-pixel 1px border, Plus Jakarta Sans, hardware-accelerated 120fps motion.
@@ -22,7 +22,7 @@ Before writing ANY code, generating files, or proposing architecture:
 1. **Skill Discovery**: If there is even a 1% chance a skill applies, invoke it immediately.
 2. **Priority Order**:
    - Process skills FIRST: `superpowers:brainstorming` (clarify spec in bite-sized chunks) or `superpowers:systematic-debugging` (root-cause isolation).
-   - Domain execution skills NEXT: `modern-fullstack-gsap-security`, `frontend-design`, `meta-astryx-design-system`, `unslop`, `modern-web-guidance`, `codex-security`, `watermarks-remover`, `game-development-godot`, `programmatic-video-remotion`, `math-animation-manim`, `cloudflare-security-audit`.
+   - Domain execution skills NEXT: `ai-3d-generation`, `blender-mcp`, `comfyui-3d-pack`, `gradio-ai-client`, `modern-fullstack-gsap-security`, `frontend-design`, `meta-astryx-design-system`, `unslop`, `modern-web-guidance`, `codex-security`, `watermarks-remover`, `game-development-godot`, `programmatic-video-remotion`, `math-animation-manim`, `cloudflare-security-audit`.
    - Quality gates LAST: `karpathy-guidelines`, `ponytail`, `verification-before-completion`.
 
 ---
@@ -52,7 +52,16 @@ Whenever working on Game Development tasks:
 
 ---
 
-## 🎬 4. Programmatic Video & Motion Graphics Directives (Remotion / Manim / HyperFrames / TTS)
+## 🧊 4. Autonomous 3D Generation & Blender Directives (TRELLIS / Hunyuan3D / Blender MCP)
+
+- **Engine Selection**: Use TRELLIS for high-fidelity photorealistic assets, Hunyuan3D-2 for stylized/hard-surface assets, TripoSR for rapid prototyping, and LLaMA-Mesh for low-poly procedural code generation.
+- **Remote Inference**: Use `gradio_client` / `@gradio/client` to execute heavy 3D models headlessly on cloud spaces without local GPU constraints.
+- **Blender Automation**: Execute headless `bpy` Python scripts via `blender --background --python <script>` or interactive `ahujasid/mcp-for-blender`.
+- **Game Optimization**: Decimate raw 3D meshes (5k-25k tris), pack PBR maps into glTF ORM texture format, center pivot at model base.
+
+---
+
+## 🎬 5. Programmatic Video & Motion Graphics Directives (Remotion / Manim / HyperFrames / TTS)
 
 Whenever working on programmatic video, mathematical animations, or media processing:
 - **Remotion Standards**: Use `useCurrentFrame()`, `useVideoConfig()`, `interpolate()` with clamping, and `spring()` for frame-accurate rendering. Embed 3D canvas via `@remotion/three` & Three.js.
@@ -62,7 +71,7 @@ Whenever working on programmatic video, mathematical animations, or media proces
 
 ---
 
-## 🛡️ 5. Bank-Grade Security Invariants (Codex Security & Cloudflare Standards)
+## 🛡️ 6. Bank-Grade Security Invariants (Codex Security & Cloudflare Standards)
 
 - **Mandatory 2FA**: Admin & sensitive actions require 6-digit numeric Gmail OTP verified via `HMAC-SHA256` (10-min expiration, max 5 attempts, IP-bound).
 - **Session Revocation**: Password reset increments `sessionVersion`, immediately invalidating all active sessions.
@@ -73,7 +82,7 @@ Whenever working on programmatic video, mathematical animations, or media proces
 
 ---
 
-## ☕ 6. Code Discipline: Karpathy & Ponytail
+## ☕ 7. Code Discipline: Karpathy & Ponytail
 
 - **Think Before Coding**: Surface assumptions explicitly. Present tradeoffs.
 - **Simplicity First & YAGNI**: The minimum code that solves the user's task. No speculative boilerplate.
@@ -82,7 +91,7 @@ Whenever working on programmatic video, mathematical animations, or media proces
 
 ---
 
-## 🧠 7. Cross-Agent Continuity (`ai-memory`)
+## 🧠 8. Cross-Agent Continuity (`ai-memory`)
 
 - When handing off tasks across models or sessions, update or read `handoff.md` with:
   1. Goal & Target State
